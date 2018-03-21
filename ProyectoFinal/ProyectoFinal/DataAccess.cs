@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace DataAccess
+namespace ProyectoFinal
 {
-    internal class DataAccess //clase publica dentro del proyecto pero oculta en otros como bisness
+    public class DataAccess //clase publica dentro del proyecto pero oculta en otros como bisness
     {
         #region attributes
-        private SqlConnection cnConnection { get; set; }
+        private MySqlConnection cnConnection { get; set; }
         private string ConnectionString = string.Empty;//inicializado cadena vacia
         #endregion
 
@@ -19,11 +20,11 @@ namespace DataAccess
         #region buillder
         public DataAccess()
         {
-            ConnectionString = "Data Source=DESKTOP-6A9DRNR\\SQLEXPRESS;Initial Catalog=ARQUITECTURA;Integrated Security=True";
+            //ConnectionString = "Data Source=DESKTOP-6A9DRNR\\SQLEXPRESS;Initial Catalog=ARQUITECTURA;Integrated Security=True";
             //ConnectionString = "Server = arquitecturameso.ddns.net; Database = dbCompra2017; User Id = sa; Password = database;";
+            ConnectionString = "Server=sql3.freesqldatabase.com;Database=sql3227915; Uid=sql3227915;Pwd=jLzyXnFhG1;";
 
-
-            cnConnection = new SqlConnection(ConnectionString);
+            cnConnection = new MySqlConnection(ConnectionString);
             
         }
         #endregion
@@ -65,7 +66,7 @@ namespace DataAccess
             try
             {
                 
-                SqlDataAdapter da = new SqlDataAdapter(sQuery, cnConnection);
+                MySqlDataAdapter da = new MySqlDataAdapter(sQuery, cnConnection);
                 da.Fill(dt);
             }
             catch (Exception ex)
@@ -80,7 +81,7 @@ namespace DataAccess
             DataSet ds = new DataSet("tblProducto");
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(sQuery, cnConnection);
+                MySqlDataAdapter da = new MySqlDataAdapter(sQuery, cnConnection);
                 da.Fill(ds,"tblProducto");
             }
             catch(Exception ex)
@@ -92,7 +93,7 @@ namespace DataAccess
 
         public int executeCommand(string sCommand)//funcion para ejecutar un comando sql
         {
-            SqlCommand cm = new SqlCommand(sCommand, cnConnection);
+            MySqlCommand cm = new MySqlCommand(sCommand, cnConnection);
             //en el sql comand hay que abrir y cerrar conexion
             try
             {
