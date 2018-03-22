@@ -17,5 +17,9 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("HOLAA");
+        }
     }
 }
