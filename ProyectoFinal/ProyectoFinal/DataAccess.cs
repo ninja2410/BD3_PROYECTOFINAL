@@ -76,20 +76,7 @@ namespace ProyectoFinal
             return dt;
         }
         #endregion
-        public DataSet imagen(string sQuery)
-        {
-            DataSet ds = new DataSet("tblProducto");
-            try
-            {
-                MySqlDataAdapter da = new MySqlDataAdapter(sQuery, cnConnection);
-                da.Fill(ds,"tblProducto");
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("Error to read image: " + ex.Message);
-            }
-            return ds;
-        }
+
 
         public int executeCommand(string sCommand)//funcion para ejecutar un comando sql
         {
