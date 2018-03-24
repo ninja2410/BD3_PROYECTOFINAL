@@ -24,24 +24,12 @@ namespace ProyectoFinal
         }
 
         private void btnShowclient_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //Cadena de conexion que solicita el servidor, id, contraseña, base de datos a conectarse
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.UserID = "root";
-            builder.Password = "s3xo!=am0r";
-            builder.Database = "bdsurticasa";
-            //iniciamos una nueva conexion
-            MySqlConnection conn = new MySqlConnection(builder.ToString());
-            conn.Open();
-            string query = "SELECT * FROM tblcliente ";
-            DataTable dt= new DataTable();
-            MySqlDataAdapter myDataAdapter = new MySqlDataAdapter(query, conn);
-            myDataAdapter.Fill(dt);
-
+        {   
+            string query = "SELECT * FROM tblCliente "; //Consulta que se enviara al servidor de la base
+            DataTable dt= new DataTable();           // creando una nueva tabla
+            dt=da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
             gridControlClient.DataSource = dt;
-
             
         }
 
