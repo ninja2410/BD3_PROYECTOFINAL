@@ -206,6 +206,7 @@
             superToolTip6.Items.Add(toolTipTitleItem6);
             superToolTip6.Items.Add(toolTipItem6);
             this.btneditProvider.SuperTip = superToolTip6;
+            this.btneditProvider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btneditProvider_ItemClick);
             // 
             // btnDelProvider
             // 
@@ -221,6 +222,7 @@
             superToolTip7.Items.Add(toolTipTitleItem7);
             superToolTip7.Items.Add(toolTipItem7);
             this.btnDelProvider.SuperTip = superToolTip7;
+            this.btnDelProvider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelProvider_ItemClick);
             // 
             // btnShowProviders
             // 
