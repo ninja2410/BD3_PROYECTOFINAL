@@ -21,7 +21,7 @@ namespace ProyectoFinal
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_ventas v = new f_ventas();
-            v.MdiParent = this;
+            //v.MdiParent = this;
             v.Show();
         }
 
@@ -116,8 +116,8 @@ namespace ProyectoFinal
 
         private void btnNewProvider_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmNewProvider frmNuevoProveedor = new frmNewProvider();
-            frmNuevoProveedor.ShowDialog();
+            //frmNewProvider frmNuevoProveedor = new frmNewProvider();
+            //frmNuevoProveedor.ShowDialog();
         }
 
         private void btneditProvider_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
