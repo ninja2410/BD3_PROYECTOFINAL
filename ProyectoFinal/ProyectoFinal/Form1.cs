@@ -22,6 +22,7 @@ namespace ProyectoFinal
         {
             f_ventas v = new f_ventas();
             //v.MdiParent = this;
+            v.venta = true;
             v.Show();
         }
 
@@ -180,6 +181,13 @@ namespace ProyectoFinal
 
                 MessageBox.Show("Error to get the selected Provider" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_ventas c = new f_ventas();
+            c.venta = false;
+            c.Show();
         }
     }
 }

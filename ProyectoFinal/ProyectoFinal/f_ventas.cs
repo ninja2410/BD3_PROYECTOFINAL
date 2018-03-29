@@ -17,6 +17,7 @@ namespace ProyectoFinal
         List<ProductosVenta> lista = new List<ProductosVenta>();
         string query;
         public int sucursal=1;
+        public bool venta=true;
         public f_ventas()
         {
             InitializeComponent();
@@ -57,6 +58,21 @@ namespace ProyectoFinal
             dt.Columns.Add("Descripción");
             dt.Columns.Add("Precio/U");
             dt.Columns.Add("Total");
+            
+            if (!venta)
+            {
+                layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                lblTitulo.Text = "Compras Surticasa S.A.";
+                button1.Text = "Comprar";
+                dt.Columns.Add("Fecha Vencimiento");
+            }
+            else
+            {
+                layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                lblTitulo.Text = "Ventas Surticasa S.A.";
+                button1.Text = "Vender";
+            }
+
             gridControl1.DataSource = dt;
 
             btnCredito.Enabled = false;
@@ -113,9 +129,14 @@ namespace ProyectoFinal
                 r["Descripción"] = lProductos.Text + " " + lPresentacion.Text;
                 r["Precio/U"] = lPresentacion.EditValue;
                 r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToInt16(lPresentacion.EditValue);
+                if (!venta)
+                {
+                    r["Fecha Vencimiento"] = fVencimiento.Value.Date;
+                }
                 dt.Rows.Add(r);
                 gridControl1.RefreshDataSource();
                 gridControl1.Refresh();
+                txtCantidad.Focus();
             }
         }
 
