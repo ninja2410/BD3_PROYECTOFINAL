@@ -189,5 +189,11 @@ namespace ProyectoFinal
             c.venta = false;
             c.Show();
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_NotasSalida nota = new f_NotasSalida();
+            nota.Show();
+        }
     }
 }

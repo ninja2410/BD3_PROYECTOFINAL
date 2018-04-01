@@ -40,6 +40,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.fVencimiento = new System.Windows.Forms.DateTimePicker();
             this.lPresentacion = new DevExpress.XtraEditors.LookUpEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -69,7 +70,6 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.fVencimiento = new System.Windows.Forms.DateTimePicker();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -132,9 +132,9 @@
             // 
             this.lblFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(652, 49);
+            this.lblFecha.Location = new System.Drawing.Point(658, 49);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(252, 39);
+            this.lblFecha.Size = new System.Drawing.Size(246, 39);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "f";
             // 
@@ -144,7 +144,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(12, 49);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(636, 39);
+            this.lblTitulo.Size = new System.Drawing.Size(642, 39);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Ventas Surti Casa S.A.";
             // 
@@ -166,16 +166,16 @@
             this.layoutControlItem1.Control = this.lblTitulo;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 37);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(640, 43);
+            this.layoutControlItem1.Size = new System.Drawing.Size(646, 43);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.lblFecha;
-            this.layoutControlItem2.Location = new System.Drawing.Point(640, 37);
+            this.layoutControlItem2.Location = new System.Drawing.Point(646, 37);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(256, 43);
+            this.layoutControlItem2.Size = new System.Drawing.Size(250, 43);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -214,6 +214,13 @@
             this.layoutControl2.Size = new System.Drawing.Size(916, 360);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // fVencimiento
+            // 
+            this.fVencimiento.Location = new System.Drawing.Point(198, 142);
+            this.fVencimiento.Name = "fVencimiento";
+            this.fVencimiento.Size = new System.Drawing.Size(379, 20);
+            this.fVencimiento.TabIndex = 18;
             // 
             // lPresentacion
             // 
@@ -531,13 +538,6 @@
             this.layoutControlItem15.Size = new System.Drawing.Size(240, 58);
             this.layoutControlItem15.Text = "Presentación";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(183, 25);
-            // 
-            // fVencimiento
-            // 
-            this.fVencimiento.Location = new System.Drawing.Point(198, 142);
-            this.fVencimiento.Name = "fVencimiento";
-            this.fVencimiento.Size = new System.Drawing.Size(379, 20);
-            this.fVencimiento.TabIndex = 18;
             // 
             // layoutControlItem16
             // 

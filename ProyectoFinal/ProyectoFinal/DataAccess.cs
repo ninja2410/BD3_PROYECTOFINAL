@@ -22,11 +22,8 @@ namespace ProyectoFinal
         #region buillder
         public DataAccess()
         {
-            //ConnectionString = "Data Source=DESKTOP-6A9DRNR\\SQLEXPRESS;Initial Catalog=ARQUITECTURA;Integrated Security=True";
-            //ConnectionString = "Server = arquitecturameso.ddns.net; Database = dbCompra2017; User Id = sa; Password = database;";
-            //ConnectionString = "Server=sql3.freesqldatabase.com;Database=sql3227915; Uid=sql3227915;Pwd=jLzyXnFhG1;";
-            //ConnectionString = "Server=ns02.000webhost.com;Database=id3406690_bdproyecto3;Uid=id3406690_ninja24;Pwd=4oj118gv;";
-            ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
+            ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj;";
+            //ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
 
             cnConnection = new MySqlConnection(ConnectionString);
             
