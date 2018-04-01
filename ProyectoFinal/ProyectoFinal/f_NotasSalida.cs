@@ -13,6 +13,7 @@ namespace ProyectoFinal
     public partial class f_NotasSalida : f_Plantilla
     {
         public int sucursal, empleado;
+        public bool entrada;
         public f_NotasSalida()
         {
             InitializeComponent();
@@ -20,7 +21,14 @@ namespace ProyectoFinal
 
         private void f_Notas_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Notas de Salida";
+            if (entrada == true)
+            {
+                lblTitulo.Text = "Notas de Salida";
+            }
+            else
+            {
+                lblTitulo.Text = "Notas de Entrada";
+            }
             
         }
 

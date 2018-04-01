@@ -189,9 +189,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -199,5 +197,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private System.Windows.Forms.Timer timer1;
         public DevExpress.XtraEditors.LabelControl lblTitulo;
+        public DevExpress.XtraLayout.LayoutControl layoutControl1;
+        public DevExpress.XtraLayout.LayoutControl layoutControl2;
     }
 }
