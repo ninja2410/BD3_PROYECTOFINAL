@@ -87,6 +87,12 @@
     <Compile Include="frmProviders.Designer.cs">
       <DependentUpon>frmProviders.cs</DependentUpon>
     </Compile>
+    <Compile Include="f_ListUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ListUsers.Designer.cs">
+      <DependentUpon>f_ListUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_NotasSalida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProviders.resx">
       <DependentUpon>frmProviders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ListUsers.resx">
+      <DependentUpon>f_ListUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_NotasSalida.resx">
       <DependentUpon>f_NotasSalida.cs</DependentUpon>

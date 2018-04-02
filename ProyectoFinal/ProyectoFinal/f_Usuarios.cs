@@ -75,9 +75,13 @@ namespace ProyectoFinal
             pass = txtPass.Text;
 
             string sCommand;
-            sCommand = "insert into tblEmpleado(nombre,apellido,telefono,direccion,email,usuario,pass) ";
-            sCommand += "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
-            sCommand = string.Format(sCommand, firtName,lastName, telefono, dir,email,user,pass);
+
+            Random rd = new Random();
+            int idEmpleado = rd.Next(999);
+
+            sCommand = "insert into tblEmpleado(id_empleado,nombre,apellido,telefono,direccion,email,usuario,pass) ";
+            sCommand += "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')";
+            sCommand = string.Format(sCommand,idEmpleado, firtName,lastName, telefono, dir,email,user,pass);
             try
             {
                 da.executeCommand(sCommand);

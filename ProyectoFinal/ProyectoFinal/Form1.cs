@@ -66,5 +66,33 @@ namespace ProyectoFinal
             frmProviders miFormProveedor = new frmProviders();
             miFormProveedor.ShowDialog();
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_ListUsers list_user = new f_ListUsers();
+            list_user.ShowDialog();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_Usuarios fuser = new f_Usuarios();
+            fuser.ShowDialog();
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            barButtonItem6.Enabled = false;
+            barButtonItem7.Enabled = false;
+        }
     }
 }
