@@ -180,6 +180,7 @@
             this.txtPass.Size = new System.Drawing.Size(339, 26);
             this.txtPass.StyleController = this.layoutControl3;
             this.txtPass.TabIndex = 10;
+            this.txtPass.EditValueChanged += new System.EventHandler(this.txtPass_EditValueChanged);
             // 
             // txtUser
             // 
