@@ -17,6 +17,7 @@ namespace ProyectoFinal
         List<ProductosVenta> lista = new List<ProductosVenta>();
         string query;
         public int sucursal=1;
+        decimal totalFactura;
         public bool venta=true;
         public f_ventas()
         {
@@ -62,6 +63,7 @@ namespace ProyectoFinal
             if (!venta)
             {
                 layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItem18.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 lblTitulo.Text = "Compras Surticasa S.A.";
                 button1.Text = "Comprar";
                 dt.Columns.Add("Fecha Vencimiento");
@@ -69,6 +71,7 @@ namespace ProyectoFinal
             else
             {
                 layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                layoutControlItem18.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 lblTitulo.Text = "Ventas Surticasa S.A.";
                 button1.Text = "Vender";
             }
@@ -127,8 +130,20 @@ namespace ProyectoFinal
                 DataRow r = dt.NewRow();
                 r["Cantidad"] = txtCantidad.Text;
                 r["Descripción"] = lProductos.Text + " " + lPresentacion.Text;
-                r["Precio/U"] = lPresentacion.EditValue;
-                r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToInt16(lPresentacion.EditValue);
+                if (venta)
+                {
+                    r["Precio/U"] = lPresentacion.EditValue;
+                    totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
+                    r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
+                }
+                else
+                {
+                    r["Precio/U"] = Convert.ToDecimal(txtPrecio.Text);
+                    totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
+                    r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
+
+                }
+                lblTotal.Text = "Total: Q "+totalFactura.ToString();
                 if (!venta)
                 {
                     r["Fecha Vencimiento"] = fVencimiento.Value.Date;
@@ -168,15 +183,37 @@ namespace ProyectoFinal
 
         private void lProductos_EditValueChanged(object sender, EventArgs e)
         {
-            query = "SELECT tipo_presentacion as Presentación, precio_venta as Precio from tblasignacionprecio as a INNER JOIN tblpresentacion as p on a.id_Presentacion=p.id_Presentacion";
+            if (venta)
+            {
+                query = "SELECT tipo_presentacion as Presentación, precio_venta as Precio from tblasignacionprecio as a INNER JOIN tblpresentacion as p on a.id_Presentacion=p.id_Presentacion";
+
+            }
+            else
+            {
+                query = "SELECT a.id_presentacion as Codigo, tipo_presentacion as Presentación from tblasignacionprecio as a INNER JOIN tblpresentacion as p on a.id_Presentacion=p.id_Presentacion";
+            }
             query += " WHERE exists(SELECT * FROM tblasignacioncantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio) AND id_producto='{1}';";
             query = string.Format(query, sucursal, lProductos.EditValue.ToString());
             lPresentacion.Properties.DataSource = da.fillDataTable(query);
-            lPresentacion.Properties.ValueMember = "Precio";
+
+            if (venta)
+            {
+
+                lPresentacion.Properties.ValueMember = "Precio";
+            }
+            else
+            {
+                lPresentacion.Properties.ValueMember = "Codigo";
+            }
             lPresentacion.Properties.DisplayMember = "Presentación";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lPresentacion_EditValueChanged(object sender, EventArgs e)
         {
 
         }

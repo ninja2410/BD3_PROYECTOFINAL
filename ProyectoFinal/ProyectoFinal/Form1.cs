@@ -192,14 +192,23 @@ namespace ProyectoFinal
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f_NotasSalida nota = new f_NotasSalida();
+            f_Notas nota = new f_Notas();
+            nota.entrada = true;
             nota.Show();
         }
 
         private void btnClientes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmClientes miformCliente = new frmClientes();
+
             miformCliente.ShowDialog();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_Notas nota = new f_Notas();
+            nota.entrada = false;
+            nota.Show();
         }
     }
 }

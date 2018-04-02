@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
-    public partial class f_NotasSalida : f_Plantilla
+    public partial class f_Notas : Form
     {
-        public int sucursal=1, empleado;
-        public bool entrada;
-        DataTable dt = new DataTable();
-        public f_NotasSalida()
+        public int sucursal=1;
+        public bool entrada=true;
+        public f_Notas()
         {
             InitializeComponent();
         }
 
         private void f_Notas_Load(object sender, EventArgs e)
         {
+            timer1.Enabled = true;
             string query;
             if (entrada == true)
             {
@@ -44,5 +44,9 @@ namespace ProyectoFinal
             //dt.Columns.Add("Total");
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelControl2.Text = DateTime.Now.ToString();
+        }
     }
 }
