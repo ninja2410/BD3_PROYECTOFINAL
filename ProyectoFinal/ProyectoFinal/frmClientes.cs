@@ -27,19 +27,25 @@ namespace ProyectoFinal
 
 
         bool changes = false;
-        private void frmClientes_Load(object sender, EventArgs e)
+
+        public void Load_Data()
         {
             string query = "SELECT * FROM tblCliente "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
-            gridView1.Columns.Clear();
+            gridView1.Columns.Clear();     
             gridControlCliente.DataSource = dt;
+        }
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            Load_Data(); // Cargamos los datos al grid view;
         }
 
         private void btnNewClient_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmnewClient miNuevocliente = new frmnewClient();
             miNuevocliente.ShowDialog();
+            Load_Data();
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -73,10 +79,12 @@ namespace ProyectoFinal
                         codigoSeleccionado = 0;
                         nit = ""; nombre = ""; apellido = "";telefono = "";codigoMayorista = "";
                         MessageBox.Show("Registro Actualizado correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Load_Data();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error to try update Client: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                        
+                        MessageBox.Show("Error to try update Client: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Load_Data();
                     }
                     
                 }
@@ -86,6 +94,7 @@ namespace ProyectoFinal
                     changes = false;
                     codigoSeleccionado = 0;
                     nit = ""; nombre = ""; apellido = ""; telefono = ""; codigoMayorista = "";
+                    Load_Data();
                 }
                 
             }
@@ -109,12 +118,13 @@ namespace ProyectoFinal
                 {
                     da.executeCommand(sCommand); //Enviamos el comando                    
                     MessageBox.Show("Registro eliminado correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error to try Delete Client: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+                Load_Data();
             }
             catch (Exception ex)
             {
@@ -154,6 +164,7 @@ namespace ProyectoFinal
             {
                 MessageBox.Show("Error to get values from gridView " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Load_Data();
         }
     }
 }
