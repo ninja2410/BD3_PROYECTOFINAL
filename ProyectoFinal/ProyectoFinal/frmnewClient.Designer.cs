@@ -63,11 +63,15 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.Silver;
+            this.groupControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.Appearance.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.layoutControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(362, 138);
+            this.groupControl1.Size = new System.Drawing.Size(543, 170);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos del nuevo Cliente";
             // 
@@ -83,16 +87,17 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 20);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(358, 116);
+            this.layoutControl1.Size = new System.Drawing.Size(539, 148);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(181, 60);
+            this.btnCancel.Location = new System.Drawing.Point(272, 96);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(165, 38);
+            this.btnCancel.Size = new System.Drawing.Size(255, 38);
             this.btnCancel.StyleController = this.layoutControl1;
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancelar";
@@ -101,9 +106,9 @@
             // btnSave
             // 
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(12, 60);
+            this.btnSave.Location = new System.Drawing.Point(12, 96);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(165, 38);
+            this.btnSave.Size = new System.Drawing.Size(256, 38);
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Guardar";
@@ -111,111 +116,125 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(230, 36);
+            this.txtTelefono.Location = new System.Drawing.Point(345, 68);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(116, 20);
+            this.txtTelefono.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Properties.Appearance.Options.UseFont = true;
+            this.txtTelefono.Size = new System.Drawing.Size(182, 24);
             this.txtTelefono.StyleController = this.layoutControl1;
             this.txtTelefono.TabIndex = 7;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(61, 36);
+            this.txtApellido.Location = new System.Drawing.Point(85, 40);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(116, 20);
+            this.txtApellido.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Properties.Appearance.Options.UseFont = true;
+            this.txtApellido.Size = new System.Drawing.Size(442, 24);
             this.txtApellido.StyleController = this.layoutControl1;
             this.txtApellido.TabIndex = 6;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(230, 12);
+            this.txtNombre.Location = new System.Drawing.Point(85, 12);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(116, 20);
+            this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Properties.Appearance.Options.UseFont = true;
+            this.txtNombre.Size = new System.Drawing.Size(442, 24);
             this.txtNombre.StyleController = this.layoutControl1;
             this.txtNombre.TabIndex = 5;
             // 
             // txtNit
             // 
-            this.txtNit.Location = new System.Drawing.Point(61, 12);
+            this.txtNit.Location = new System.Drawing.Point(85, 68);
             this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(116, 20);
+            this.txtNit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNit.Properties.Appearance.Options.UseFont = true;
+            this.txtNit.Size = new System.Drawing.Size(183, 24);
             this.txtNit.StyleController = this.layoutControl1;
             this.txtNit.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
+            this.layoutControlGroup1.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlGroup1.AppearanceGroup.Options.UseFont = true;
+            this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlGroup1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutnit,
             this.layoutControlItem2,
-            this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutnit,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(358, 116);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(539, 148);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutnit
             // 
             this.layoutnit.Control = this.txtNit;
-            this.layoutnit.Location = new System.Drawing.Point(0, 0);
+            this.layoutnit.Location = new System.Drawing.Point(0, 56);
             this.layoutnit.Name = "layoutnit";
-            this.layoutnit.Size = new System.Drawing.Size(169, 24);
+            this.layoutnit.Size = new System.Drawing.Size(260, 28);
             this.layoutnit.Text = "NIT:";
-            this.layoutnit.TextSize = new System.Drawing.Size(46, 13);
+            this.layoutnit.TextSize = new System.Drawing.Size(70, 18);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtNombre;
-            this.layoutControlItem2.Location = new System.Drawing.Point(169, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(169, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(519, 28);
             this.layoutControlItem2.Text = "Nombre:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(46, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 18);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtApellido;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(169, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(519, 28);
             this.layoutControlItem1.Text = "Apellido:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(46, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 18);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtTelefono;
-            this.layoutControlItem3.Location = new System.Drawing.Point(169, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(260, 56);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(169, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(259, 28);
             this.layoutControlItem3.Text = "Telefono:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(46, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 18);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnSave;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(169, 48);
+            this.layoutControlItem4.Size = new System.Drawing.Size(260, 44);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnCancel;
-            this.layoutControlItem5.Location = new System.Drawing.Point(169, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(260, 84);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(169, 48);
+            this.layoutControlItem5.Size = new System.Drawing.Size(259, 44);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // frmnewClient
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 138);
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(543, 170);
             this.Controls.Add(this.groupControl1);
             this.MaximizeBox = false;
             this.Name = "frmnewClient";
