@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Security.Cryptography;
 
 namespace ProyectoFinal
 {
@@ -17,6 +18,8 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        DataAccess da = new DataAccess();
 
         private void txtFirstName_EditValueChanged(object sender, EventArgs e)
         {
@@ -38,9 +41,60 @@ namespace ProyectoFinal
         {
             #region validaciones
 
+            if (txtFirstName.Text.Trim() == String.Empty)
+                txtFirstName.Focus();
 
+            if (txtLastName.Text.Trim() == String.Empty)
+                txtLastName.Focus();
+
+            if (txtTel.Text.Trim() == String.Empty)
+                txtTel.Focus();
+
+            if (txtDirec.Text.Trim() == String.Empty)
+                txtDirec.Focus();
+
+            if (txtEmail.Text.Trim() == String.Empty)
+                txtEmail.Focus();
+
+            if (txtUser.Text.Trim() == String.Empty)
+                txtUser.Focus();
+
+            if (txtPass.Text.Trim() == String.Empty)
+                txtPass.Focus();
 
             #endregion
+
+            string firtName, lastName, telefono, dir, email, user, pass;
+
+            firtName = txtFirstName.Text;
+            lastName = txtLastName.Text;
+            telefono = txtTel.Text;
+            dir = txtDirec.Text;
+            email = txtEmail.Text;
+            user = txtUser.Text;
+            pass = txtPass.Text;
+
+            string sCommand;
+            sCommand = "insert into tblEmpleado(nombre,apellido,telefono,direccion,email,usuario,pass) ";
+            sCommand += "values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')";
+            sCommand = string.Format(sCommand, firtName,lastName, telefono, dir,email,user,pass);
+            try
+            {
+                da.executeCommand(sCommand);
+                MessageBox.Show("Usuario ingresado con exito");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar ingresar un nuevo usuario, más detalles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void txtPass_EditValueChanged(object sender, EventArgs e)
+        {
+            txtPass.Properties.PasswordChar = '■';
         }
     }
 }

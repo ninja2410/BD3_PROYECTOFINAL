@@ -24,7 +24,7 @@ namespace ProyectoFinal
         {
             ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj;";
             //ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
-            ConnectionString = "Server=localhost;Database=dbsurticasa;Uid=root;Pwd=s3xo!=am0r;";
+            //ConnectionString = "Server=localhost;Database=dbsurticasa;Uid=root;Pwd=s3xo!=am0r;";
 
             cnConnection = new MySqlConnection(ConnectionString);
             
