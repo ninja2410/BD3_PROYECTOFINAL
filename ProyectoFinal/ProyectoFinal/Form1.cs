@@ -195,5 +195,11 @@ namespace ProyectoFinal
             f_NotasSalida nota = new f_NotasSalida();
             nota.Show();
         }
+
+        private void btnClientes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmClientes miformCliente = new frmClientes();
+            miformCliente.ShowDialog();
+        }
     }
 }
