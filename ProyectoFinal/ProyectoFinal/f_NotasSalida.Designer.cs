@@ -49,7 +49,7 @@
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lookUpEdit2 = new DevExpress.XtraEditors.LookUpEdit();
+            this.lProductos = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lProductos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -96,7 +96,7 @@
             // 
             this.lblTitulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Size = new System.Drawing.Size(504, 56);
+            this.lblTitulo.Size = new System.Drawing.Size(508, 56);
             // 
             // layoutControl1
             // 
@@ -104,14 +104,14 @@
             this.layoutControl1.Controls.Add(this.button3);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Controls.Add(this.lookUpEdit2);
+            this.layoutControl1.Controls.Add(this.lProductos);
             this.layoutControl1.Controls.Add(this.textEdit3);
             this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Size = new System.Drawing.Size(705, 300);
+            this.layoutControl1.Size = new System.Drawing.Size(710, 314);
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Size = new System.Drawing.Size(705, 118);
+            this.layoutControl2.Size = new System.Drawing.Size(710, 118);
             this.layoutControl2.Controls.SetChildIndex(this.lblTitulo, 0);
             // 
             // textBox1
@@ -292,19 +292,19 @@
             this.layoutControlItem9.Text = "Cantidad";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(43, 13);
             // 
-            // lookUpEdit2
+            // lProductos
             // 
-            this.lookUpEdit2.Location = new System.Drawing.Point(160, 36);
-            this.lookUpEdit2.Name = "lookUpEdit2";
-            this.lookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lProductos.Location = new System.Drawing.Point(160, 36);
+            this.lProductos.Name = "lProductos";
+            this.lProductos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit2.Size = new System.Drawing.Size(489, 20);
-            this.lookUpEdit2.StyleController = this.layoutControl1;
-            this.lookUpEdit2.TabIndex = 6;
+            this.lProductos.Size = new System.Drawing.Size(489, 20);
+            this.lProductos.StyleController = this.layoutControl1;
+            this.lProductos.TabIndex = 6;
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.lookUpEdit2;
+            this.layoutControlItem10.Control = this.lProductos;
             this.layoutControlItem10.Location = new System.Drawing.Point(101, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(540, 42);
@@ -401,10 +401,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 418);
+            this.ClientSize = new System.Drawing.Size(710, 432);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "f_NotasSalida";
             this.Text = "f_Notas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Load += new System.EventHandler(this.f_Notas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -426,7 +427,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lProductos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
@@ -460,7 +461,7 @@
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit2;
+        private DevExpress.XtraEditors.LookUpEdit lProductos;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
