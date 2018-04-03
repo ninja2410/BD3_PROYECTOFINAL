@@ -21,7 +21,7 @@ namespace ProyectoFinal
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_ventas v = new f_ventas();
-            //v.MdiParent = this;
+            v.MdiParent = this;
             v.venta = true;
             v.Show();
         }
@@ -46,25 +46,53 @@ namespace ProyectoFinal
         {
             f_ventas c = new f_ventas();
             c.venta = false;
+            c.MdiParent = this;
             c.Show();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f_NotasSalida nota = new f_NotasSalida();
+            f_Notas nota = new f_Notas();
+            nota.entrada = true;
+            nota.MdiParent = this;
             nota.Show();
         }
 
         private void btnClientes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmClientes miformCliente = new frmClientes();
-            miformCliente.ShowDialog();
+            miformCliente.MdiParent = this;
+            miformCliente.Show();
         }
 
         private void btnProveedores_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmProviders miFormProveedor = new frmProviders();
             miFormProveedor.ShowDialog();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_Notas nota = new f_Notas();
+            nota.entrada = false;
+            nota.MdiParent = this;
+            nota.Show();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_Usuarios u = new f_Usuarios();
+            u.Show();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
