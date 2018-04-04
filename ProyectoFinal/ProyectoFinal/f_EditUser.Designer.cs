@@ -32,15 +32,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cmbEditUser = new DevExpress.XtraEditors.LookUpEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.txtFirstName = new DevExpress.XtraEditors.TextEdit();
+            this.txtLastName = new DevExpress.XtraEditors.TextEdit();
+            this.txtTel = new DevExpress.XtraEditors.TextEdit();
+            this.txtDir = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -60,13 +60,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEditUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDir.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -89,15 +89,15 @@
             // 
             this.layoutControl1.Controls.Add(this.cmbEditUser);
             this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.textEdit4);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit5);
-            this.layoutControl1.Controls.Add(this.textEdit6);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit7);
+            this.layoutControl1.Controls.Add(this.txtFirstName);
+            this.layoutControl1.Controls.Add(this.txtLastName);
+            this.layoutControl1.Controls.Add(this.txtTel);
+            this.layoutControl1.Controls.Add(this.txtDir);
+            this.layoutControl1.Controls.Add(this.txtEmail);
+            this.layoutControl1.Controls.Add(this.txtUser);
+            this.layoutControl1.Controls.Add(this.txtPass);
             this.layoutControl1.Controls.Add(this.button1);
-            this.layoutControl1.Controls.Add(this.button2);
+            this.layoutControl1.Controls.Add(this.btnUpdate);
             this.layoutControl1.Controls.Add(this.layoutControl2);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -126,62 +126,64 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Elegir";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // textEdit4
+            // txtFirstName
             // 
-            this.textEdit4.Location = new System.Drawing.Point(295, 79);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(324, 26);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 4;
+            this.txtFirstName.Location = new System.Drawing.Point(295, 79);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(324, 26);
+            this.txtFirstName.StyleController = this.layoutControl1;
+            this.txtFirstName.TabIndex = 4;
             // 
-            // textEdit2
+            // txtLastName
             // 
-            this.textEdit2.Location = new System.Drawing.Point(887, 79);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(324, 26);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 5;
+            this.txtLastName.Location = new System.Drawing.Point(887, 79);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(324, 26);
+            this.txtLastName.StyleController = this.layoutControl1;
+            this.txtLastName.TabIndex = 5;
             // 
-            // textEdit3
+            // txtTel
             // 
-            this.textEdit3.Location = new System.Drawing.Point(295, 111);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(324, 26);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 6;
+            this.txtTel.Location = new System.Drawing.Point(295, 111);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(324, 26);
+            this.txtTel.StyleController = this.layoutControl1;
+            this.txtTel.TabIndex = 6;
             // 
-            // textEdit5
+            // txtDir
             // 
-            this.textEdit5.Location = new System.Drawing.Point(887, 111);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(324, 26);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 7;
+            this.txtDir.Location = new System.Drawing.Point(887, 111);
+            this.txtDir.Name = "txtDir";
+            this.txtDir.Size = new System.Drawing.Size(324, 26);
+            this.txtDir.StyleController = this.layoutControl1;
+            this.txtDir.TabIndex = 7;
             // 
-            // textEdit6
+            // txtEmail
             // 
-            this.textEdit6.Location = new System.Drawing.Point(295, 143);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(916, 26);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 8;
+            this.txtEmail.Location = new System.Drawing.Point(295, 143);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(916, 26);
+            this.txtEmail.StyleController = this.layoutControl1;
+            this.txtEmail.TabIndex = 8;
             // 
-            // textEdit1
+            // txtUser
             // 
-            this.textEdit1.Location = new System.Drawing.Point(295, 175);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(324, 26);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 9;
+            this.txtUser.Location = new System.Drawing.Point(295, 175);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(324, 26);
+            this.txtUser.StyleController = this.layoutControl1;
+            this.txtUser.TabIndex = 9;
             // 
-            // textEdit7
+            // txtPass
             // 
-            this.textEdit7.Location = new System.Drawing.Point(887, 175);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(324, 26);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 10;
+            this.txtPass.Location = new System.Drawing.Point(887, 175);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(324, 26);
+            this.txtPass.StyleController = this.layoutControl1;
+            this.txtPass.TabIndex = 10;
+            this.txtPass.EditValueChanged += new System.EventHandler(this.txtPass_EditValueChanged);
             // 
             // button1
             // 
@@ -197,19 +199,19 @@
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(33, 564);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(586, 133);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.Orange;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(33, 564);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(586, 133);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.button2_Click);
             // 
             // layoutControl2
             // 
@@ -280,7 +282,7 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.textEdit4;
+            this.layoutControlItem4.Control = this.txtFirstName;
             this.layoutControlItem4.CustomizationFormText = "Nombres:";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -290,7 +292,7 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.textEdit2;
+            this.layoutControlItem5.Control = this.txtLastName;
             this.layoutControlItem5.CustomizationFormText = "Apellidos:";
             this.layoutControlItem5.Location = new System.Drawing.Point(592, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -300,7 +302,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textEdit3;
+            this.layoutControlItem6.Control = this.txtTel;
             this.layoutControlItem6.CustomizationFormText = "Telefono:";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 32);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -310,7 +312,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.textEdit5;
+            this.layoutControlItem7.Control = this.txtDir;
             this.layoutControlItem7.CustomizationFormText = "Dirección: ";
             this.layoutControlItem7.Location = new System.Drawing.Point(592, 32);
             this.layoutControlItem7.Name = "layoutControlItem7";
@@ -320,7 +322,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.textEdit6;
+            this.layoutControlItem8.Control = this.txtEmail;
             this.layoutControlItem8.CustomizationFormText = "Correo electrónico:";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 64);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -330,7 +332,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textEdit1;
+            this.layoutControlItem9.Control = this.txtUser;
             this.layoutControlItem9.CustomizationFormText = "Usuario:";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -340,7 +342,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.textEdit7;
+            this.layoutControlItem10.Control = this.txtPass;
             this.layoutControlItem10.CustomizationFormText = "Contraseña:";
             this.layoutControlItem10.Location = new System.Drawing.Point(592, 96);
             this.layoutControlItem10.Name = "layoutControlItem10";
@@ -360,7 +362,7 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.button2;
+            this.layoutControlItem12.Control = this.btnUpdate;
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem12";
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 485);
             this.layoutControlItem12.Name = "layoutControlItem12";
@@ -400,13 +402,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cmbEditUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLastName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDir.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -433,15 +435,15 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit txtFirstName;
+        private DevExpress.XtraEditors.TextEdit txtLastName;
+        private DevExpress.XtraEditors.TextEdit txtTel;
+        private DevExpress.XtraEditors.TextEdit txtDir;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.TextEdit txtUser;
+        private DevExpress.XtraEditors.TextEdit txtPass;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlGroup Root;

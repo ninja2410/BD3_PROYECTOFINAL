@@ -81,7 +81,7 @@ namespace ProyectoFinal
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f_Usuarios u = new f_Usuarios();
+            f_EditUser u = new f_EditUser();
             u.Show();
         }
 
@@ -93,6 +93,24 @@ namespace ProyectoFinal
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_deleteUser delUser = new f_deleteUser();
+            delUser.ShowDialog();
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_Usuarios newuser = new f_Usuarios();
+            newuser.ShowDialog();
+        }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_ListUsers luser = new f_ListUsers();
+            luser.ShowDialog();
         }
     }
 }
