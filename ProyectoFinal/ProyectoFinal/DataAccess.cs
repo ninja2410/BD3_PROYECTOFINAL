@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ProyectoFinal
 {
@@ -14,15 +15,16 @@ namespace ProyectoFinal
         #region attributes
         private MySqlConnection cnConnection { get; set; }
         private string ConnectionString = string.Empty;//inicializado cadena vacia
+        string x = "",query="";
         #endregion
 
 
         #region buillder
         public DataAccess()
         {
-            //ConnectionString = "Data Source=DESKTOP-6A9DRNR\\SQLEXPRESS;Initial Catalog=ARQUITECTURA;Integrated Security=True";
-            //ConnectionString = "Server = arquitecturameso.ddns.net; Database = dbCompra2017; User Id = sa; Password = database;";
-            ConnectionString = "Server=sql3.freesqldatabase.com;Database=sql3227915; Uid=sql3227915;Pwd=jLzyXnFhG1;";
+            //ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj;";
+            ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
+            //ConnectionString = "Server=localhost;Database=dbsurticasa;Uid=root;Pwd=s3xo!=am0r;";
 
             cnConnection = new MySqlConnection(ConnectionString);
             
@@ -97,7 +99,62 @@ namespace ProyectoFinal
                 cm.Connection.Close();
             }
         }
-        
+
+        public void transact(List<int> codigos, List<int> cantidades, string documento, string noEnvio, int codEmpleado, int codTipoVenta, decimal total)
+        {
+            x = "EXECUTE insert_detalle {0}, {1}";
+            cnConnection.Open();
+
+            // Start a local transaction.
+            MySqlTransaction sqlTran = cnConnection.BeginTransaction();
+
+            // Enlist a command in the current transaction.
+            MySqlCommand command = cnConnection.CreateCommand();
+            command.Transaction = sqlTran;
+
+            try
+            {
+                query = "EXECUTE dbo.insert_factura '{0}', '{1}', '{2}', {3}, {4}, {5}";
+                query = string.Format(query, documento, DateTime.Today.Date.ToString("yyyy-MM-dd"), noEnvio, codEmpleado, codTipoVenta, total);
+                // Execute two separate commands.
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                for (int i = 0; i < codigos.Count; i++)
+                {
+
+                    x = "";
+                    x = "EXECUTE insert_detalle {0}, {1}";
+                    x = string.Format(x, cantidades[i], codigos[i]);
+                    command.CommandText = x;
+                    command.ExecuteNonQuery();
+                }
+
+
+                // Commit the transaction.
+                sqlTran.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception if the transaction fails to commit.
+
+                try
+                {
+                    // Attempt to roll back the transaction.
+                    sqlTran.Rollback();
+                }
+                catch (Exception exRollback)
+                {
+                    // Throws an InvalidOperationException if the connection 
+                    // is closed or the transaction has already been rolled 
+                    // back on the server.
+                    MessageBox.Show("Error " + exRollback + "Info Adicional" + ex.Message);
+                }
+                throw new Exception("ERROR EN LA TRANSACCION " + ex.Message);
+            }
+
+
+        }
 
     }
 }
