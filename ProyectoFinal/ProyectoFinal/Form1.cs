@@ -17,5 +17,15 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DataTable dt = da.fillDataTable("select * from tblVenta");
+            dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
