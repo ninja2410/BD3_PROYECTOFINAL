@@ -71,7 +71,7 @@
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(688, 141);
+            this.ribbonControl1.Size = new System.Drawing.Size(688, 139);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // btnNewClient
@@ -146,13 +146,13 @@
             this.gridControlCliente.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.gridControlCliente.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gridControlCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControlCliente.Location = new System.Drawing.Point(0, 141);
+            this.gridControlCliente.Location = new System.Drawing.Point(0, 139);
             this.gridControlCliente.LookAndFeel.SkinName = "Office 2016 Dark";
             this.gridControlCliente.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.gridControlCliente.MainView = this.gridView1;
             this.gridControlCliente.MenuManager = this.ribbonControl1;
             this.gridControlCliente.Name = "gridControlCliente";
-            this.gridControlCliente.Size = new System.Drawing.Size(688, 264);
+            this.gridControlCliente.Size = new System.Drawing.Size(688, 266);
             this.gridControlCliente.TabIndex = 1;
             this.gridControlCliente.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
