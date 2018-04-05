@@ -35,12 +35,6 @@ namespace ProyectoFinal
         }    
 
      
-
-        private void btnNewProvider_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            //frmNewProvider frmNuevoProveedor = new frmNewProvider();
-            //frmNuevoProveedor.ShowDialog();
-        }
         
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
