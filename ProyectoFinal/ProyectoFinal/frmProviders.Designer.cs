@@ -45,11 +45,11 @@
             this.btnNewProvider = new DevExpress.XtraBars.BarButtonItem();
             this.btnSaveChanges = new DevExpress.XtraBars.BarButtonItem();
             this.btnDeleteProvider = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.gridControlProvider = new DevExpress.XtraGrid.GridControl();
             this.gridviewProvider = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewProvider)).BeginInit();
@@ -70,7 +70,7 @@
             this.ribbonProvider.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonProvider.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonProvider.Size = new System.Drawing.Size(679, 141);
+            this.ribbonProvider.Size = new System.Drawing.Size(707, 141);
             // 
             // btnNewProvider
             // 
@@ -120,12 +120,28 @@
             this.btnDeleteProvider.SuperTip = superToolTip3;
             this.btnDeleteProvider.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteProvider_ItemClick);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Caption = "Actualizar";
+            this.btnRefresh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Glyph")));
+            this.btnRefresh.Id = 4;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem4.Text = "Actualizar";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Actualiza la vista de los proveedores que se tienen actualmente en el registro.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnRefresh.SuperTip = superToolTip4;
+            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Administrar";
+            this.ribbonPage1.Text = "Opciones Proveedor";
             // 
             // ribbonPageGroup1
             // 
@@ -146,7 +162,7 @@
             this.gridControlProvider.MainView = this.gridviewProvider;
             this.gridControlProvider.MenuManager = this.ribbonProvider;
             this.gridControlProvider.Name = "gridControlProvider";
-            this.gridControlProvider.Size = new System.Drawing.Size(679, 245);
+            this.gridControlProvider.Size = new System.Drawing.Size(707, 265);
             this.gridControlProvider.TabIndex = 1;
             this.gridControlProvider.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridviewProvider});
@@ -163,31 +179,16 @@
             this.gridviewProvider.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridviewProvider_FocusedRowChanged);
             this.gridviewProvider.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridviewProvider_CellValueChanged);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Caption = "Actualizar";
-            this.btnRefresh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Glyph")));
-            this.btnRefresh.Id = 4;
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem4.Text = "Actualizar";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Actualiza la vista de los proveedores que se tienen actualmente en el registro.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnRefresh.SuperTip = superToolTip4;
-            this.btnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRefresh_ItemClick);
-            // 
             // frmProviders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 386);
+            this.ClientSize = new System.Drawing.Size(707, 406);
             this.Controls.Add(this.gridControlProvider);
             this.Controls.Add(this.ribbonProvider);
             this.Name = "frmProviders";
             this.Text = "Proveedores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProviders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProvider)).EndInit();

@@ -68,7 +68,8 @@ namespace ProyectoFinal
         private void btnProveedores_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmProviders miFormProveedor = new frmProviders();
-            miFormProveedor.ShowDialog();
+            miFormProveedor.MdiParent = this;
+            miFormProveedor.Show();
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
