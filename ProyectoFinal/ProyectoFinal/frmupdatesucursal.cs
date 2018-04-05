@@ -38,7 +38,7 @@ namespace ProyectoFinal
         DataAccess da = new DataAccess();
         void cargar()
         {
-            string query = "SELECT id_sucursal as 'Numero Sucursal',nombre_sucursal as 'Nombre Sucursal',activo, direccion,id_empleado as 'Cod Empleado', (select nombre from tblempleado where id_empleado=tblsucursal.id_empleado) as 'Nombre Encargado', (select apellido from tblempleado where id_empleado=tblsucursal.id_empleado) as 'Apellido Encargado' FROM dbsurticasa.tblsucursal "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_sucursal as 'Numero Sucursal',nombre_sucursal as 'Nombre Sucursal',activo, direccion,id_empleado as 'Cod Empleado', (select nombre from tblEmpleado where id_empleado=tblSucursal.id_empleado) as 'Nombre Encargado', (select apellido from tblEmpleado where id_empleado=tblSucursal.id_empleado) as 'Apellido Encargado' FROM tblSucursal "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -46,7 +46,7 @@ namespace ProyectoFinal
         }
         void cargar_combo()
         {
-            string query = "select id_empleado,nombre from tblempleado"; //Consulta que se enviara al servidor de la base
+            string query = "select id_empleado,nombre from tblEmpleado"; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             lookUpEdit1.Properties.DataSource = dt;
@@ -79,7 +79,7 @@ namespace ProyectoFinal
             direcion=textEdit1.Text;
             
             string sCommand;
-            sCommand = "UPDATE tblsucursal SET nombre_sucursal='"+ nombre +"', direccion='"+direcion+ "',id_empleado='"+lookUpEdit1.EditValue+"' WHERE id_sucursal='"+cod_sucursal+"'";
+            sCommand = "UPDATE tblSucursal SET nombre_sucursal='"+ nombre +"', direccion='"+direcion+ "',id_empleado='"+lookUpEdit1.EditValue+"' WHERE id_sucursal='"+cod_sucursal+"'";
             
              try
             {

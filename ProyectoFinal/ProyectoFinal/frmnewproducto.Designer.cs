@@ -30,6 +30,7 @@
         {
             DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -67,9 +68,8 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
@@ -131,6 +131,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(655, 486);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(195, 129);
+            this.dateTimePicker1.MinDate = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.Value = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
             // 
             // textEdit4
             // 
@@ -518,20 +528,6 @@
             this.layoutControlItem13.Text = "Codigo Producto";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(170, 13);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 129);
-            this.dateTimePicker1.MinDate = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
-            // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.dateTimePicker1;
@@ -540,6 +536,10 @@
             this.layoutControlItem14.Size = new System.Drawing.Size(403, 24);
             this.layoutControlItem14.Text = "Fecha De Caducidad";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(170, 13);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmnewproducto
             // 

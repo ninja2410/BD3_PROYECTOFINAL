@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -46,23 +46,41 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnnewproducto = new DevExpress.XtraBars.BarButtonItem();
+            this.btnverproducto = new DevExpress.XtraBars.BarButtonItem();
+            this.btnupdateproducto = new DevExpress.XtraBars.BarButtonItem();
+            this.btndelproducto = new DevExpress.XtraBars.BarButtonItem();
+            this.btnnewcategoria = new DevExpress.XtraBars.BarButtonItem();
+            this.btnvercategoria = new DevExpress.XtraBars.BarButtonItem();
+            this.btnupdatecate = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnnewmarca = new DevExpress.XtraBars.BarButtonItem();
+            this.btnvermarca = new DevExpress.XtraBars.BarButtonItem();
+            this.btnupdatemarca = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnnewsucursal = new DevExpress.XtraBars.BarButtonItem();
+            this.btnversucursal = new DevExpress.XtraBars.BarButtonItem();
+            this.btnupdatesucursal = new DevExpress.XtraBars.BarButtonItem();
+            this.btndelsucursal = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageclientes = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.productospage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pagecategorias = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pagemarcas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.pagesucursales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,17 +101,33 @@
             this.barButtonItem8,
             this.barButtonItem12,
             this.barButtonItem13,
-            this.barButtonItem14});
+            this.barButtonItem14,
+            this.btnnewproducto,
+            this.btnverproducto,
+            this.btnupdateproducto,
+            this.btndelproducto,
+            this.btnnewcategoria,
+            this.btnvercategoria,
+            this.btnupdatecate,
+            this.barButtonItem15,
+            this.btnnewmarca,
+            this.btnvermarca,
+            this.btnupdatemarca,
+            this.barButtonItem17,
+            this.btnnewsucursal,
+            this.btnversucursal,
+            this.btnupdatesucursal,
+            this.btndelsucursal});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbonControl1.MaxItemId = 28;
+            this.ribbonControl1.MaxItemId = 44;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPageclientes,
-            this.ribbonPage2});
+            this.ribbonPage2,
+            this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1137, 219);
+            this.ribbonControl1.Size = new System.Drawing.Size(889, 144);
             // 
             // barButtonItem1
             // 
@@ -133,12 +167,12 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem7.Text = "Clientes";
-            toolTipItem7.LeftIndent = 6;
-            toolTipItem7.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
-            superToolTip7.Items.Add(toolTipTitleItem7);
-            superToolTip7.Items.Add(toolTipItem7);
-            this.btnClientes.SuperTip = superToolTip7;
+            toolTipTitleItem3.Text = "Clientes";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btnClientes.SuperTip = superToolTip3;
             this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
             // 
             // btnProveedores
@@ -149,13 +183,13 @@
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem8.Text = "Proveedores";
-            toolTipItem8.LeftIndent = 6;
-            toolTipItem8.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
+            toolTipTitleItem4.Text = "Proveedores";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
     "trados.";
-            superToolTip8.Items.Add(toolTipTitleItem8);
-            superToolTip8.Items.Add(toolTipItem8);
-            this.btnProveedores.SuperTip = superToolTip8;
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnProveedores.SuperTip = superToolTip4;
             this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
             // barButtonItem4
@@ -182,31 +216,197 @@
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Agregar Producto";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
             this.barButtonItem6.Id = 22;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // barButtonItem7
             // 
             this.barButtonItem7.Caption = "Agregar Categoria";
-            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
             this.barButtonItem7.Id = 23;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
             this.barButtonItem8.Caption = "Agregar Marca";
-            this.barButtonItem8.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.Glyph")));
             this.barButtonItem8.Id = 24;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Eliminar";
+            this.barButtonItem12.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.Glyph")));
+            this.barButtonItem12.Id = 25;
+            this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Nuevo";
+            this.barButtonItem13.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.Glyph")));
+            this.barButtonItem13.Id = 26;
+            this.barButtonItem13.Name = "barButtonItem13";
+            this.barButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "Listar";
+            this.barButtonItem14.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.Glyph")));
+            this.barButtonItem14.Id = 27;
+            this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
+            // 
+            // btnnewproducto
+            // 
+            this.btnnewproducto.Caption = "Agregar Nuevo Producto";
+            this.btnnewproducto.Glyph = ((System.Drawing.Image)(resources.GetObject("btnnewproducto.Glyph")));
+            this.btnnewproducto.Id = 28;
+            this.btnnewproducto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnnewproducto.LargeGlyph")));
+            this.btnnewproducto.Name = "btnnewproducto";
+            this.btnnewproducto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnnewproducto_ItemClick);
+            // 
+            // btnverproducto
+            // 
+            this.btnverproducto.Caption = "Ver Productos";
+            this.btnverproducto.Glyph = ((System.Drawing.Image)(resources.GetObject("btnverproducto.Glyph")));
+            this.btnverproducto.Id = 29;
+            this.btnverproducto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnverproducto.LargeGlyph")));
+            this.btnverproducto.Name = "btnverproducto";
+            this.btnverproducto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnverproducto_ItemClick);
+            // 
+            // btnupdateproducto
+            // 
+            this.btnupdateproducto.Caption = "Modificar Productos";
+            this.btnupdateproducto.Glyph = ((System.Drawing.Image)(resources.GetObject("btnupdateproducto.Glyph")));
+            this.btnupdateproducto.Id = 30;
+            this.btnupdateproducto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnupdateproducto.LargeGlyph")));
+            this.btnupdateproducto.Name = "btnupdateproducto";
+            this.btnupdateproducto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnupdateproducto_ItemClick);
+            // 
+            // btndelproducto
+            // 
+            this.btndelproducto.Caption = "Eliminar Productos";
+            this.btndelproducto.Glyph = ((System.Drawing.Image)(resources.GetObject("btndelproducto.Glyph")));
+            this.btndelproducto.Id = 31;
+            this.btndelproducto.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btndelproducto.LargeGlyph")));
+            this.btndelproducto.Name = "btndelproducto";
+            this.btndelproducto.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btndelproducto_ItemClick);
+            // 
+            // btnnewcategoria
+            // 
+            this.btnnewcategoria.Caption = "Nueva Categoria";
+            this.btnnewcategoria.Glyph = ((System.Drawing.Image)(resources.GetObject("btnnewcategoria.Glyph")));
+            this.btnnewcategoria.Id = 32;
+            this.btnnewcategoria.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnnewcategoria.LargeGlyph")));
+            this.btnnewcategoria.Name = "btnnewcategoria";
+            this.btnnewcategoria.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnnewcate_ItemClick);
+            // 
+            // btnvercategoria
+            // 
+            this.btnvercategoria.Caption = "Ver Categoria";
+            this.btnvercategoria.Glyph = ((System.Drawing.Image)(resources.GetObject("btnvercategoria.Glyph")));
+            this.btnvercategoria.Id = 33;
+            this.btnvercategoria.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnvercategoria.LargeGlyph")));
+            this.btnvercategoria.Name = "btnvercategoria";
+            this.btnvercategoria.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnvercategoria_ItemClick);
+            // 
+            // btnupdatecate
+            // 
+            this.btnupdatecate.Caption = "Modificar Categoria";
+            this.btnupdatecate.Glyph = ((System.Drawing.Image)(resources.GetObject("btnupdatecate.Glyph")));
+            this.btnupdatecate.Id = 34;
+            this.btnupdatecate.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnupdatecate.LargeGlyph")));
+            this.btnupdatecate.Name = "btnupdatecate";
+            this.btnupdatecate.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnupdatecate_ItemClick);
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "Eliminar Categoria";
+            this.barButtonItem15.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.Glyph")));
+            this.barButtonItem15.Id = 35;
+            this.barButtonItem15.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.LargeGlyph")));
+            this.barButtonItem15.Name = "barButtonItem15";
+            this.barButtonItem15.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btndelcategoria_ItemClick);
+            // 
+            // btnnewmarca
+            // 
+            this.btnnewmarca.Caption = "Nueva Marca";
+            this.btnnewmarca.Glyph = ((System.Drawing.Image)(resources.GetObject("btnnewmarca.Glyph")));
+            this.btnnewmarca.Id = 36;
+            this.btnnewmarca.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnnewmarca.LargeGlyph")));
+            this.btnnewmarca.Name = "btnnewmarca";
+            this.btnnewmarca.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnnewmarca_ItemClick);
+            // 
+            // btnvermarca
+            // 
+            this.btnvermarca.Caption = "Ver Marcas";
+            this.btnvermarca.Glyph = ((System.Drawing.Image)(resources.GetObject("btnvermarca.Glyph")));
+            this.btnvermarca.Id = 37;
+            this.btnvermarca.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnvermarca.LargeGlyph")));
+            this.btnvermarca.Name = "btnvermarca";
+            this.btnvermarca.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnvermarca_ItemClick);
+            // 
+            // btnupdatemarca
+            // 
+            this.btnupdatemarca.Caption = "Modificar Marca";
+            this.btnupdatemarca.Glyph = ((System.Drawing.Image)(resources.GetObject("btnupdatemarca.Glyph")));
+            this.btnupdatemarca.Id = 38;
+            this.btnupdatemarca.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnupdatemarca.LargeGlyph")));
+            this.btnupdatemarca.Name = "btnupdatemarca";
+            this.btnupdatemarca.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnupdatemarca_ItemClick);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Eliminar Marcas";
+            this.barButtonItem17.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.Glyph")));
+            this.barButtonItem17.Id = 39;
+            this.barButtonItem17.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.LargeGlyph")));
+            this.barButtonItem17.Name = "barButtonItem17";
+            this.barButtonItem17.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btndelmarca_ItemClick);
+            // 
+            // btnnewsucursal
+            // 
+            this.btnnewsucursal.Caption = "Nueva Sucursal";
+            this.btnnewsucursal.Glyph = ((System.Drawing.Image)(resources.GetObject("btnnewsucursal.Glyph")));
+            this.btnnewsucursal.Id = 40;
+            this.btnnewsucursal.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnnewsucursal.LargeGlyph")));
+            this.btnnewsucursal.Name = "btnnewsucursal";
+            this.btnnewsucursal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnnewsucursal_ItemClick);
+            // 
+            // btnversucursal
+            // 
+            this.btnversucursal.Caption = "Ver Sucursales";
+            this.btnversucursal.Glyph = ((System.Drawing.Image)(resources.GetObject("btnversucursal.Glyph")));
+            this.btnversucursal.Id = 41;
+            this.btnversucursal.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnversucursal.LargeGlyph")));
+            this.btnversucursal.Name = "btnversucursal";
+            this.btnversucursal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnversucursal_ItemClick);
+            // 
+            // btnupdatesucursal
+            // 
+            this.btnupdatesucursal.Caption = "Modificar Sucursal";
+            this.btnupdatesucursal.Glyph = ((System.Drawing.Image)(resources.GetObject("btnupdatesucursal.Glyph")));
+            this.btnupdatesucursal.Id = 42;
+            this.btnupdatesucursal.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnupdatesucursal.LargeGlyph")));
+            this.btnupdatesucursal.Name = "btnupdatesucursal";
+            this.btnupdatesucursal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnupdatesucursal_ItemClick_1);
+            // 
+            // btndelsucursal
+            // 
+            this.btndelsucursal.Caption = "Eliminar Sucursal";
+            this.btndelsucursal.Glyph = ((System.Drawing.Image)(resources.GetObject("btndelsucursal.Glyph")));
+            this.btndelsucursal.Id = 43;
+            this.btndelsucursal.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btndelsucursal.LargeGlyph")));
+            this.btndelsucursal.Name = "btndelsucursal";
+            this.btndelsucursal.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btndelsucursal_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -251,32 +451,6 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Administrar";
             // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup7});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Productos";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
-            // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            // 
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem13);
@@ -285,6 +459,58 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem12);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Usuarios";
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.productospage,
+            this.pagecategorias,
+            this.pagemarcas});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Productos";
+            // 
+            // productospage
+            // 
+            this.productospage.ItemLinks.Add(this.btnnewproducto);
+            this.productospage.ItemLinks.Add(this.btnverproducto);
+            this.productospage.ItemLinks.Add(this.btnupdateproducto);
+            this.productospage.ItemLinks.Add(this.btndelproducto);
+            this.productospage.Name = "productospage";
+            this.productospage.Text = "Productos";
+            // 
+            // pagecategorias
+            // 
+            this.pagecategorias.ItemLinks.Add(this.btnnewcategoria);
+            this.pagecategorias.ItemLinks.Add(this.btnvercategoria);
+            this.pagecategorias.ItemLinks.Add(this.btnupdatecate);
+            this.pagecategorias.ItemLinks.Add(this.barButtonItem15);
+            this.pagecategorias.Name = "pagecategorias";
+            this.pagecategorias.Text = "Categorias";
+            // 
+            // pagemarcas
+            // 
+            this.pagemarcas.ItemLinks.Add(this.btnnewmarca);
+            this.pagemarcas.ItemLinks.Add(this.btnvermarca);
+            this.pagemarcas.ItemLinks.Add(this.btnupdatemarca);
+            this.pagemarcas.ItemLinks.Add(this.barButtonItem17);
+            this.pagemarcas.Name = "pagemarcas";
+            this.pagemarcas.Text = "Marcas";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.pagesucursales});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Sucursales";
+            // 
+            // pagesucursales
+            // 
+            this.pagesucursales.ItemLinks.Add(this.btnnewsucursal);
+            this.pagesucursales.ItemLinks.Add(this.btnversucursal);
+            this.pagesucursales.ItemLinks.Add(this.btnupdatesucursal);
+            this.pagesucursales.ItemLinks.Add(this.btndelsucursal);
+            this.pagesucursales.Name = "pagesucursales";
+            this.pagesucursales.Text = "Sucursales";
             // 
             // barButtonItem9
             // 
@@ -313,42 +539,14 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // barButtonItem12
-            // 
-            this.barButtonItem12.Caption = "Eliminar";
-            this.barButtonItem12.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.Glyph")));
-            this.barButtonItem12.Id = 25;
-            this.barButtonItem12.Name = "barButtonItem12";
-            this.barButtonItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
-            // 
-            // barButtonItem13
-            // 
-            this.barButtonItem13.Caption = "Nuevo";
-            this.barButtonItem13.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.Glyph")));
-            this.barButtonItem13.Id = 26;
-            this.barButtonItem13.Name = "barButtonItem13";
-            this.barButtonItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
-            // 
-            // barButtonItem14
-            // 
-            this.barButtonItem14.Caption = "Listar";
-            this.barButtonItem14.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.Glyph")));
-            this.barButtonItem14.Id = 27;
-            this.barButtonItem14.Name = "barButtonItem14";
-            this.barButtonItem14.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
-            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 526);
+            this.ClientSize = new System.Drawing.Size(889, 357);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Surticasa S.A.";
@@ -384,12 +582,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
@@ -397,6 +591,28 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem btnnewproducto;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup productospage;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pagesucursales;
+        private DevExpress.XtraBars.BarButtonItem btnverproducto;
+        private DevExpress.XtraBars.BarButtonItem btnupdateproducto;
+        private DevExpress.XtraBars.BarButtonItem btndelproducto;
+        private DevExpress.XtraBars.BarButtonItem btnnewcategoria;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pagecategorias;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pagemarcas;
+        private DevExpress.XtraBars.BarButtonItem btnvercategoria;
+        private DevExpress.XtraBars.BarButtonItem btnupdatecate;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarButtonItem btnnewmarca;
+        private DevExpress.XtraBars.BarButtonItem btnvermarca;
+        private DevExpress.XtraBars.BarButtonItem btnupdatemarca;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem btnnewsucursal;
+        private DevExpress.XtraBars.BarButtonItem btnversucursal;
+        private DevExpress.XtraBars.BarButtonItem btnupdatesucursal;
+        private DevExpress.XtraBars.BarButtonItem btndelsucursal;
     }
 }
 

@@ -20,7 +20,7 @@ namespace ProyectoFinal
         void cargar()
         {
 
-            string query = "SELECT id_categoria as 'Codigo De la Categoria', nombre_categoria as 'Nombre De la Categoria', activo FROM tblcategoria "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_categoria as 'Codigo De la Categoria', nombre_categoria as 'Nombre De la Categoria', activo FROM tblCategoria "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -32,12 +32,17 @@ namespace ProyectoFinal
         }
         void mod()
         {
-            string nombre;
+            string nombre,activo;
             nombre = textEdit1.Text;
             int cod= Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo De la Categoria"));
-
+            if (checkEdit1.Checked)
+            {
+                activo = "1";
+            }
+            else
+            { activo = "0"; }
             string sCommand;
-            sCommand = "UPDATE tblcategoria SET nombre_categoria='" + nombre + "' WHERE id_categoria='" + cod + "'";
+            sCommand = "UPDATE tblCategoria SET nombre_categoria='" + nombre + "', activo="+Convert.ToByte(activo)+ " WHERE id_categoria='" + cod + "'";
 
             try
             {

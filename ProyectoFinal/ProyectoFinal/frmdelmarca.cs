@@ -19,7 +19,7 @@ namespace ProyectoFinal
         DataAccess da = new DataAccess();
         void cargar()
         {
-            string query = "SELECT id_marca as 'Codigo Marca',nombre_marca as 'Nombre De la Marca' FROM tblmarca "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_marca as 'Codigo Marca',nombre_marca as 'Nombre De la Marca',activo FROM tblMarca "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -32,7 +32,7 @@ namespace ProyectoFinal
         void eliminar(int cod, string nombre)
         {
             string sCommand;
-            sCommand = "delete from tblmarca where id_marca='" + cod + "'";
+            sCommand = "delete from tblMarca where id_marca='" + cod + "'";
 
             try
             {

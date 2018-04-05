@@ -24,7 +24,7 @@ namespace ProyectoFinal
         DataAccess da = new DataAccess();
         void cargar()
         {
-            string query = "SELECT nombre_categoria as 'Nombre Categoria' FROM tblcategoria "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT nombre_categoria as 'Nombre Categoria' FROM tblCategoria "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -65,7 +65,7 @@ namespace ProyectoFinal
                  
 
                     string sCommand;
-                    sCommand = "insert into tblcategoria(nombre_categoria,activo) ";
+                    sCommand = "insert into tblCategoria(nombre_categoria,activo) ";
                     sCommand += "values('{0}',{1})";
                     sCommand = string.Format(sCommand, nombre, Convert.ToByte(activo));
                     try

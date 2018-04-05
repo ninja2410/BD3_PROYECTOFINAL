@@ -53,7 +53,7 @@ namespace ProyectoFinal
 
 
                 string sCommand;
-                sCommand = "insert into tblmarca(nombre_marca,activo) ";
+                sCommand = "insert into tblMarca(nombre_marca,activo) ";
                 sCommand += "values('{0}',{1})";
                 sCommand = string.Format(sCommand, nombre, Convert.ToByte(activo));
                 try
@@ -76,7 +76,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT nombre_marca as 'Nombre Marca' FROM tblmarca "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT nombre_marca as 'Nombre Marca' FROM tblMarca "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();

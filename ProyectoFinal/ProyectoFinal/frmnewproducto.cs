@@ -75,14 +75,14 @@ namespace ProyectoFinal
                     codigo = textEdit3.Text;
                     descripcion = textEdit2.Text;
                     f_caducidad = dateTimePicker1.Text;
-                f_caducidad= dateTimePicker1.Text;
-                MessageBox.Show(f_caducidad);
-               f_caducidad= f_caducidad.Replace('/', '-');
-                MessageBox.Show(f_caducidad);
+                f_caducidad= dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                
+     
                
                    categoria =  Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cod Categoria"));
-                    marca = Convert.ToInt32(gridView2.GetRowCellValue(gridView1.FocusedRowHandle, "Cod Marca"));
+                    marca = Convert.ToInt32(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Cod Marca"));
                 codigo_pro = textEdit4.Text;
+                
                 if (checkEdit1.Checked)
                 {
                     activo = "1";
@@ -92,7 +92,7 @@ namespace ProyectoFinal
                 string sCommand;
                     
 
-                    sCommand = "insert into tblproducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,f_caducidad,id_marca,id_categoria) ";
+                    sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,f_caducidad,id_marca,id_categoria) ";
                     sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
                 sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, f_caducidad, marca,categoria);
                     try
@@ -116,7 +116,7 @@ namespace ProyectoFinal
         }
         void cargar_cat()
         {
-            string query = "SELECT id_categoria as 'Cod Categoria',nombre_categoria as 'Nombre Categoria' FROM tblcategoria "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_categoria as 'Cod Categoria',nombre_categoria as 'Nombre Categoria' FROM tblCategoria "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -124,7 +124,7 @@ namespace ProyectoFinal
         }
         void cargar_marcas()
         {
-            string query = "SELECT id_marca as 'Cod Marca', nombre_marca as 'Nombre Marca' FROM tblmarca "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_marca as 'Cod Marca', nombre_marca as 'Nombre Marca' FROM tblMarca "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView2.Columns.Clear();

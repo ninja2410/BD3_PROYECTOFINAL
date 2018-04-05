@@ -18,7 +18,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT id_marca as 'Codigo Marca',nombre_marca as 'Nombre De la Marca' FROM tblmarca "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_marca as 'Codigo Marca',nombre_marca as 'Nombre De la Marca',activo FROM tblMarca "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -32,12 +32,18 @@ namespace ProyectoFinal
 
         void mod()
         {
-            string nombre;
+            string nombre,activo;
+            if (checkEdit1.Checked)
+            {
+                activo = "1";
+            }
+            else
+            { activo = "0"; }
             nombre = textEdit1.Text;
             int cod = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Marca"));
 
             string sCommand;
-            sCommand = "UPDATE tblmarca SET nombre_marca='" + nombre + "' WHERE id_marca='" + cod + "'";
+            sCommand = "UPDATE tblMarca SET nombre_marca='" + nombre + "', activo=" + Convert.ToByte(activo) + " WHERE id_marca='" + cod + "'";
 
             try
             {

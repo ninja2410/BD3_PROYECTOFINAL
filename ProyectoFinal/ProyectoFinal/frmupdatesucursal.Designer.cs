@@ -315,6 +315,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmupdatesucursal";
             this.Text = "Modificar Sucursal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmupdatesucursal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

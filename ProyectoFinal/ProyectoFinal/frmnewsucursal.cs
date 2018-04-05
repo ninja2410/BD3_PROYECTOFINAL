@@ -59,7 +59,7 @@ namespace ProyectoFinal
             encargado =seleccion;
                    
                     string sCommand;
-            sCommand = "insert into tblsucursal(nombre_sucursal,activo,direccion,id_empleado) ";
+            sCommand = "insert into tblSucursal(nombre_sucursal,activo,direccion,id_empleado) ";
             sCommand += "values('{0}',{1},'{2}','{3}')";
             sCommand = string.Format(sCommand, nombre, Convert.ToByte(activo), direccion,encargado);
             try
@@ -82,7 +82,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT id_empleado as 'COD EMPLEADO',nombre as 'Nombre Del Empleado',apellido as 'Apellido Del Empleado',direccion as 'Direccion Del Empleado' FROM tblempleado "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_empleado as 'COD EMPLEADO',nombre as 'Nombre Del Empleado',apellido as 'Apellido Del Empleado',direccion as 'Direccion Del Empleado' FROM tblEmpleado "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();

@@ -25,7 +25,7 @@ namespace ProyectoFinal
         void cargar()
         {
 
-            string query = "SELECT id_categoria as 'Codigo De la Categoria', nombre_categoria as 'Nombre De la Categoria', activo FROM tblcategoria "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_categoria as 'Codigo De la Categoria', nombre_categoria as 'Nombre De la Categoria', activo FROM tblCategoria "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
