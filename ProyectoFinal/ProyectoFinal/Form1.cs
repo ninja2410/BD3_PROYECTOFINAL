@@ -87,44 +87,27 @@ namespace ProyectoFinal
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmnewproducto a = new frmnewproducto();
-            a.MdiParent = this;
-            a.Show();
+            
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmnewcategoria a = new frmnewcategoria();
-            a.MdiParent = this;
-            a.Show();
-        }
-
-        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmnewsucursal a = new frmnewsucursal();
-            a.MdiParent = this;
-            a.Show();
+            
         }
 
         private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmversucursal a = new frmversucursal();
-            a.MdiParent = this;
-            a.Show();
+           
         }
 
         private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmdelsucursal a = new frmdelsucursal();
-            a.MdiParent = this;
-            a.Show();
+            
         }
 
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmupdatesucursal a = new frmupdatesucursal();
-            a.MdiParent = this;
-            a.Show();
+            
         }
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -134,68 +117,160 @@ namespace ProyectoFinal
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
+        }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnnewsucursal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmnewsucursal a = new frmnewsucursal();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnversucursal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmversucursal a = new frmversucursal();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnupdatesucursal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmupdatesucursal a = new frmupdatesucursal();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btndelsucursal_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmdelsucursal a = new frmdelsucursal();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnnewproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmnewproducto a = new frmnewproducto();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnverproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             frmverproducto a = new frmverproducto();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnupdateproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmupdateproducto a = new frmupdateproducto();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btndelproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmdelproducto a = new frmdelproducto();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnnewcate_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmnewcategoria a = new frmnewcategoria();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnvercategoria_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmvercategoria a = new frmvercategoria();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bar(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmupdatecategoria a = new frmupdatecategoria();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btndelcategoria_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmdelcategoria a = new frmdelcategoria();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnnewmarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmnewmarca a = new frmnewmarca();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnvermarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmvermarca a = new frmvermarca();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnupdatemarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmupdatemarca a = new frmupdatemarca();
             a.MdiParent = this;
             a.Show();
         }
 
-        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btndelmarca_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmdelmarca a = new frmdelmarca();
             a.MdiParent = this;
