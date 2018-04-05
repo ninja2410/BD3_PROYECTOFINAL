@@ -128,7 +128,7 @@
             this.ribbonPageGroup1});
             this.ribbonPage1.KeyTip = "AD";
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Administrar";
+            this.ribbonPage1.Text = "Opciones Cliente";
             // 
             // ribbonPageGroup1
             // 
@@ -197,6 +197,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmClientes";
             this.Text = "Clientes Surticasa S.A.";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCliente)).EndInit();

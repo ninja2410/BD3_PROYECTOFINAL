@@ -70,7 +70,7 @@
             this.ribbonProvider.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonProvider.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonProvider.Size = new System.Drawing.Size(679, 139);
+            this.ribbonProvider.Size = new System.Drawing.Size(707, 141);
             // 
             // btnNewProvider
             // 
@@ -141,7 +141,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Administrar";
+            this.ribbonPage1.Text = "Opciones Proveedor";
             // 
             // ribbonPageGroup1
             // 
@@ -156,13 +156,13 @@
             // gridControlProvider
             // 
             this.gridControlProvider.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlProvider.Location = new System.Drawing.Point(0, 139);
+            this.gridControlProvider.Location = new System.Drawing.Point(0, 141);
             this.gridControlProvider.LookAndFeel.SkinName = "Visual Studio 2013 Blue";
             this.gridControlProvider.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Office2003;
             this.gridControlProvider.MainView = this.gridviewProvider;
             this.gridControlProvider.MenuManager = this.ribbonProvider;
             this.gridControlProvider.Name = "gridControlProvider";
-            this.gridControlProvider.Size = new System.Drawing.Size(679, 247);
+            this.gridControlProvider.Size = new System.Drawing.Size(707, 265);
             this.gridControlProvider.TabIndex = 1;
             this.gridControlProvider.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridviewProvider});
@@ -183,11 +183,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 386);
+            this.ClientSize = new System.Drawing.Size(707, 406);
             this.Controls.Add(this.gridControlProvider);
             this.Controls.Add(this.ribbonProvider);
             this.Name = "frmProviders";
             this.Text = "Proveedores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmProviders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProvider)).EndInit();
