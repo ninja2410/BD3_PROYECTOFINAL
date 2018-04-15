@@ -78,7 +78,9 @@ namespace ProyectoFinal
 
             gridControl1.DataSource = dt;
 
-            btnCredito.Enabled = false;
+            //btnCredito.Enabled = false;
+            lblLimit.Enabled = false;
+            dateTimeLimit.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,6 +88,18 @@ namespace ProyectoFinal
             if (verificar() == true)
             {
                 MessageBox.Show("Se ha insertado correctamente");
+                if (chkCredito.Checked == true)
+                {
+                    int idCliente = Convert.ToInt16(lCliente.EditValue);
+                    decimal monto = Convert.ToDecimal(lblTotal.Text);
+                    string sQuery;
+                    sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento);";
+                    sQuery += "values ({0},{1},{2},1,'{3}')";
+                    sQuery = string.Format(sQuery,idCliente,monto,dateTimeLimit.Value.Date,txtDocumento.Text);
+                    da.executeCommand(sQuery);
+                    MessageBox.Show("Se ha generado el credito con exito");
+                }
+
 
             }
         }
@@ -115,11 +129,15 @@ namespace ProyectoFinal
         {
             if (chkCredito.Checked == true)
             {
-                btnCredito.Enabled = true;    
+                //btnCredito.Enabled = true;
+                lblLimit.Enabled = true;
+                dateTimeLimit.Enabled = true;    
             }
             else
             {
-                btnCredito.Enabled = false;
+                lblLimit.Enabled = false;
+                dateTimeLimit.Enabled = false;
+                //btnCredito.Enabled = false;
             }
         }
 
