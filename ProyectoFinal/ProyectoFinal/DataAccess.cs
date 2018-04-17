@@ -100,11 +100,9 @@ namespace ProyectoFinal
             }
         }
 
-        public void transact(List<int> codigos, List<int> cantidades, string documento, string noEnvio, int codEmpleado, int codTipoVenta, decimal total)
+        public void transact(DataTable detalles, string documento, int codEmpleado, bool codTipoVenta, int codCliente, int idSucursal, decimal total)
         {
-            x = "EXECUTE insert_detalle {0}, {1}";
             cnConnection.Open();
-
             // Start a local transaction.
             MySqlTransaction sqlTran = cnConnection.BeginTransaction();
 
@@ -114,22 +112,25 @@ namespace ProyectoFinal
 
             try
             {
-                query = "EXECUTE dbo.insert_factura '{0}', '{1}', '{2}', {3}, {4}, {5}";
-                query = string.Format(query, documento, DateTime.Today.Date.ToString("yyyy-MM-dd"), noEnvio, codEmpleado, codTipoVenta, total);
+                query = "INSERT INTO tblVenta(fecha, documento, codigo_cliente, id_cliente, id_empleado, id_sucursal, tipo_venta, total) ";
+                query += "VALUES('{0}','{1}',{2},{3},{4},{5},{6},{7})";
+                query = string.Format(query,DateTime.Today.Date.ToString("yyyy-MM-dd"),documento,codCliente,codCliente.ToString(), codEmpleado, idSucursal, codTipoVenta, total);
                 // Execute two separate commands.
                 command.CommandText = query;
                 command.ExecuteNonQuery();
-                for (int i = 0; i < codigos.Count; i++)
+                DataTable tmp = new DataTable();
+                tmp = fillDataTable("select Max(id_venta) as Cod FROM tblVenta ");
+                foreach (DataRow r in detalles.Rows)
                 {
-
                     x = "";
-                    x = "EXECUTE insert_detalle {0}, {1}";
-                    x = string.Format(x, cantidades[i], codigos[i]);
+                    x = "INSERT INTO tblDetallesVenta(id_asignacion, id_venta, cantidad, precio, total) ";
+                    x += "VALUES({0},{1},{2},{3},{4})";
+                    x = string.Format(x,Convert.ToInt16(r["Codigo"]), Convert.ToInt16(tmp.Rows[0]["Cod"]),
+                        Convert.ToInt16(r["Cantidad"]), Convert.ToDecimal(r["Precio/U"]), Convert.ToDecimal(r["Total"]));
                     command.CommandText = x;
                     command.ExecuteNonQuery();
                 }
-
-
+                
                 // Commit the transaction.
                 sqlTran.Commit();
 
@@ -153,7 +154,64 @@ namespace ProyectoFinal
                 throw new Exception("ERROR EN LA TRANSACCION " + ex.Message);
             }
 
+            cnConnection.Close();
+        }
 
+        public void tansactCompra(DataTable detalles, string documento, int codEmpleado, bool codTipoVenta, int codProveedor, int idSucursal, decimal total)
+        {
+            cnConnection.Open();
+            // Start a local transaction.
+            MySqlTransaction sqlTran = cnConnection.BeginTransaction();
+
+            // Enlist a command in the current transaction.
+            MySqlCommand command = cnConnection.CreateCommand();
+            command.Transaction = sqlTran;
+
+            try
+            {
+                query = "INSERT INTO tblCompra(fecha, total_documento, id_proveedor, id_sucursal, id_empleado, genera_credito)";
+                query += "VALUES('{0}',{1},{2},{3},{4},{5})";
+                query = string.Format(query, DateTime.Today.Date.ToString("yyyy-MM-dd"), total, codProveedor, idSucursal, codEmpleado, codTipoVenta);
+                // Execute two separate commands.
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                DataTable tmp = new DataTable();
+                tmp = fillDataTable("select Max(id_compra) as Cod FROM tblCompra ");
+                foreach (DataRow r in detalles.Rows)
+                {
+                    x = "";
+                    x = "CALL updtCompra({0},{1},{2},{3},{4},'{5}',{6})";
+                    x = string.Format(x, Convert.ToInt16(r["Cantidad"]), Convert.ToDecimal(r["Precio/U"]),
+                        Convert.ToDecimal(r["Total"]), Convert.ToInt16(tmp.Rows[0]["Cod"]), Convert.ToInt16(r["Codigo"]),
+                        Convert.ToDateTime(r["Fecha Vencimiento"]).ToString("yyyy-MM-dd"), idSucursal);
+                    command.CommandText = x;
+                    command.ExecuteNonQuery();
+                }
+
+                // Commit the transaction.
+                sqlTran.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception if the transaction fails to commit.
+
+                try
+                {
+                    // Attempt to roll back the transaction.
+                    sqlTran.Rollback();
+                }
+                catch (Exception exRollback)
+                {
+                    // Throws an InvalidOperationException if the connection 
+                    // is closed or the transaction has already been rolled 
+                    // back on the server.
+                    MessageBox.Show("Error " + exRollback + "Info Adicional" + ex.Message);
+                }
+                throw new Exception("ERROR EN LA TRANSACCION COMPRA: " + ex.Message);
+            }
+
+            cnConnection.Close();
         }
 
     }

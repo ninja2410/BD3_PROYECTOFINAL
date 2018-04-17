@@ -19,6 +19,7 @@ namespace ProyectoFinal
         public int sucursal=1;
         decimal totalFactura;
         public bool venta=true;
+        public int empleado = 1;
         public f_ventas()
         {
             InitializeComponent();
@@ -37,13 +38,13 @@ namespace ProyectoFinal
 
         private void f_ventas_Load(object sender, EventArgs e)
         {
-            lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblCliente");
-            lCliente.Properties.DisplayMember = "nombre";
-            lCliente.Properties.ValueMember = "id_cliente";
+          
+            
 
             //LLENADO DE LOOKUPEDIT DE PRODUCTO CON VISTA listarProductos
             try
             {
+                //falta filtrar por sucursal
                 lProductos.Properties.DataSource = da.fillDataTable("SELECT id_producto, nombre_producto from listarProductos");
                 lProductos.Properties.DisplayMember = "nombre_producto";
                 lProductos.Properties.ValueMember = "id_producto";
@@ -54,12 +55,19 @@ namespace ProyectoFinal
 
                 throw new Exception("Error al ingresar productos "+ex.Message); 
             }
-
+            dt.Columns.Add("Codigo");
             dt.Columns.Add("Cantidad");
             dt.Columns.Add("Descripción");
             dt.Columns.Add("Precio/U");
             dt.Columns.Add("Total");
+
+            cargar();
+            layoutControlItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            gridControl1.DataSource = dt;
             
+        }
+        private void cargar()
+        {
             if (!venta)
             {
                 layoutControlItem16.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
@@ -67,6 +75,11 @@ namespace ProyectoFinal
                 lblTitulo.Text = "Compras Surticasa S.A.";
                 button1.Text = "Comprar";
                 dt.Columns.Add("Fecha Vencimiento");
+                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblProveedor");
+                lCliente.Properties.DisplayMember = "nombre_proveedor";
+                lCliente.Properties.ValueMember = "id_proveedor";
+                lblCP.Text = "Seleccione Proveedor";
+                simpleButton1.Text = "Agregar Proveedor";
             }
             else
             {
@@ -74,18 +87,46 @@ namespace ProyectoFinal
                 layoutControlItem18.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 lblTitulo.Text = "Ventas Surticasa S.A.";
                 button1.Text = "Vender";
+
+                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblCliente");
+                lCliente.Properties.DisplayMember = "nombre";
+                lCliente.Properties.ValueMember = "id_cliente";
+                lblCP.Text = "Seleccione Cliente";
+                simpleButton1.Text = "Agregar Cliente";
             }
-
-            gridControl1.DataSource = dt;
-
-            btnCredito.Enabled = false;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (verificar() == true)
             {
-                MessageBox.Show("Se ha insertado correctamente");
+                try
+                {
+                    if (!venta)
+                    {
+                        da.tansactCompra(dt, txtDocumento.Text, empleado, false, Convert.ToInt16(lCliente.EditValue), sucursal, totalFactura);
+                    }
+                    else
+                    {
+                        da.transact(dt, txtDocumento.Text, empleado, true, Convert.ToInt16(lCliente.EditValue),
+                            sucursal, totalFactura);
+                    }
+                    MessageBox.Show("Registrado con Exito");
+                    txtCantidad.Text = "";
+                    txtDocumento.Text = "";
+                    txtPrecio.Text = "";
+                    dt.Clear();
+                    gridControl1.Refresh();
+                    gridControl1.RefreshDataSource();
+                    gridView1.RefreshData();
+                    totalFactura = 0;
+                    lblTotal.Text = totalFactura.ToString();
+                    txtDocumento.Focus();
+                }
+                catch (Exception ex)
+                {
+
+                    throw new Exception("ERROR EN LA EJECUCION "+ex.Message);
+                }
 
             }
         }
@@ -115,44 +156,107 @@ namespace ProyectoFinal
         {
             if (chkCredito.Checked == true)
             {
-                btnCredito.Enabled = true;    
+                layoutControlItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always; 
             }
             else
             {
-                btnCredito.Enabled = false;
+                layoutControlItem5.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            bool bandera=true;
             if (verificarProducto())
             {
                 DataRow r = dt.NewRow();
-                r["Cantidad"] = txtCantidad.Text;
-                r["Descripción"] = lProductos.Text + " " + lPresentacion.Text;
+                lPresentacion.Properties.ValueMember = "Codigo";
+
                 if (venta)
                 {
-                    r["Precio/U"] = lPresentacion.EditValue;
-                    totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
-                    r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
+
+                    r["Codigo"] = verificarCodigo(Convert.ToInt16(lPresentacion.EditValue));
+                    if (r["Codigo"].ToString() == "-1")
+                    {
+                        txtCantidad.Focus();
+                        MessageBox.Show("No hay existencia sifucientes de este producto");
+                        bandera = false;
+                    }
+                    lPresentacion.Properties.ValueMember = "Precio";
                 }
                 else
                 {
-                    r["Precio/U"] = Convert.ToDecimal(txtPrecio.Text);
-                    totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
-                    r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
-
+                    r["Codigo"] = verificarAsignacion(lProductos.EditValue.ToString(),
+                        Convert.ToInt16(lPresentacion.EditValue));
                 }
-                lblTotal.Text = "Total: Q "+totalFactura.ToString();
-                if (!venta)
+                if (bandera)
                 {
-                    r["Fecha Vencimiento"] = fVencimiento.Value.Date;
+
+                    r["Cantidad"] = txtCantidad.Text;
+                    r["Descripción"] = lProductos.Text + " " + lPresentacion.Text;
+                    if (venta)
+                    {
+                        r["Precio/U"] = lPresentacion.EditValue;
+                        totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
+                        r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(lPresentacion.EditValue);
+                    }
+                    else
+                    {
+                        r["Precio/U"] = Convert.ToDecimal(txtPrecio.Text);
+                        totalFactura += Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
+                        r["Total"] = Convert.ToInt16(txtCantidad.Text) * Convert.ToDecimal(txtPrecio.Text);
+                    }
+                    lblTotal.Text = "Total: Q " + totalFactura.ToString();
+                    if (!venta)
+                    {
+                        r["Fecha Vencimiento"] = fVencimiento.Value.Date;
+                    }
+
+
+
+                    dt.Rows.Add(r);
+                    gridControl1.RefreshDataSource();
+                    gridControl1.Refresh();
+                    txtCantidad.Text = "";
+                    lProductos.Properties.DisplayMember = "nombre_producto";
+                    lProductos.Properties.ValueMember = "id_producto";
+                    txtCantidad.Focus();
                 }
-                dt.Rows.Add(r);
-                gridControl1.RefreshDataSource();
-                gridControl1.Refresh();
-                txtCantidad.Focus();
             }
+            
+        }
+
+        private int verificarCodigo(int cod)
+        {
+            int codigo;
+            string q;
+            DataTable dt = new DataTable();
+            q = "SELECT id_asignacion, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>={2}";
+            q += " ORDER BY fecha_caducidad ASC";
+
+            q = string.Format(q, cod, sucursal, Convert.ToInt16(txtCantidad.Text));
+            dt = da.fillDataTable(q);
+            if (dt.Rows.Count == 0)
+            {
+                codigo = -1;
+            }
+            else
+            {
+                codigo = Convert.ToInt16(dt.Rows[0]["id_asignacion"]);
+            }
+            return codigo;
+        }
+
+        private int verificarAsignacion(string codProducto, int codPresentacion)
+        {
+            int codigo;
+            string q;
+            DataTable dt = new DataTable();
+            q = "SELECT id_asignacionprecio as codigo FROM tblAsignacionPrecio WHERE id_producto='{0}' AND id_presentacion={1}";
+            q = string.Format(q, codProducto, codPresentacion);
+            dt = da.fillDataTable(q);
+            codigo = Convert.ToInt16(dt.Rows[0]["codigo"]);
+            return codigo;
         }
 
         private bool verificarProducto()
@@ -185,7 +289,7 @@ namespace ProyectoFinal
         {
             if (venta)
             {
-                query = "SELECT tipo_presentacion as Presentación, precio_venta as Precio from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
+                query = "SELECT id_asignacionprecio as Codigo, tipo_presentacion as Presentación, precio_venta as Precio from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
 
             }
             else
@@ -216,6 +320,43 @@ namespace ProyectoFinal
         private void lPresentacion_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (!venta)
+            {
+                //proveedor
+                frmNewProvider p = new frmNewProvider();
+                p.ShowDialog();
+                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblProveedor where activo=1");
+                lCliente.Properties.DisplayMember = "nombre_proveedor";
+                lCliente.Properties.ValueMember = "id_proveedor";
+            }
+            else
+            {
+                //cliente
+                frmnewClient c = new frmnewClient();
+                c.ShowDialog();
+                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblCliente");
+                lCliente.Properties.DisplayMember = "nombre";
+                lCliente.Properties.ValueMember = "id_cliente";
+            }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            int cod = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo"));
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (dt.Rows[i]["Codigo"].ToString() == cod.ToString())
+                {
+                    totalFactura -= Convert.ToDecimal(dt.Rows[i]["Total"]);
+                    lblTotal.Text="Total: Q " + totalFactura.ToString();
+                    dt.Rows.Remove(dt.Rows[i]);
+                }
+            }
+            gridView1.RefreshData();
         }
     }
 }

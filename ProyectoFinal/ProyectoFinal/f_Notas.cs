@@ -71,5 +71,10 @@ namespace ProyectoFinal
             gridControl1.Refresh();
             gridControl1.RefreshDataSource();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
