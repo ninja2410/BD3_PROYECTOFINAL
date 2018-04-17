@@ -50,12 +50,7 @@ namespace ProyectoFinal
                     textEdit1.Focus();
 
                 }
-                else if (dateTimePicker1.Text.Trim() == String.Empty)
-                {
-                    MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
-                dateTimePicker1.Focus();
-
-                }
+               
                 else if (textEdit3.Text.Trim() == String.Empty)
                 {
                     MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
@@ -74,11 +69,7 @@ namespace ProyectoFinal
                     nombre = textEdit1.Text;
                     codigo = textEdit3.Text;
                     descripcion = textEdit2.Text;
-                    f_caducidad = dateTimePicker1.Text;
-                f_caducidad= dateTimePicker1.Value.ToString("yyyy-MM-dd");
-                
-     
-               
+             
                    categoria =  Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cod Categoria"));
                     marca = Convert.ToInt32(gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "Cod Marca"));
                 codigo_pro = textEdit4.Text;
@@ -92,9 +83,9 @@ namespace ProyectoFinal
                 string sCommand;
                     
 
-                    sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,f_caducidad,id_marca,id_categoria) ";
+                    sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,id_marca,id_categoria) ";
                     sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
-                sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, f_caducidad, marca,categoria);
+                sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, marca,categoria);
                     try
                     {
                         da.executeCommand(sCommand);
