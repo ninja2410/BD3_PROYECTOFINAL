@@ -46,10 +46,9 @@ namespace ProyectoFinal
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f_Notas nota = new f_Notas();
-            nota.entrada = true;
-            nota.MdiParent = this;
-            nota.Show();
+            f_NotasEntrada n = new f_NotasEntrada();
+            n.MdiParent = this;
+            n.Show();
         }
 
         private void btnClientes_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

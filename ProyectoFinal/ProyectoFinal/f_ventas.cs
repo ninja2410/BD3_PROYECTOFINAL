@@ -290,14 +290,15 @@ namespace ProyectoFinal
             if (venta)
             {
                 query = "SELECT id_asignacionprecio as Codigo, tipo_presentacion as Presentación, precio_venta as Precio from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
-
+                query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio) AND id_producto='{1}';";
+                query = string.Format(query, sucursal, lProductos.EditValue.ToString());
             }
             else
             {
                 query = "SELECT a.id_presentacion as Codigo, tipo_presentacion as Presentación from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
+                query += " WHERE id_producto='{0}';";
+                query = string.Format(query, lProductos.EditValue.ToString());
             }
-            query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio) AND id_producto='{1}';";
-            query = string.Format(query, sucursal, lProductos.EditValue.ToString());
             lPresentacion.Properties.DataSource = da.fillDataTable(query);
 
             if (venta)
