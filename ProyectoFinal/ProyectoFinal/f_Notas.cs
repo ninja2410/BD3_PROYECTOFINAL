@@ -12,9 +12,11 @@ namespace ProyectoFinal
 {
     public partial class f_Notas : Form
     {
+        DataAccess da = new DataAccess();
         public int sucursal=1;
         public bool entrada=true;
         DataTable dt = new DataTable();
+        public int empleado = 1;
         string tpres;
         public f_Notas()
         {
@@ -33,11 +35,7 @@ namespace ProyectoFinal
             {
                 lblTitulo.Text = "Notas de Entrada";
             }
-            query = "SELECT * FROM productosExistencias WHERE id_sucursal={0}";
-            query = string.Format(query, sucursal);
-            lProductos.Properties.DataSource = new DataAccess().fillDataTable(query);
-            lProductos.Properties.DisplayMember = "Descripcion";
-            lProductos.Properties.ValueMember = "Lote";
+            
             dt.Columns.Add("Codigo Lote");
             dt.Columns.Add("Descripción");
             dt.Columns.Add("Presentacion");
@@ -47,6 +45,11 @@ namespace ProyectoFinal
             dt.Columns.Add("Nueva Existencia");
             gridControl1.DataSource = dt;
             gridControl1.Refresh();
+
+            //falta filtrar por sucursal
+            lProducto.Properties.DataSource = da.fillDataTable("SELECT id_producto, nombre_producto from listarProductos");
+            lProducto.Properties.DisplayMember = "nombre_producto";
+            lProducto.Properties.ValueMember = "id_producto";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -66,7 +69,16 @@ namespace ProyectoFinal
             r["Cantidad"] = txtCantidad.Text;
             lProductos.Properties.DisplayMember = "Existencias";
             r["Existencias"] = lProductos.Text;
-            r["Nueva Existencia"] = Convert.ToInt16(txtCantidad.Text) + Convert.ToInt16(lProductos.Text);
+            if (entrada)
+            {
+                r["Nueva Existencia"] = Convert.ToInt16(txtCantidad.Text) + Convert.ToInt16(lProductos.Text);
+
+            }
+            else
+            {
+                r["Nueva Existencia"] =   Convert.ToInt16(lProductos.Text)- Convert.ToInt16(txtCantidad.Text);
+
+            }
             dt.Rows.Add(r);
             gridControl1.Refresh();
             gridControl1.RefreshDataSource();
@@ -74,7 +86,68 @@ namespace ProyectoFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (verificar())
+            {
+                //mandar a llamar a data acces para la transaccion
+                if (entrada)
+                {
 
+                }
+                else
+                {
+                    da.regNotaSalida(txtMotivo.Text, DateTime.Now.ToString("yyyy-MM-dd"), empleado,
+                        sucursal, dt);
+                    MessageBox.Show("Nora resigrada con Exito");
+                    txtMotivo.Text = "";
+                    txtCantidad.Text = "";
+                    dt.Rows.Clear();
+                    gridControl1.Refresh();
+                    gridControl1.RefreshDataSource();
+
+                }
+            }
+        }
+        private bool verificar()
+        {
+            bool resultado = true;
+            if (txtMotivo.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un motivo");
+                txtMotivo.Focus();
+                resultado = false;
+            }
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar almenos un producto");
+                txtCantidad.Focus();
+                resultado = false;
+            }
+            return resultado;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void lProducto_EditValueChanged(object sender, EventArgs e)
+        {
+            string q;
+            q = "SELECT a.id_presentacion as Codigo, tipo_presentacion as Presentación from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
+            q += " WHERE id_producto='{0}'";
+            q = string.Format(q, lProducto.EditValue.ToString());
+            lPresentacion.Properties.DataSource = da.fillDataTable(q);
+            lPresentacion.Properties.ValueMember = "Codigo";
+            lPresentacion.Properties.DisplayMember = "Presentación";
+        }
+
+        private void lPresentacion_EditValueChanged(object sender, EventArgs e)
+        {
+            string query;
+            query = "SELECT * FROM productosExistencias WHERE id_sucursal={0} AND Existencias>0 AND Descripcion='{1}' AND Presentacion='{2}'";
+            query = string.Format(query, sucursal, lProducto.Text, lPresentacion.Text);
+            lProductos.Properties.DataSource = da.fillDataTable(query);
+            lProductos.Properties.DisplayMember = "Descripcion";
+            lProductos.Properties.ValueMember = "Lote";
         }
     }
 }

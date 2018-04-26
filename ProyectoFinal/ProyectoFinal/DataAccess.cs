@@ -213,6 +213,133 @@ namespace ProyectoFinal
 
             cnConnection.Close();
         }
+        public void regNotaSalida(string motivo, string fecha, int codEmpleado, int sucursal, DataTable detalles)
+        {
+            cnConnection.Open();
+            // Start a local transaction.
+            MySqlTransaction sqlTran = cnConnection.BeginTransaction();
 
+            // Enlist a command in the current transaction.
+            MySqlCommand command = cnConnection.CreateCommand();
+            command.Transaction = sqlTran;
+
+            try
+            {
+                query = "INSERT INTO tblNotas(motivo, fecha, id_empleado, tipo) ";
+                query += "VALUES('{0}','{1}',{2},{3})";
+                query = string.Format(query, motivo, fecha, codEmpleado, 1);
+                // Execute two separate commands.
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                DataTable tmp = new DataTable();
+                tmp = fillDataTable("select Max(id_Notas) as Cod FROM tblNotas ");
+                foreach (DataRow r in detalles.Rows)
+                {
+                    x = "";
+                    x = "CALL notasSalida({0},{1},{2},{3},{4},{5})";
+                    x = string.Format(x,Convert.ToInt16(r["Cantidad"]), Convert.ToInt16(r["Existencias"]),
+                        Convert.ToInt16(r["Nueva Existencia"]), Convert.ToInt16(tmp.Rows[0]["Cod"]), 
+                        Convert.ToInt16(r["Codigo Lote"]), sucursal);
+                    command.CommandText = x;
+                    command.ExecuteNonQuery();
+                }
+
+                // Commit the transaction.
+                sqlTran.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception if the transaction fails to commit.
+
+                try
+                {
+                    // Attempt to roll back the transaction.
+                    sqlTran.Rollback();
+                }
+                catch (Exception exRollback)
+                {
+                    // Throws an InvalidOperationException if the connection 
+                    // is closed or the transaction has already been rolled 
+                    // back on the server.
+                    MessageBox.Show("Error " + exRollback + "Info Adicional" + ex.Message);
+                }
+                throw new Exception("ERROR EN LA TRANSACCION " + ex.Message);
+            }
+
+            cnConnection.Close();
+        }
+
+        public void regNotaEntrada(string motivo, string fecha, int codEmpleado, int sucursal, DataTable detalles)
+        {
+            cnConnection.Open();
+            // Start a local transaction.
+            MySqlTransaction sqlTran = cnConnection.BeginTransaction();
+            
+            
+            // Enlist a command in the current transaction.
+            MySqlCommand command = cnConnection.CreateCommand();
+            command.Transaction = sqlTran;
+
+            try
+            {
+                query = "INSERT INTO tblNotas(motivo, fecha, id_empleado, tipo) ";
+                query += "VALUES('{0}','{1}',{2},{3})";
+                query = string.Format(query, motivo, fecha, codEmpleado, 0);
+                // Execute two separate commands.
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+                DataTable tmp = new DataTable();
+                tmp = fillDataTable("select Max(id_Notas) as Cod FROM tblNotas ");
+                foreach (DataRow r in detalles.Rows)
+                {
+                    string stmp;
+                    string[] codigos;
+                    stmp = r["Codigo Producto"].ToString();
+                    codigos = stmp.Split('-');
+
+                    MessageBox.Show("Cp:" + codigos[0] + "Cpr:" + codigos[1] + "-"+r["Fecha Caducidad"].ToString());
+                    x = "";
+                    x = "CALL notasEntrada({0},'{1}',{2},{3},'{4}',{5})";
+                    x = string.Format(x, Convert.ToInt16(r["Cantidad"]), codigos[0],
+                        Convert.ToInt16(codigos[1]), sucursal,r["Fecha Caducidad"].ToString(),
+                        Convert.ToInt16(tmp.Rows[0]["Cod"]));
+                    try
+                    {
+                        command.CommandText = x;
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("ERR:"+ex.Message);
+                    }
+                }
+
+                // Commit the transaction.
+                sqlTran.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception if the transaction fails to commit.
+
+                try
+                {
+                    // Attempt to roll back the transaction.
+                    sqlTran.Rollback();
+                }
+                catch (Exception exRollback)
+                {
+                    // Throws an InvalidOperationException if the connection 
+                    // is closed or the transaction has already been rolled 
+                    // back on the server.
+                    MessageBox.Show("Error " + exRollback + "Info Adicional" + ex.Message);
+                }
+                throw new Exception("ERROR EN LA TRANSACCION " + ex.Message);
+            }
+
+            cnConnection.Close();
+        }
     }
 }
