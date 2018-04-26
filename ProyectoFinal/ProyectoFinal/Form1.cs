@@ -227,5 +227,33 @@ namespace ProyectoFinal
             a.MdiParent = this;
             a.Show();
         }
+
+        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            agregarpresentacion a = new agregarpresentacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void barButtonItem2_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmverpresentacion a = new frmverpresentacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void barButtonItem3_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmupdatepresentacion a = new frmupdatepresentacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmdelpresentacion a = new frmdelpresentacion();
+            a.MdiParent = this;
+            a.Show();
+        }
     }
 }
