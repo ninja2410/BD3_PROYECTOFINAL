@@ -26,5 +26,64 @@ namespace ProyectoFinal
         {
 
         }
+        DataAccess da = new DataAccess();
+        void cargar()
+        {
+            string query = "SELECT tipo_presentacion as 'Tipo De Presentacion' FROM tblpresentacion "; //Consulta que se enviara al servidor de la base
+            DataTable dt = new DataTable();           // creando una nueva tabla
+            dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
+            gridView1.Columns.Clear();
+            gridControl1.DataSource = dt;
+        }
+        private void agregarpresentacion_Load(object sender, EventArgs e)
+        {
+            cargar();
+        }
+        void agregar()
+        {
+            #region validaciones
+
+            if (textEdit1.Text.Trim() == String.Empty)
+            {
+                MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
+                textEdit1.Focus();
+
+            }
+
+
+
+            else
+            {
+                #endregion
+
+                string nombre;
+
+                nombre = textEdit1.Text;
+
+               
+
+
+                string sCommand;
+                sCommand = "insert into tblpresentacion(tipo_presentacion) ";
+                sCommand += "values('{0}')";
+                sCommand = string.Format(sCommand, nombre);
+                try
+                {
+                    da.executeCommand(sCommand);
+                    MessageBox.Show("Se Ingreso La Presentacion " + nombre + " Con Exito");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar ingresar una Nueva Presentacion, más detalles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("¿Esta seguro que desea Ingresar esta Presentacion?", "Cancelar", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes) { agregar(); } else if (dialog == DialogResult.No) { }
+
+        }
     }
 }

@@ -16,5 +16,24 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+        DataAccess da = new DataAccess();
+        void cargar()
+        {
+            string query = "SELECT tipo_presentacion as 'Tipo De Presentacion' FROM tblpresentacion "; //Consulta que se enviara al servidor de la base
+            DataTable dt = new DataTable();           // creando una nueva tabla
+            dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
+            gridView1.Columns.Clear();
+            gridControl1.DataSource = dt;
+        }
+        private void frmverpresentacion_Load(object sender, EventArgs e)
+        {
+            cargar();
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

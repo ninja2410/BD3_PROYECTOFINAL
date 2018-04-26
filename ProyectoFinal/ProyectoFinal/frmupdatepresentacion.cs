@@ -16,5 +16,60 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+        void cargar()
+        {
+            string query = "SELECT tipo_presentacion as 'Tipo De Presentacion' FROM tblpresentacion "; //Consulta que se enviara al servidor de la base
+            DataTable dt = new DataTable();           // creando una nueva tabla
+            dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
+            gridView1.Columns.Clear();
+            gridControl1.DataSource = dt;
+        }
+        private void frmupdatepresentacion_Load(object sender, EventArgs e)
+        {
+            cargar();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            simpleButton2.Enabled = true;
+        }
+        DataAccess da = new DataAccess();
+        void  mod()
+        {
+
+            string nombre;
+            nombre = textEdit1.Text;
+            int cod;
+            cod= Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Tipo De Presentacion"));
+            string sCommand;
+            sCommand = "UPDATE tblpresentacion SET tipo_presetnacion='" + nombre + "' WHERE id_Presentacion='" + cod + "'";
+
+            try
+            {
+                da.executeCommand(sCommand);
+                MessageBox.Show("Se Modifico La Presentacion " + nombre + " Con Exito");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar Modificar la Presentacion, más detalles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("¿Esta seguro que desea Modificar esta Presentacion?", "Cancelar", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes) { mod(); } else if (dialog == DialogResult.No) { }
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
