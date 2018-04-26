@@ -219,6 +219,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmverpresentacion";
             this.Text = "frmverpresentacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmverpresentacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

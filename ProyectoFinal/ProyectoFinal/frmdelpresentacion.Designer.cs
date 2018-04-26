@@ -223,6 +223,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmdelpresentacion";
             this.Text = "frmdelpresentacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
