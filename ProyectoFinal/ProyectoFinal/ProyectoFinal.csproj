@@ -316,6 +316,9 @@
     <EmbeddedResource Include="frmvermarca.resx">
       <DependentUpon>frmvermarca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmverpresentacion.resx">
+      <DependentUpon>frmverpresentacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmverproducto.resx">
       <DependentUpon>frmverproducto.cs</DependentUpon>
     </EmbeddedResource>
