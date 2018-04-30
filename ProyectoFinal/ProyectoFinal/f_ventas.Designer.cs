@@ -55,13 +55,10 @@
             this.lProductos = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtCantidad = new DevExpress.XtraEditors.TextEdit();
-            this.lCliente = new DevExpress.XtraEditors.LookUpEdit();
             this.chkCredito = new DevExpress.XtraEditors.CheckEdit();
             this.txtDocumento = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lblCP = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -78,6 +75,11 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtNit = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtNombre = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -95,13 +97,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lProductos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lCliente.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCredito.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblCP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -118,6 +117,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -207,6 +211,8 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.txtNombre);
+            this.layoutControl2.Controls.Add(this.txtNit);
             this.layoutControl2.Controls.Add(this.simpleButton4);
             this.layoutControl2.Controls.Add(this.dtFechaPago);
             this.layoutControl2.Controls.Add(this.txtPrecio);
@@ -221,7 +227,6 @@
             this.layoutControl2.Controls.Add(this.lProductos);
             this.layoutControl2.Controls.Add(this.labelControl1);
             this.layoutControl2.Controls.Add(this.txtCantidad);
-            this.layoutControl2.Controls.Add(this.lCliente);
             this.layoutControl2.Controls.Add(this.chkCredito);
             this.layoutControl2.Controls.Add(this.txtDocumento);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -313,9 +318,9 @@
             // simpleButton1
             // 
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(778, 48);
+            this.simpleButton1.Location = new System.Drawing.Point(780, 48);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(121, 38);
+            this.simpleButton1.Size = new System.Drawing.Size(119, 38);
             this.simpleButton1.StyleController = this.layoutControl2;
             this.simpleButton1.TabIndex = 15;
             this.simpleButton1.Text = "Agregar Cliente";
@@ -396,17 +401,6 @@
             this.txtCantidad.StyleController = this.layoutControl2;
             this.txtCantidad.TabIndex = 8;
             // 
-            // lCliente
-            // 
-            this.lCliente.EnterMoveNextControl = true;
-            this.lCliente.Location = new System.Drawing.Point(198, 48);
-            this.lCliente.Name = "lCliente";
-            this.lCliente.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lCliente.Size = new System.Drawing.Size(576, 20);
-            this.lCliente.StyleController = this.layoutControl2;
-            this.lCliente.TabIndex = 6;
-            // 
             // chkCredito
             // 
             this.chkCredito.EnterMoveNextControl = true;
@@ -435,7 +429,6 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem3,
-            this.lblCP,
             this.layoutControlItem7,
             this.layoutControlItem6,
             this.layoutControlItem8,
@@ -452,7 +445,9 @@
             this.layoutControlItem15,
             this.layoutControlItem19,
             this.emptySpaceItem3,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem12,
+            this.layoutControlItem20});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(911, 360);
@@ -468,26 +463,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(444, 36);
             this.layoutControlItem3.Text = "Documento ";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(183, 28);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.chkCredito;
-            this.layoutControlItem4.Location = new System.Drawing.Point(444, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(154, 36);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // lblCP
-            // 
-            this.lblCP.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCP.AppearanceItemCaption.Options.UseFont = true;
-            this.lblCP.Control = this.lCliente;
-            this.lblCP.Location = new System.Drawing.Point(0, 36);
-            this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(766, 42);
-            this.lblCP.Text = "Seleccione Cliente";
-            this.lblCP.TextSize = new System.Drawing.Size(183, 25);
             // 
             // layoutControlItem7
             // 
@@ -622,9 +597,9 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.simpleButton1;
-            this.layoutControlItem13.Location = new System.Drawing.Point(766, 36);
+            this.layoutControlItem13.Location = new System.Drawing.Point(768, 36);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(125, 42);
+            this.layoutControlItem13.Size = new System.Drawing.Size(123, 42);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -656,6 +631,50 @@
             this.emptySpaceItem3.Size = new System.Drawing.Size(846, 42);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.chkCredito;
+            this.layoutControlItem4.Location = new System.Drawing.Point(444, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(154, 36);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // txtNit
+            // 
+            this.txtNit.Location = new System.Drawing.Point(198, 48);
+            this.txtNit.Name = "txtNit";
+            this.txtNit.Size = new System.Drawing.Size(110, 20);
+            this.txtNit.StyleController = this.layoutControl2;
+            this.txtNit.TabIndex = 24;
+            this.txtNit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtNit;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(300, 42);
+            this.layoutControlItem12.Text = "NIT";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(183, 13);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(498, 48);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(278, 20);
+            this.txtNombre.StyleController = this.layoutControl2;
+            this.txtNombre.TabIndex = 25;
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.txtNombre;
+            this.layoutControlItem20.Location = new System.Drawing.Point(300, 36);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(468, 42);
+            this.layoutControlItem20.Text = "Nombre Cliente";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(183, 13);
+            // 
             // f_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,13 +705,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lProductos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lCliente.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkCredito.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblCP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -709,6 +725,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -732,13 +753,11 @@
         private DevExpress.XtraEditors.LookUpEdit lProductos;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtCantidad;
-        private DevExpress.XtraEditors.LookUpEdit lCliente;
         private DevExpress.XtraEditors.CheckEdit chkCredito;
         private DevExpress.XtraEditors.TextEdit txtDocumento;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem lblCP;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
@@ -763,5 +782,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraEditors.TextEdit txtNombre;
+        private DevExpress.XtraEditors.TextEdit txtNit;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
     }
 }
