@@ -255,5 +255,19 @@ namespace ProyectoFinal
             a.MdiParent = this;
             a.Show();
         }
+
+        private void btnSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_ventas v = new f_ventas();
+            v.MdiParent = this;
+            v.venta = true;
+            v.Show();
+        }
+
+        private void btnReporteVentas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVentas miFrmVenta = new frmVentas();            
+            miFrmVenta.Show();
+        }
     }
 }
