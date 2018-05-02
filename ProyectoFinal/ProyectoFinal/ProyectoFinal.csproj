@@ -98,6 +98,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarPermisos.Designer.cs">
+      <DependentUpon>frmAsignarPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignarPrecio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="frmDelAsignacionprecio.Designer.cs">
       <DependentUpon>frmDelAsignacionprecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDelAsignacionRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDelAsignacionRoles.Designer.cs">
+      <DependentUpon>frmDelAsignacionRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="frmdelcategoria.cs">
       <SubType>Form</SubType>
@@ -151,6 +163,12 @@
     </Compile>
     <Compile Include="frmdelsucursal.Designer.cs">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarAsignacion.Designer.cs">
+      <DependentUpon>frmModificarAsignacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmnewcategoria.cs">
       <SubType>Form</SubType>
@@ -241,6 +259,12 @@
     </Compile>
     <Compile Include="frmVentascs.Designer.cs">
       <DependentUpon>frmVentascs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerAsignacionPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerAsignacionPermisos.Designer.cs">
+      <DependentUpon>frmVerAsignacionPermisos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmvercategoria.cs">
       <SubType>Form</SubType>
