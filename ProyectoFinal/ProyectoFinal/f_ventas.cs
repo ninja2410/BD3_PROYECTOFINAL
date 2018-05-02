@@ -14,12 +14,15 @@ namespace ProyectoFinal
     {
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
+        DataTable tmp = new DataTable();
         List<ProductosVenta> lista = new List<ProductosVenta>();
         string query;
         public int sucursal=1;
         decimal totalFactura;
         public bool venta=true;
         public int empleado = 1;
+        int codigoProveedor;
+        int codigoCliente;
         public f_ventas()
         {
             InitializeComponent();
@@ -75,10 +78,6 @@ namespace ProyectoFinal
                 lblTitulo.Text = "Compras Surticasa S.A.";
                 button1.Text = "Comprar";
                 dt.Columns.Add("Fecha Vencimiento");
-                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblProveedor");
-                lCliente.Properties.DisplayMember = "nombre_proveedor";
-                lCliente.Properties.ValueMember = "id_proveedor";
-                lblCP.Text = "Seleccione Proveedor";
                 simpleButton1.Text = "Agregar Proveedor";
             }
             else
@@ -88,10 +87,6 @@ namespace ProyectoFinal
                 lblTitulo.Text = "Ventas Surticasa S.A.";
                 button1.Text = "Vender";
 
-                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblCliente");
-                lCliente.Properties.DisplayMember = "nombre";
-                lCliente.Properties.ValueMember = "id_cliente";
-                lblCP.Text = "Seleccione Cliente";
                 simpleButton1.Text = "Agregar Cliente";
             }
         }
@@ -103,11 +98,11 @@ namespace ProyectoFinal
                 {
                     if (!venta)
                     {
-                        da.tansactCompra(dt, txtDocumento.Text, empleado, false, Convert.ToInt16(lCliente.EditValue), sucursal, totalFactura);
+                        da.tansactCompra(dt, txtDocumento.Text, empleado, false, codigoProveedor, sucursal, totalFactura);
                     }
                     else
                     {
-                        da.transact(dt, txtDocumento.Text, empleado, true, Convert.ToInt16(lCliente.EditValue),
+                        da.transact(dt, txtDocumento.Text, empleado, true, codigoCliente,
                             sucursal, totalFactura);
                     }
                     MessageBox.Show("Registrado con Exito");
@@ -139,11 +134,11 @@ namespace ProyectoFinal
                 MessageBox.Show("Debe ingresar un documento");
                 txtDocumento.Focus();
             }
-            if (lCliente.EditValue == null)
+            if (codigoCliente==0 || codigoProveedor==0)
             {
                 respuesta = false;
                 MessageBox.Show("Debe Seleccionar un cliente");
-                lCliente.Focus();
+                
             }
             if (gridView1.DataRowCount < 1)
             {
@@ -329,19 +324,18 @@ namespace ProyectoFinal
             {
                 //proveedor
                 frmNewProvider p = new frmNewProvider();
+                p.txtNitProvider.Text = txtNit.Text;
                 p.ShowDialog();
-                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblProveedor where activo=1");
-                lCliente.Properties.DisplayMember = "nombre_proveedor";
-                lCliente.Properties.ValueMember = "id_proveedor";
+                cargarinformacion();
             }
             else
             {
                 //cliente
                 frmnewClient c = new frmnewClient();
+                c.txtNit.Text = txtNit.Text;
                 c.ShowDialog();
-                lCliente.Properties.DataSource = da.fillDataTable("SELECT * FROM tblCliente");
-                lCliente.Properties.DisplayMember = "nombre";
-                lCliente.Properties.ValueMember = "id_cliente";
+                cargarinformacion();
+                
             }
         }
 
@@ -358,6 +352,56 @@ namespace ProyectoFinal
                 }
             }
             gridView1.RefreshData();
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            cargarinformacion();
+            
+        }
+        public void cargarinformacion()
+        {
+            if (txtNit.Text.Length >= 8)
+            {
+                string tmps;
+                if (venta)
+                {
+                    tmps = "SELECT * FROM tblCliente where nit={0}";
+                    tmps = string.Format(tmps, Convert.ToInt32(txtNit.Text));
+                    tmp = da.fillDataTable(tmps);
+                    if (tmp.Rows.Count == 0)
+                    {
+                        txtNombre.Text = "";
+                        MessageBox.Show("El NIT no esta registrado");
+                        simpleButton1.Focus();
+                    }
+                    else
+                    {
+                        txtNombre.Text = "";
+                        codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_cliente"]);
+                        txtNombre.Text = tmp.Rows[0]["nombre"].ToString() + " " + tmp.Rows[0]["apellido"].ToString();
+                    }
+                }
+                else
+                {
+                    tmps = "SELECT * FROM tblProveedor where nit={0}";
+                    tmps = string.Format(tmps, Convert.ToInt32(txtNit.Text));
+                    tmp = da.fillDataTable(tmps);
+                    if (tmp.Rows.Count == 0)
+                    {
+                        txtNombre.Text = "";
+                        MessageBox.Show("El NIT no esta registrado");
+                        simpleButton1.Focus();
+                    }
+                    else
+                    {
+                        txtNombre.Text = "";
+                        codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_proveedor"]);
+                        txtNombre.Text = tmp.Rows[0]["nombre_proveedor"].ToString() ;
+                    }
+                }
+                
+            }
         }
     }
 }

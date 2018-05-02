@@ -287,7 +287,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.TextEdit txtContact;
         private DevExpress.XtraEditors.TextEdit txtPhoneProvider;
-        private DevExpress.XtraEditors.TextEdit txtNitProvider;
         private DevExpress.XtraEditors.TextEdit txtNameProvider;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -297,5 +296,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        public DevExpress.XtraEditors.TextEdit txtNitProvider;
     }
 }

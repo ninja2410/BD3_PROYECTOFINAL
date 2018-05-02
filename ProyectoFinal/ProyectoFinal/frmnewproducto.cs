@@ -84,7 +84,7 @@ namespace ProyectoFinal
                     
 
                     sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,id_marca,id_categoria) ";
-                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
+                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}')";
                 sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, marca,categoria);
                     try
                     {
