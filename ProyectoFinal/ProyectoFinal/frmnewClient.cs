@@ -47,5 +47,10 @@ namespace ProyectoFinal
         {
             this.Close();
         }
+
+        private void frmnewClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
