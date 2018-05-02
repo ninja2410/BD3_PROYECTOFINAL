@@ -29,12 +29,13 @@ namespace ProyectoFinal
         DataAccess da = new DataAccess();
         void cargar()
         {
-            string query = "SELECT tipo_presentacion as 'Tipo De Presentacion' FROM tblpresentacion "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT tipo_presentacion as 'Tipo De Presentacion' FROM tblPresentacion "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
             gridControl1.DataSource = dt;
         }
+        public int u = 0;
         private void agregarpresentacion_Load(object sender, EventArgs e)
         {
             cargar();
@@ -64,13 +65,14 @@ namespace ProyectoFinal
 
 
                 string sCommand;
-                sCommand = "insert into tblpresentacion(tipo_presentacion) ";
+                sCommand = "insert into tblPresentacion(tipo_presentacion) ";
                 sCommand += "values('{0}')";
                 sCommand = string.Format(sCommand, nombre);
                 try
                 {
                     da.executeCommand(sCommand);
                     MessageBox.Show("Se Ingreso La Presentacion " + nombre + " Con Exito");
+                    u = 1;
                     this.Close();
                 }
                 catch (Exception ex)

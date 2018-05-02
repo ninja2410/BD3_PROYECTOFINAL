@@ -33,11 +33,32 @@ namespace ProyectoFinal
         }
         void agregar()
         {
-           
-            
-                #region validaciones
 
-                if (textEdit2.Text.Trim() == String.Empty)
+            int cod_presentacion=0;
+            #region validaciones
+
+            if (presentacion)
+            {
+                cod_presentacion = Convert.ToInt32(gridView3.GetRowCellValue(gridView3.FocusedRowHandle, "Cod Presentacion"));
+
+                if (textEdit5.Text.Trim() == String.Empty)
+                {
+                    MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
+                    textEdit5.Focus();
+                }
+                if (textEdit6.Text.Trim() == String.Empty)
+                {
+                    MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
+                    textEdit5.Focus();
+                }
+                if (cod_presentacion == 0)
+                {
+                    MessageBox.Show("Debe Seleccionar Una Presentacion Para Guardarlo");
+                }
+            }
+           
+
+            if (textEdit2.Text.Trim() == String.Empty)
                 {
                     MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
                     textEdit2.Focus();
@@ -57,6 +78,7 @@ namespace ProyectoFinal
                     textEdit3.Focus();
 
                 }
+                
                 else
                 {
                     #endregion
@@ -81,16 +103,27 @@ namespace ProyectoFinal
                 else
                 { activo = "0"; }
                 string sCommand;
-                    
+                string sCommand1="";
 
                     sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,id_marca,id_categoria) ";
-                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
-                sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, marca,categoria);
-                    try
-                    {
+                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}')";
+                    sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, marca,categoria);
+                if(presentacion)
+                    { 
+                        sCommand1 = "insert into tblAsignacionPrecio(id_Presentacion,id_producto,precio_Venta,precio_Compra) ";
+                        sCommand1 += "values('{0}','{1}','{2}','{3}')";
+                        sCommand1 = string.Format(sCommand1, cod_presentacion, codigo_pro, Convert.ToDecimal(textEdit5.Text), Convert.ToDecimal(textEdit6.Text));
+                    }
+                try
+                {
                         da.executeCommand(sCommand);
                         MessageBox.Show("Se Ingreso El Producto " + nombre + " Con Exito");
-                        this.Close();
+                        if(presentacion)
+                        {
+                        da.executeCommand(sCommand1);
+                        MessageBox.Show("Se Asigno El Precio Con Exito");
+                         }
+                    this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -121,10 +154,19 @@ namespace ProyectoFinal
             gridView2.Columns.Clear();
             gridControl2.DataSource = dt;
         }
+        void cargar_presentaciones()
+        {
+            string query = "SELECT id_Presentacion as 'Cod Presentacion', tipo_presentacion as 'Tipo Presentacion' FROM tblPresentacion "; //Consulta que se enviara al servidor de la base
+            DataTable dt = new DataTable();           // creando una nueva tabla
+            dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
+            gridView3.Columns.Clear();
+            gridControl3.DataSource = dt;
+        }
         private void frmnewproducto_Load(object sender, EventArgs e)
         {
             cargar_cat();
             cargar_marcas();
+            
         }
 
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
@@ -141,6 +183,71 @@ namespace ProyectoFinal
             catch (Exception ex)
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+        public int j = 0;
+        public int j1 = 0;
+        private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void gridControl2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmnewmarca a = new frmnewmarca();
+
+            a.ShowDialog();
+            j = a.u;
+            if (j == 1)
+            {
+                cargar_marcas();
+            }
+        }
+
+        private void gridControl3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void gridControl3_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+        bool presentacion = false;
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            presentacion = !presentacion;
+            if(presentacion)
+            {
+                cargar_presentaciones();
+                gridControl3.Enabled = true;
+                textEdit5.Enabled = true;
+                textEdit6.Enabled = true;
+                simpleButton4.Text = "Cancelar";
+            }
+            else
+            {
+                simpleButton4.Text = "Asignar Presentacion";
+                gridControl3.Enabled = false;
+                textEdit5.Enabled = false;
+                textEdit6.Enabled = false;
+            }
+        }
+
+        private void gridControl3_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            agregarpresentacion a = new agregarpresentacion();
+            a.ShowDialog();
+            j1 = a.u;
+            if (j1 == 1)
+            {
+                cargar_presentaciones();
             }
         }
     }
