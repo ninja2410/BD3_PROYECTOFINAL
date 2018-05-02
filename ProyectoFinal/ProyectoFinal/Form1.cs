@@ -76,6 +76,7 @@ namespace ProyectoFinal
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_EditUser u = new f_EditUser();
+            u.MdiParent = this;
             u.Show();
         }
         
@@ -200,13 +201,15 @@ namespace ProyectoFinal
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_Usuarios newuser = new f_Usuarios();
-            newuser.ShowDialog();
+            newuser.MdiParent = this;
+            newuser.Show();
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_ListUsers luser = new f_ListUsers();
-            luser.ShowDialog();
+            luser.MdiParent = this;
+            luser.Show();
         }
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -254,6 +257,21 @@ namespace ProyectoFinal
             frmdelpresentacion a = new frmdelpresentacion();
             a.MdiParent = this;
             a.Show();
+        }
+
+        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_abonos aC = new f_abonos();
+            aC.typeAbono = false;
+            aC.MdiParent = this;
+            aC.Show();
+        }
+
+        private void btnAddAbono_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_abonos aV = new f_abonos();
+            aV.MdiParent = this;
+            aV.Show();
         }
     }
 }

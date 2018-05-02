@@ -112,5 +112,14 @@ namespace ProyectoFinal
                 btnUpdate.Enabled = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro que desea cancelar?", "",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
