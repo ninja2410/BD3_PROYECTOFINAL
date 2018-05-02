@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCompras = new DevExpress.XtraBars.BarButtonItem();
@@ -88,6 +88,11 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.AsignacionPrecios = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnasignarprecio = new DevExpress.XtraBars.BarButtonItem();
+            this.btnverasignacion = new DevExpress.XtraBars.BarButtonItem();
+            this.btnmodificarasignacion = new DevExpress.XtraBars.BarButtonItem();
+            this.btneliminarasignacion = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,9 +132,13 @@
             this.barButtonItem3,
             this.barButtonItem4,
             this.btnAddAbono,
-            this.btnRemoveAbono});
+            this.btnRemoveAbono,
+            this.btnasignarprecio,
+            this.btnverasignacion,
+            this.btnmodificarasignacion,
+            this.btneliminarasignacion});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 50;
+            this.ribbonControl1.MaxItemId = 54;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
@@ -137,7 +146,7 @@
             this.ribbonPageProductos,
             this.ribbonPageSucursales});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(917, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1376, 143);
             // 
             // btnVentas
             // 
@@ -177,12 +186,12 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem3.Text = "Clientes";
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.btnClientes.SuperTip = superToolTip3;
+            toolTipTitleItem7.Text = "Clientes";
+            toolTipItem7.LeftIndent = 6;
+            toolTipItem7.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.btnClientes.SuperTip = superToolTip7;
             this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
             // 
             // btnProveedores
@@ -193,13 +202,13 @@
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem4.Text = "Proveedores";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
+            toolTipTitleItem8.Text = "Proveedores";
+            toolTipItem8.LeftIndent = 6;
+            toolTipItem8.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
     "trados.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnProveedores.SuperTip = superToolTip4;
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            superToolTip8.Items.Add(toolTipItem8);
+            this.btnProveedores.SuperTip = superToolTip8;
             this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
             // btnNotasSalida
@@ -514,7 +523,8 @@
             this.productospage,
             this.pagecategorias,
             this.pagemarcas,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.AsignacionPrecios});
             this.ribbonPageProductos.Name = "ribbonPageProductos";
             this.ribbonPageProductos.Text = "Productos";
             // 
@@ -621,12 +631,57 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
+            // AsignacionPrecios
+            // 
+            this.AsignacionPrecios.ItemLinks.Add(this.btnasignarprecio);
+            this.AsignacionPrecios.ItemLinks.Add(this.btnverasignacion);
+            this.AsignacionPrecios.ItemLinks.Add(this.btnmodificarasignacion);
+            this.AsignacionPrecios.ItemLinks.Add(this.btneliminarasignacion);
+            this.AsignacionPrecios.Name = "AsignacionPrecios";
+            this.AsignacionPrecios.Text = "Asignacion De Precios";
+            // 
+            // btnasignarprecio
+            // 
+            this.btnasignarprecio.Caption = "Asignar Un Precio";
+            this.btnasignarprecio.Glyph = ((System.Drawing.Image)(resources.GetObject("btnasignarprecio.Glyph")));
+            this.btnasignarprecio.Id = 50;
+            this.btnasignarprecio.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnasignarprecio.LargeGlyph")));
+            this.btnasignarprecio.Name = "btnasignarprecio";
+            this.btnasignarprecio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnasignarprecio_ItemClick);
+            // 
+            // btnverasignacion
+            // 
+            this.btnverasignacion.Caption = "Ver Las Asignacionaciones De Precios";
+            this.btnverasignacion.Glyph = ((System.Drawing.Image)(resources.GetObject("btnverasignacion.Glyph")));
+            this.btnverasignacion.Id = 51;
+            this.btnverasignacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnverasignacion.LargeGlyph")));
+            this.btnverasignacion.Name = "btnverasignacion";
+            this.btnverasignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnverasignacion_ItemClick);
+            // 
+            // btnmodificarasignacion
+            // 
+            this.btnmodificarasignacion.Caption = "Modificar Una Asignacion";
+            this.btnmodificarasignacion.Glyph = ((System.Drawing.Image)(resources.GetObject("btnmodificarasignacion.Glyph")));
+            this.btnmodificarasignacion.Id = 52;
+            this.btnmodificarasignacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnmodificarasignacion.LargeGlyph")));
+            this.btnmodificarasignacion.Name = "btnmodificarasignacion";
+            this.btnmodificarasignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnmodificarasignacion_ItemClick);
+            // 
+            // btneliminarasignacion
+            // 
+            this.btneliminarasignacion.Caption = "Eliminar Una Asignacion";
+            this.btneliminarasignacion.Glyph = ((System.Drawing.Image)(resources.GetObject("btneliminarasignacion.Glyph")));
+            this.btneliminarasignacion.Id = 53;
+            this.btneliminarasignacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btneliminarasignacion.LargeGlyph")));
+            this.btneliminarasignacion.Name = "btneliminarasignacion";
+            this.btneliminarasignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btneliminarasignacion_ItemClick);
+            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 357);
+            this.ClientSize = new System.Drawing.Size(1376, 357);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
@@ -694,6 +749,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnAddAbono;
         private DevExpress.XtraBars.BarButtonItem btnRemoveAbono;
+        private DevExpress.XtraBars.BarButtonItem btnasignarprecio;
+        private DevExpress.XtraBars.BarButtonItem btnverasignacion;
+        private DevExpress.XtraBars.BarButtonItem btnmodificarasignacion;
+        private DevExpress.XtraBars.BarButtonItem btneliminarasignacion;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup AsignacionPrecios;
     }
 }
 

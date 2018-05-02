@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator5 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -45,6 +46,9 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.Root1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
@@ -72,17 +76,14 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -93,6 +94,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -120,13 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,9 +157,19 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // textEdit5
+            // 
+            this.textEdit5.Enabled = false;
+            this.textEdit5.Location = new System.Drawing.Point(723, 263);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(50, 20);
+            this.textEdit5.StyleController = this.layoutControl1;
+            this.textEdit5.TabIndex = 19;
+            this.textEdit5.Visible = false;
+            // 
             // simpleButton4
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(303, 189);
+            this.simpleButton4.Location = new System.Drawing.Point(423, 189);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(113, 39);
             this.simpleButton4.StyleController = this.layoutControl1;
@@ -169,7 +179,7 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(75, 39);
+            this.textEdit4.Location = new System.Drawing.Point(195, 39);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Size = new System.Drawing.Size(815, 20);
             this.textEdit4.StyleController = this.layoutControl1;
@@ -177,7 +187,7 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(436, 425);
+            this.simpleButton3.Location = new System.Drawing.Point(556, 425);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(154, 22);
             this.simpleButton3.StyleController = this.layoutControl1;
@@ -187,7 +197,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(75, 63);
+            this.textEdit1.Location = new System.Drawing.Point(195, 63);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(229, 20);
             this.textEdit1.StyleController = this.layoutControl1;
@@ -195,7 +205,7 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(75, 145);
+            this.textEdit3.Location = new System.Drawing.Point(195, 145);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Size = new System.Drawing.Size(229, 20);
             this.textEdit3.StyleController = this.layoutControl1;
@@ -204,7 +214,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Enabled = false;
-            this.simpleButton1.Location = new System.Drawing.Point(408, 145);
+            this.simpleButton1.Location = new System.Drawing.Point(528, 145);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(482, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
@@ -214,17 +224,18 @@
             // barCodeControl1
             // 
             this.barCodeControl1.Enabled = false;
-            this.barCodeControl1.Location = new System.Drawing.Point(308, 145);
+            this.barCodeControl1.Location = new System.Drawing.Point(428, 145);
             this.barCodeControl1.Name = "barCodeControl1";
             this.barCodeControl1.Padding = new System.Windows.Forms.Padding(10, 2, 10, 0);
             this.barCodeControl1.Size = new System.Drawing.Size(96, 16);
             this.barCodeControl1.StyleController = this.layoutControl1;
-            this.barCodeControl1.Symbology = code128Generator5;
+            this.barCodeControl1.Symbology = code128Generator1;
             this.barCodeControl1.TabIndex = 7;
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(308, 63);
+            this.checkEdit1.EditValue = true;
+            this.checkEdit1.Location = new System.Drawing.Point(428, 63);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "¿ACTIVO?";
             this.checkEdit1.Size = new System.Drawing.Size(107, 19);
@@ -233,7 +244,7 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(75, 171);
+            this.pictureEdit1.Location = new System.Drawing.Point(195, 171);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
@@ -246,7 +257,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(75, 87);
+            this.textEdit2.Location = new System.Drawing.Point(195, 87);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(815, 20);
             this.textEdit2.StyleController = this.layoutControl1;
@@ -254,7 +265,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(75, 297);
+            this.gridControl1.Location = new System.Drawing.Point(195, 297);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(278, 124);
@@ -276,7 +287,7 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(552, 297);
+            this.gridControl2.Location = new System.Drawing.Point(672, 297);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.Size = new System.Drawing.Size(338, 124);
@@ -297,7 +308,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(270, 425);
+            this.simpleButton2.Location = new System.Drawing.Point(390, 425);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(162, 22);
             this.simpleButton2.StyleController = this.layoutControl1;
@@ -305,13 +316,45 @@
             this.simpleButton2.Text = "AGREGAR PRODUCTO NUEVO";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // textEdit6
+            // 
+            this.textEdit6.Enabled = false;
+            this.textEdit6.Location = new System.Drawing.Point(950, 263);
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Size = new System.Drawing.Size(50, 20);
+            this.textEdit6.StyleController = this.layoutControl1;
+            this.textEdit6.TabIndex = 19;
+            this.textEdit6.Visible = false;
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Enabled = false;
+            this.gridControl3.Location = new System.Drawing.Point(723, 171);
+            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(287, 88);
+            this.gridControl3.TabIndex = 13;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            this.gridControl3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl3_MouseDoubleClick_1);
+            // 
+            // gridView3
+            // 
+            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView3.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsView.ShowAutoFilterRow = true;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.Root1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(-120, 0);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1032, 469);
             this.layoutControlGroup1.TextVisible = false;
@@ -599,28 +642,6 @@
             this.emptySpaceItem12.Size = new System.Drawing.Size(117, 18);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // emptySpaceItem13
-            // 
-            this.emptySpaceItem13.AllowHotTrack = false;
-            this.emptySpaceItem13.Location = new System.Drawing.Point(518, 149);
-            this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(10, 116);
-            this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Enabled = false;
-            this.textEdit5.Location = new System.Drawing.Point(603, 263);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(50, 20);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 19;
-            this.textEdit5.Visible = false;
-            // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.textEdit5;
@@ -629,16 +650,6 @@
             this.layoutControlItem16.Size = new System.Drawing.Size(227, 24);
             this.layoutControlItem16.Text = "Precio Compra Del Producto:";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(170, 13);
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Enabled = false;
-            this.textEdit6.Location = new System.Drawing.Point(830, 263);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(50, 20);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 19;
-            this.textEdit6.Visible = false;
             // 
             // layoutControlItem17
             // 
@@ -650,27 +661,13 @@
             this.layoutControlItem17.Text = "Precio Venta Del Producto:";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(170, 13);
             // 
-            // gridControl3
+            // emptySpaceItem13
             // 
-            this.gridControl3.Enabled = false;
-            this.gridControl3.Location = new System.Drawing.Point(603, 171);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(287, 88);
-            this.gridControl3.TabIndex = 13;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            this.gridControl3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl3_MouseDoubleClick_1);
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView3.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView3.OptionsBehavior.Editable = false;
-            this.gridView3.OptionsView.ShowAutoFilterRow = true;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.emptySpaceItem13.AllowHotTrack = false;
+            this.emptySpaceItem13.Location = new System.Drawing.Point(518, 149);
+            this.emptySpaceItem13.Name = "emptySpaceItem13";
+            this.emptySpaceItem13.Size = new System.Drawing.Size(10, 116);
+            this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem15
             // 
@@ -681,6 +678,10 @@
             this.layoutControlItem15.Size = new System.Drawing.Size(464, 92);
             this.layoutControlItem15.Text = "SELECCIONAR PRESENTACION:";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(170, 13);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmnewproducto
             // 
@@ -695,6 +696,7 @@
             this.Load += new System.EventHandler(this.frmnewproducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
@@ -705,6 +707,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
@@ -732,13 +737,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.ResumeLayout(false);
 

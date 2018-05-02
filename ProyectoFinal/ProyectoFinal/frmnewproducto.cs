@@ -26,7 +26,7 @@ namespace ProyectoFinal
         {
 
         }
-
+        public int p = 0;
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -123,6 +123,7 @@ namespace ProyectoFinal
                         da.executeCommand(sCommand1);
                         MessageBox.Show("Se Asigno El Precio Con Exito");
                          }
+                    p = 1;
                     this.Close();
                     }
                     catch (Exception ex)
