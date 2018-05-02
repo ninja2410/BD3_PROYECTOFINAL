@@ -159,11 +159,16 @@ namespace ProyectoFinal
                 MessageBox.Show("Debe ingresar un documento");
                 txtDocumento.Focus();
             }
-            if (codigoCliente==0 || codigoProveedor==0)
+            if (codigoCliente==0 && venta)
             {
                 respuesta = false;
                 MessageBox.Show("Debe Seleccionar un cliente");
                 
+            }
+            if(codigoProveedor==0 && !venta)
+            {
+                respuesta = false;
+                MessageBox.Show("Debe seleccionar un proveedor");
             }
             if (gridView1.DataRowCount < 1)
             {
@@ -405,6 +410,7 @@ namespace ProyectoFinal
                     {
                         txtNombre.Text = "";
                         codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_cliente"]);
+                        MessageBox.Show(codigoCliente.ToString());
                         txtNombre.Text = tmp.Rows[0]["nombre"].ToString() + " " + tmp.Rows[0]["apellido"].ToString();
                     }
                 }
@@ -422,7 +428,7 @@ namespace ProyectoFinal
                     else
                     {
                         txtNombre.Text = "";
-                        codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_proveedor"]);
+                        codigoProveedor = Convert.ToInt16(tmp.Rows[0]["id_proveedor"]);
                         txtNombre.Text = tmp.Rows[0]["nombre_proveedor"].ToString() ;
                     }
                 }
