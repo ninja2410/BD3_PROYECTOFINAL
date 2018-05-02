@@ -299,5 +299,33 @@ namespace ProyectoFinal
             miReporte.PrintReportTop10();
             miReporte.Show();
         }
+
+        private void btnAgregarPresentacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAsignarPrecio a = new frmAsignarPrecio();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnVerPrecios_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVerPrecioAsignado a = new frmVerPrecioAsignado();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnmodificarAsignacionPrecio_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmUpdateAsignacion a = new frmUpdateAsignacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btneliminarasignacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDelAsignacionprecio a = new frmDelAsignacionprecio();
+            a.MdiParent = this;
+            a.Show();
+        }
     }
 }
