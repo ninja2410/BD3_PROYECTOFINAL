@@ -410,7 +410,6 @@ namespace ProyectoFinal
                     {
                         txtNombre.Text = "";
                         codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_cliente"]);
-                        MessageBox.Show(codigoCliente.ToString());
                         txtNombre.Text = tmp.Rows[0]["nombre"].ToString() + " " + tmp.Rows[0]["apellido"].ToString();
                     }
                 }
