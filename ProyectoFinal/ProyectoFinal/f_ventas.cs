@@ -104,7 +104,7 @@ namespace ProyectoFinal
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
                             decimal monto = Convert.ToDecimal(lblTotal.Text);
                             string sQuery;
-                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento);";
+                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento) ";
                             sQuery += "values ({0},{1},{2},0,'{3}')";
                             sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
                             da.executeCommand(sQuery);
@@ -121,7 +121,7 @@ namespace ProyectoFinal
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
                             decimal monto = Convert.ToDecimal(lblTotal.Text);
                             string sQuery;
-                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento);";
+                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento) ";
                             sQuery += "values ({0},{1},{2},1,'{3}')";
                             sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
                             da.executeCommand(sQuery);
@@ -434,6 +434,11 @@ namespace ProyectoFinal
                 }
                 
             }
+        }
+
+        private void txtNit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
