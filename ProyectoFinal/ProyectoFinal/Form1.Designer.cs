@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCompras = new DevExpress.XtraBars.BarButtonItem();
@@ -69,9 +69,9 @@
             this.btnAddAbono = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemoveAbono = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnNotas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageclientes = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -177,12 +177,12 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem3.Text = "Clientes";
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.btnClientes.SuperTip = superToolTip3;
+            toolTipTitleItem1.Text = "Clientes";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Abre una nueva ventana para administrar los clientes actualmente en el registro.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.btnClientes.SuperTip = superToolTip1;
             this.btnClientes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClientes_ItemClick);
             // 
             // btnProveedores
@@ -193,13 +193,13 @@
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem4.Text = "Proveedores";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
+            toolTipTitleItem2.Text = "Proveedores";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Abre una nueva ventana donde puede administrar  los proveedores actualmente regis" +
     "trados.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnProveedores.SuperTip = superToolTip4;
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.btnProveedores.SuperTip = superToolTip2;
             this.btnProveedores.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProveedores_ItemClick);
             // 
             // btnNotasSalida
@@ -453,36 +453,36 @@
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ribbonPageTranscts.Appearance.Options.UseBackColor = true;
             this.ribbonPageTranscts.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup5});
+            this.rbnVentas,
+            this.rbnCompras,
+            this.rbnNotas});
             this.ribbonPageTranscts.Name = "ribbonPageTranscts";
             this.ribbonPageTranscts.Text = "Transacciones";
             // 
-            // ribbonPageGroup1
+            // rbnVentas
             // 
-            this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.Glyph = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup1.Glyph")));
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnVentas);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddAbono);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Transacciones Venta";
+            this.rbnVentas.AllowTextClipping = false;
+            this.rbnVentas.Glyph = ((System.Drawing.Image)(resources.GetObject("rbnVentas.Glyph")));
+            this.rbnVentas.ItemLinks.Add(this.btnVentas);
+            this.rbnVentas.ItemLinks.Add(this.btnAddAbono);
+            this.rbnVentas.Name = "rbnVentas";
+            this.rbnVentas.Text = "Transacciones Venta";
             // 
-            // ribbonPageGroup4
+            // rbnCompras
             // 
-            this.ribbonPageGroup4.AllowTextClipping = false;
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnCompras);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnRemoveAbono);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Transacciones Compra";
+            this.rbnCompras.AllowTextClipping = false;
+            this.rbnCompras.ItemLinks.Add(this.btnCompras);
+            this.rbnCompras.ItemLinks.Add(this.btnRemoveAbono);
+            this.rbnCompras.Name = "rbnCompras";
+            this.rbnCompras.Text = "Transacciones Compra";
             // 
-            // ribbonPageGroup5
+            // rbnNotas
             // 
-            this.ribbonPageGroup5.AllowTextClipping = false;
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnNotasEntrada);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnNotasSalida);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Movimiento Mercadería";
+            this.rbnNotas.AllowTextClipping = false;
+            this.rbnNotas.ItemLinks.Add(this.btnNotasEntrada);
+            this.rbnNotas.ItemLinks.Add(this.btnNotasSalida);
+            this.rbnNotas.Name = "rbnNotas";
+            this.rbnNotas.Text = "Movimiento Mercadería";
             // 
             // ribbonPageclientes
             // 
@@ -643,14 +643,14 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageTranscts;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnVentas;
         private DevExpress.XtraBars.BarButtonItem btnVentas;        
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageclientes;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnCompras;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnCompras;
         private DevExpress.XtraBars.BarButtonItem btnNotasEntrada;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnNotas;
         private DevExpress.XtraBars.BarButtonItem btnClientes;
         private DevExpress.XtraBars.BarButtonItem btnProveedores;
         private DevExpress.XtraBars.BarButtonItem btnNotasSalida;
