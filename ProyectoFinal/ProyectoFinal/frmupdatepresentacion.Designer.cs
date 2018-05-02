@@ -78,15 +78,16 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(229, 32);
+            this.gridControl1.Location = new System.Drawing.Point(390, 32);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(325, 138);
+            this.gridControl1.Size = new System.Drawing.Size(164, 138);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             this.gridControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseClick);
+            this.gridControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseDoubleClick);
             // 
             // gridView1
             // 
@@ -121,9 +122,9 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(229, 174);
+            this.textEdit1.Location = new System.Drawing.Point(390, 174);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(274, 20);
+            this.textEdit1.Size = new System.Drawing.Size(113, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 8;
             // 
@@ -179,8 +180,8 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(526, 142);
-            this.layoutControlItem1.Text = "PRESENTACIONES EXISTENTES";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(194, 13);
+            this.layoutControlItem1.Text = "PRESENTACIONES EXISTENTES PRECIONE DOBLE CLICK PARA EDITARLO";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(355, 13);
             // 
             // emptySpaceItem1
             // 
@@ -236,8 +237,8 @@
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 142);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(475, 24);
-            this.layoutControlItem2.Text = "Nuevo Nombra Para La PRESENTACION:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(194, 13);
+            this.layoutControlItem2.Text = "NUEVO NOMBRE PARA LA PRESENTACION:";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(355, 13);
             // 
             // frmupdatepresentacion
             // 
@@ -247,6 +248,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmupdatepresentacion";
             this.Text = "frmupdatepresentacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmupdatepresentacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

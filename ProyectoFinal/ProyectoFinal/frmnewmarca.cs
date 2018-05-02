@@ -19,6 +19,7 @@ namespace ProyectoFinal
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+           
             this.Close();
 
         }
@@ -60,6 +61,7 @@ namespace ProyectoFinal
                 {
                     da.executeCommand(sCommand);
                     MessageBox.Show("Se Ingreso La Marca " + nombre + " Con Exito");
+                    u = 1;
                     this.Close();
                 }
                 catch (Exception ex)
@@ -68,10 +70,11 @@ namespace ProyectoFinal
                 }
             }
         }
+        public int u = 0;
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("¿Esta seguro que desea Ingresar esta Marca?", "Cancelar", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes) { agregar(); } else if (dialog == DialogResult.No) { }
+            if (dialog == DialogResult.Yes) { agregar(); } else if (dialog == DialogResult.No) {  }
 
         }
         void cargar()

@@ -60,12 +60,7 @@
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -101,17 +96,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAsignProducts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAsignProducts.Designer.cs">
-      <DependentUpon>frmAsignProducts.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDelAsignacionprecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDelAsignacionprecio.Designer.cs">
+      <DependentUpon>frmDelAsignacionprecio.cs</DependentUpon>
     </Compile>
     <Compile Include="frmdelcategoria.cs">
       <SubType>Form</SubType>
@@ -191,6 +186,12 @@
     <Compile Include="frmProviders.Designer.cs">
       <DependentUpon>frmProviders.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateAsignacion.Designer.cs">
+      <DependentUpon>frmUpdateAsignacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmupdatecategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +240,12 @@
     <Compile Include="frmvermarca.Designer.cs">
       <DependentUpon>frmvermarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerPrecioAsignado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerPrecioAsignado.Designer.cs">
+      <DependentUpon>frmVerPrecioAsignado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmverpresentacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +263,12 @@
     </Compile>
     <Compile Include="frmversucursal.Designer.cs">
       <DependentUpon>frmversucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_abonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_abonos.Designer.cs">
+      <DependentUpon>f_abonos.cs</DependentUpon>
     </Compile>
     <Compile Include="f_deleteUser.cs">
       <SubType>Form</SubType>
@@ -337,11 +350,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAsignProducts.resx">
-      <DependentUpon>frmAsignProducts.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDelAsignacionprecio.resx">
+      <DependentUpon>frmDelAsignacionprecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmdelcategoria.resx">
       <DependentUpon>frmdelcategoria.cs</DependentUpon>
@@ -382,6 +395,9 @@
     <EmbeddedResource Include="frmProviders.resx">
       <DependentUpon>frmProviders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateAsignacion.resx">
+      <DependentUpon>frmUpdateAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmupdatecategoria.resx">
       <DependentUpon>frmupdatecategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +422,9 @@
     <EmbeddedResource Include="frmvermarca.resx">
       <DependentUpon>frmvermarca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVerPrecioAsignado.resx">
+      <DependentUpon>frmVerPrecioAsignado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmverpresentacion.resx">
       <DependentUpon>frmverpresentacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,6 +433,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmversucursal.resx">
       <DependentUpon>frmversucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_abonos.resx">
+      <DependentUpon>f_abonos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_deleteUser.resx">
       <DependentUpon>f_deleteUser.cs</DependentUpon>

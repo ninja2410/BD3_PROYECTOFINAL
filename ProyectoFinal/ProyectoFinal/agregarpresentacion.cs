@@ -35,6 +35,7 @@ namespace ProyectoFinal
             gridView1.Columns.Clear();
             gridControl1.DataSource = dt;
         }
+        public int u = 0;
         private void agregarpresentacion_Load(object sender, EventArgs e)
         {
             cargar();
@@ -71,6 +72,7 @@ namespace ProyectoFinal
                 {
                     da.executeCommand(sCommand);
                     MessageBox.Show("Se Ingreso La Presentacion " + nombre + " Con Exito");
+                    u = 1;
                     this.Close();
                 }
                 catch (Exception ex)

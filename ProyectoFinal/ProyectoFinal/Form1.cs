@@ -76,6 +76,7 @@ namespace ProyectoFinal
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_EditUser u = new f_EditUser();
+            u.MdiParent = this;
             u.Show();
         }
         
@@ -200,13 +201,15 @@ namespace ProyectoFinal
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_Usuarios newuser = new f_Usuarios();
-            newuser.ShowDialog();
+            newuser.MdiParent = this;
+            newuser.Show();
         }
 
         private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_ListUsers luser = new f_ListUsers();
-            luser.ShowDialog();
+            luser.MdiParent = this;
+            luser.Show();
         }
 
         private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -256,31 +259,47 @@ namespace ProyectoFinal
             a.Show();
         }
 
-        private void btnSale_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            f_ventas v = new f_ventas();
-            v.MdiParent = this;
-            v.venta = true;
-            v.Show();
+            f_abonos aC = new f_abonos();
+            aC.typeAbono = false;
+            aC.MdiParent = this;
+            aC.Show();
         }
 
-        private void btnReporteVentas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnAddAbono_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmVentascs miFrmVenta = new frmVentascs();            
-            miFrmVenta.Show();
+            f_abonos aV = new f_abonos();
+            aV.MdiParent = this;
+            aV.Show();
         }
 
-        private void btnAsignProducts_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnverasignacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmAsignProducts asignacion = new frmAsignProducts();
-            asignacion.Show();
+            frmVerPrecioAsignado a = new frmVerPrecioAsignado();
+            a.MdiParent = this;
+            a.Show();
         }
 
-        private void btnReport10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnasignarprecio_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmPrintReport miReporte = new frmPrintReport();
-            miReporte.PrintReportTop10();
-            miReporte.Show();
+            frmAsignarPrecio a = new frmAsignarPrecio();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnmodificarasignacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmUpdateAsignacion a = new frmUpdateAsignacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btneliminarasignacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDelAsignacionprecio a = new frmDelAsignacionprecio();
+            a.MdiParent = this;
+            a.Show();
         }
     }
 }
