@@ -34,5 +34,10 @@ namespace ProyectoFinal
             report.CreateDocument();
 
         }
+
+        private void frmPrintReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

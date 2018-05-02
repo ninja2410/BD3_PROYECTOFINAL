@@ -1536,6 +1536,7 @@
             this.Controls.Add(this.ribbonControl1);
             this.Name = "frmPrintReport";
             this.Text = "Reporte de Ventas.";
+            this.Load += new System.EventHandler(this.frmPrintReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();

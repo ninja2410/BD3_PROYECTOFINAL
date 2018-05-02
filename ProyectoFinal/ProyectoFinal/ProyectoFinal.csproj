@@ -60,7 +60,9 @@
     <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -95,6 +97,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarPrecio.Designer.cs">
+      <DependentUpon>frmAsignarPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignProducts.Designer.cs">
+      <DependentUpon>frmAsignProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
@@ -344,11 +358,23 @@
     <Compile Include="XtraReportVentas.Designer.cs">
       <DependentUpon>XtraReportVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraTop10Less.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraTop10Less.Designer.cs">
+      <DependentUpon>XtraTop10Less.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="agregarpresentacion.resx">
       <DependentUpon>agregarpresentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarPrecio.resx">
+      <DependentUpon>frmAsignarPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignProducts.resx">
+      <DependentUpon>frmAsignProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>

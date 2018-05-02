@@ -278,5 +278,26 @@ namespace ProyectoFinal
         {
 
         }
+
+        private void btnAsignProducts_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAsignProducts miAsignacion = new frmAsignProducts();
+            miAsignacion.Show();
+        }
+
+        private void btnReportSales_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVentascs miReporte = new frmVentascs();
+            miReporte.Show(); 
+            
+        }
+
+        private void btnTop10Sales_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            frmPrintReport miReporte = new frmPrintReport();
+            miReporte.PrintReportTop10();
+            miReporte.Show();
+        }
     }
 }
