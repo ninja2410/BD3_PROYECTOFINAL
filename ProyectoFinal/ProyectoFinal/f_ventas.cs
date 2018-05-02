@@ -438,7 +438,7 @@ namespace ProyectoFinal
 
         private void txtNit_EditValueChanged(object sender, EventArgs e)
         {
-
+            cargarinformacion();
         }
     }
 }
