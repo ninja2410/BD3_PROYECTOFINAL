@@ -73,7 +73,7 @@
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnNotas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageclientes = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnAdministrar = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnUsuarios = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageProductos = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.productospage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -487,17 +487,17 @@
             // ribbonPageclientes
             // 
             this.ribbonPageclientes.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2,
+            this.rbnAdministrar,
             this.rbnUsuarios});
             this.ribbonPageclientes.Name = "ribbonPageclientes";
             this.ribbonPageclientes.Text = "Gestion";
             // 
-            // ribbonPageGroup2
+            // rbnAdministrar
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnClientes);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnProveedores);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Administrar";
+            this.rbnAdministrar.ItemLinks.Add(this.btnClientes);
+            this.rbnAdministrar.ItemLinks.Add(this.btnProveedores);
+            this.rbnAdministrar.Name = "rbnAdministrar";
+            this.rbnAdministrar.Text = "Administrar";
             // 
             // rbnUsuarios
             // 
@@ -646,7 +646,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnVentas;
         private DevExpress.XtraBars.BarButtonItem btnVentas;        
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageclientes;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnAdministrar;
         private DevExpress.XtraBars.BarButtonItem btnCompras;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnCompras;
         private DevExpress.XtraBars.BarButtonItem btnNotasEntrada;
