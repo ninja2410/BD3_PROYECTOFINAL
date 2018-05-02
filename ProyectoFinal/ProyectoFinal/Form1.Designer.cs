@@ -74,12 +74,12 @@
             this.rbnNotas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageclientes = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnUsuarios = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageProductos = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.productospage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pagecategorias = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pagemarcas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbnPresentacion = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSucursales = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pagesucursales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -488,7 +488,7 @@
             // 
             this.ribbonPageclientes.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2,
-            this.ribbonPageGroup8});
+            this.rbnUsuarios});
             this.ribbonPageclientes.Name = "ribbonPageclientes";
             this.ribbonPageclientes.Text = "Gestion";
             // 
@@ -499,14 +499,14 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Administrar";
             // 
-            // ribbonPageGroup8
+            // rbnUsuarios
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnNewUser);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnEditUser);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnListUsers);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnDeleteUser);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Usuarios";
+            this.rbnUsuarios.ItemLinks.Add(this.btnNewUser);
+            this.rbnUsuarios.ItemLinks.Add(this.btnEditUser);
+            this.rbnUsuarios.ItemLinks.Add(this.btnListUsers);
+            this.rbnUsuarios.ItemLinks.Add(this.btnDeleteUser);
+            this.rbnUsuarios.Name = "rbnUsuarios";
+            this.rbnUsuarios.Text = "Usuarios";
             // 
             // ribbonPageProductos
             // 
@@ -514,7 +514,7 @@
             this.productospage,
             this.pagecategorias,
             this.pagemarcas,
-            this.ribbonPageGroup3});
+            this.rbnPresentacion});
             this.ribbonPageProductos.Name = "ribbonPageProductos";
             this.ribbonPageProductos.Text = "Productos";
             // 
@@ -545,14 +545,14 @@
             this.pagemarcas.Name = "pagemarcas";
             this.pagemarcas.Text = "Marcas";
             // 
-            // ribbonPageGroup3
+            // rbnPresentacion
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Presentacion";
+            this.rbnPresentacion.ItemLinks.Add(this.barButtonItem1);
+            this.rbnPresentacion.ItemLinks.Add(this.barButtonItem2);
+            this.rbnPresentacion.ItemLinks.Add(this.barButtonItem3);
+            this.rbnPresentacion.ItemLinks.Add(this.barButtonItem4);
+            this.rbnPresentacion.Name = "rbnPresentacion";
+            this.rbnPresentacion.Text = "Presentacion";
             // 
             // ribbonPageSucursales
             // 
@@ -659,7 +659,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem btnDeleteUser;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnUsuarios;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
@@ -691,7 +691,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnPresentacion;
         private DevExpress.XtraBars.BarButtonItem btnAddAbono;
         private DevExpress.XtraBars.BarButtonItem btnRemoveAbono;
     }
