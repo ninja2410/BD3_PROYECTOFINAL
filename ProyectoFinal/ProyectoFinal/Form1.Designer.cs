@@ -147,9 +147,9 @@
             this.ribbonPageTranscts,
             this.ribbonPageclientes,
             this.ribbonPageProductos,
-            this.ribbonPageSucursales,
-            this.ribbonPageCaja,
-            this.ribbonPageReports});
+            this.ribbonPageSucursales
+            //this.ribbonPageCaja,
+            /*this.ribbonPageReports*/});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl1.Size = new System.Drawing.Size(1074, 143);
             // 
