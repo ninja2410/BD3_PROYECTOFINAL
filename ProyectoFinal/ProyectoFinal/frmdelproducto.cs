@@ -19,7 +19,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,descripcion, f_caducidad as 'Fecha De Caducidad', id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,descripcion, id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -29,7 +29,7 @@ namespace ProyectoFinal
         {
             cargar();
         }
-        void eliminar(int cod, string nombre)
+        void eliminar(string cod, string nombre)
         {
             string sCommand;
             sCommand = "delete from tblProducto where id_producto='" + cod + "'";
@@ -48,12 +48,21 @@ namespace ProyectoFinal
         }
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            string nombre = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Nombre Del Producto"));
-            int cod = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Producto"));
+            try
+            {
+                string nombre = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Nombre Del Producto"));
+                string cod = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Producto"));
 
-            DialogResult dialog = MessageBox.Show("¿Esta seguro que desea Eliminar este Producto? " + nombre, "Cancelar", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes) { eliminar(cod, nombre); } else if (dialog == DialogResult.No) { }
+                DialogResult dialog = MessageBox.Show("¿Esta seguro que desea Eliminar este Producto? " + nombre, "Cancelar", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes) { eliminar(cod, nombre); } else if (dialog == DialogResult.No) { }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                
+            }
+            
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

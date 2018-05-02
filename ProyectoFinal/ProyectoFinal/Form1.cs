@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -272,6 +272,11 @@ namespace ProyectoFinal
             f_abonos aV = new f_abonos();
             aV.MdiParent = this;
             aV.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

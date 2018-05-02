@@ -242,25 +242,6 @@
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(753, 70);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(411, 26);
-            this.txtNombre.StyleController = this.layoutControl2;
-            this.txtNombre.TabIndex = 25;
-            // 
-            // txtNit
-            // 
-            this.txtNit.Location = new System.Drawing.Point(303, 70);
-            this.txtNit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(159, 26);
-            this.txtNit.StyleController = this.layoutControl2;
-            this.txtNit.TabIndex = 24;
-            this.txtNit.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
-            // 
             // simpleButton4
             // 
             this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
@@ -688,7 +669,15 @@
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.Size = new System.Drawing.Size(450, 46);
             this.layoutControlItem12.Text = "NIT";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(282, 19);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(183, 13);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(498, 48);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(278, 20);
+            this.txtNombre.StyleController = this.layoutControl2;
+            this.txtNombre.TabIndex = 25;
             // 
             // layoutControlItem20
             // 

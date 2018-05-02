@@ -34,14 +34,13 @@ namespace ProyectoFinal
                 checkEdit1.Checked = false;
             }
             textEdit1.Text = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "descripcion"));
-            dateTimePicker1.Text = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Fecha De Caducidad"));
-            lookUpEdit1.EditValue= Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Marca"));
+             lookUpEdit1.EditValue= Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Marca"));
             lookUpEdit2.EditValue = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Categoria"));
 
         }
         void cargar()
         {
-            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,descripcion, f_caducidad as 'Fecha De Caducidad', id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,descripcion,  id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -60,7 +59,7 @@ namespace ProyectoFinal
         }
         void mod()
         {
-            string cod_producto, nombre_producto, codigo_barras, descripcion, f_caducidad;
+            string cod_producto, nombre_producto, codigo_barras, descripcion, marca,categoria;
             string cod= Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Producto"));
             string activo = "0";
             if (checkEdit1.Checked)
@@ -73,9 +72,10 @@ namespace ProyectoFinal
             nombre_producto = textEdit2.Text;
             codigo_barras = textEdit3.Text;
             descripcion = textEdit1.Text;
-            f_caducidad = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            marca = lookUpEdit1.EditValue.ToString();
+            categoria = lookUpEdit2.EditValue.ToString();
             string sCommand;
-            sCommand = "UPDATE tblProducto SET id_producto='" + cod_producto + "', nombre_producto='" + nombre_producto + "',codigo_barras='" + codigo_barras + "',activo=" + Convert.ToByte(activo) + ", descripcion='" + descripcion + "', f_caducidad='" + f_caducidad +"' WHERE id_producto='" + cod + "'";
+            sCommand = "UPDATE tblProducto SET id_producto='" + cod_producto + "', nombre_producto='" + nombre_producto + "',codigo_barras='" + codigo_barras + "',activo=" + Convert.ToByte(activo) + ", descripcion='" + descripcion + "',id_marca=" + marca + ", id_categoria='" + categoria + "' WHERE id_producto='" + cod + "'";
 
             try
             {
@@ -116,6 +116,12 @@ namespace ProyectoFinal
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkEdit1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+           
         }
     }
 }

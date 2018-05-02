@@ -99,6 +99,7 @@
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 6;
             this.simpleButton2.Text = "Agregar Presentacion";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
@@ -219,6 +220,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmverpresentacion";
             this.Text = "frmverpresentacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmverpresentacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

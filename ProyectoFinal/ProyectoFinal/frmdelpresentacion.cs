@@ -26,7 +26,7 @@ namespace ProyectoFinal
         void eliminar(int cod, string nombre)
         {
             string sCommand;
-            sCommand = "delete from tblpresentacion where id_Presentacion='" + cod + "'";
+            sCommand = "delete from tblPresentacion where id_Presentacion='" + cod + "'";
 
             try
             {
@@ -42,7 +42,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT id_Presentacion as 'Codigo',tipo_presentacion as 'Tipo De Presentacion' FROM tblpresentacion "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_Presentacion as 'Codigo',tipo_presentacion as 'Tipo De Presentacion' FROM tblPresentacion "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
@@ -60,6 +60,11 @@ namespace ProyectoFinal
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmdelpresentacion_Load(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
 }

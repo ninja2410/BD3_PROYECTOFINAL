@@ -57,8 +57,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
@@ -87,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -102,7 +99,6 @@
             this.layoutControl1.Controls.Add(this.checkEdit1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.dateTimePicker1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -132,7 +128,7 @@
             // 
             // lookUpEdit1
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(457, 172);
+            this.lookUpEdit1.Location = new System.Drawing.Point(457, 148);
             this.lookUpEdit1.Name = "lookUpEdit1";
             this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -190,6 +186,7 @@
             this.checkEdit1.Size = new System.Drawing.Size(211, 19);
             this.checkEdit1.StyleController = this.layoutControl1;
             this.checkEdit1.TabIndex = 9;
+            this.checkEdit1.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
             // 
             // simpleButton2
             // 
@@ -255,8 +252,7 @@
             this.layoutControlItem8,
             this.layoutControlItem4,
             this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem14});
+            this.layoutControlItem11});
             this.Root2.Location = new System.Drawing.Point(0, 0);
             this.Root2.Name = "Root2";
             this.Root2.Size = new System.Drawing.Size(656, 282);
@@ -373,9 +369,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lookUpEdit1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(317, 140);
+            this.layoutControlItem4.Location = new System.Drawing.Point(317, 116);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(301, 48);
+            this.layoutControlItem4.Size = new System.Drawing.Size(301, 72);
             this.layoutControlItem4.Text = "Marca";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(105, 13);
             // 
@@ -396,26 +392,6 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem11.Text = "Codigo Producto";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(105, 13);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(457, 148);
-            this.dateTimePicker1.MinDate = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(189, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 4, 4, 0, 0, 0, 0);
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.dateTimePicker1;
-            this.layoutControlItem14.CustomizationFormText = "Fecha De Caducidad";
-            this.layoutControlItem14.Location = new System.Drawing.Point(317, 116);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(301, 24);
-            this.layoutControlItem14.Text = "Fecha De Caducidad";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(105, 13);
             // 
             // frmupdateproducto
             // 
@@ -456,7 +432,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,7 +467,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }
