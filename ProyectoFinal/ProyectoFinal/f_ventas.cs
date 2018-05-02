@@ -105,8 +105,8 @@ namespace ProyectoFinal
                             decimal monto = Convert.ToDecimal(lblTotal.Text);
                             string sQuery;
                             sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento) ";
-                            sQuery += "values ({0},{1},{2},0,'{3}')";
-                            sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
+                            sQuery += "values ({0},{1},'{2}',0,'{3}')";
+                            sQuery = string.Format(sQuery, codigoProveedor codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
                             da.executeCommand(sQuery);
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 0 significa que es COMPRA
@@ -122,7 +122,7 @@ namespace ProyectoFinal
                             decimal monto = Convert.ToDecimal(lblTotal.Text);
                             string sQuery;
                             sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento) ";
-                            sQuery += "values ({0},{1},{2},1,'{3}')";
+                            sQuery += "values ({0},{1},'{2}',1,'{3}')";
                             sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
                             da.executeCommand(sQuery);
                             MessageBox.Show("Se ha generado el credito con exito");
