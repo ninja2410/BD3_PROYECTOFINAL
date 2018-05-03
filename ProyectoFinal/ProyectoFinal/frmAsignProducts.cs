@@ -45,26 +45,7 @@ namespace ProyectoFinal
 
         }
 
-        private void gridLookUpProduct_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string query = "select tblAsignacionPrecio.id_Presentacion AS 'ID', tblPresentacion.tipo_presentacion AS 'Presentacion' from tblAsignacionPrecio ";
-                query += "INNER JOIN tblPresentacion ON tblPresentacion.id_Presentacion = tblAsignacionPrecio.id_presentacion ";
-                query += "WHERE id_producto='{0}';";
-                query = string.Format(query, gridLookUpProduct.EditValue.ToString());
-
-                gridLookUpPresentacion.Properties.DataSource = da.fillDataTable(query);
-                gridLookUpPresentacion.Properties.DisplayMember = "Presentacion";
-                gridLookUpPresentacion.Properties.ValueMember = "ID";
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Debe seleccionar al menos un producto y Sucursal \n Detalles del error:"+ex.Message);
-            }
-
-        }
+     
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -73,47 +54,36 @@ namespace ProyectoFinal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //AGREGANDO EL DATO A LA BASE, 
-            //SE AGREGA AL KARDEX LA CREACION DEL PRODUCTO EN LA SUCURSAL
-            //Y ASI COMPLETAR LOS CAMPOS QUE REQUIEREN
-
-            string query = "SELECT tblAsignacionPrecio.id_asignacionprecio from tblAsignacionPrecio WHERE id_producto = '{0}' AND id_presentacion = {1};";
-            //Parametrizando.
-            query = string.Format(query, gridLookUpProduct.EditValue.ToString(), gridLookUpPresentacion.EditValue.ToString());
-            int idPrecio= da.executeCommand(query);
-            int idSucursal = Convert.ToInt16(gridLookUpSucursales.EditValue);
-
-            try
+            //AGREGANDO EL DATO A LA BASE,             
+            //Validando si ya existe el producto en la sucursal.
+            string query = "SELECT id_Producto from tblAsignacionProducto WHERE id_sucursal={0} AND id_producto='{1}'";
+            query = string.Format(query, gridLookUpSucursales.EditValue.ToString(), gridLookUpProduct.EditValue.ToString());
+            DataTable dt= da.fillDataTable(query);
+            if (dt.Rows.Count <= 0)
             {
-                //insertamos el dato.
-                //PRIMERO EN TABLASIGNACION PRODUCTO
+                try
+                {
+                    //insertamos el dato.
+                    //PRIMERO EN TABLASIGNACION PRODUCTO
 
-                string command = "INSERT INTO tblAsignacionProducto(id_sucursal, id_producto) VALUES ({0},'{1}')";
-                command = string.Format(command, gridLookUpSucursales.EditValue.ToString(), gridLookUpProduct.EditValue.ToString());
-                da.executeCommand(command);
-                //insertamos el dato.
-                //AHORA EN EL KARDEX.
-                command = "INSERT INTO tblKardex(fecha,documento,cantidad_inicial,cantidad_final,id_asignacionprecio,id_sucursal) ";
-                command += "VALUES('{0}','{1}',0,0,(SELECT tblAsignacionPrecio.id_asignacionprecio from tblAsignacionPrecio WHERE id_producto = '{2}' AND id_presentacion = {3}),{4})";
-                command = string.Format(command,
-                    DateTime.Today.ToString("yyyy-MM-dd"),
-                    "INICIO PROD ",
-                    gridLookUpProduct.EditValue.ToString(),
-                    gridLookUpPresentacion.EditValue.ToString(),
-                    gridLookUpSucursales.EditValue.ToString());
-                da.executeCommand(command);
+                    string command = "INSERT INTO tblAsignacionProducto(id_sucursal, id_producto) VALUES ({0},'{1}')";
+                    command = string.Format(command, gridLookUpSucursales.EditValue.ToString(), gridLookUpProduct.EditValue.ToString());
+                    da.executeCommand(command);
 
-                MessageBox.Show("Producto Agregado correctamente. ", "Informacion", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                LoadData();
+                    MessageBox.Show("Producto Agregado correctamente. ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
 
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al asignar el producto. \n Detalles del error: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al asignar el producto. \n Detalles del error: "+ex.Message);
-                
+                MessageBox.Show("El producto que desea agregar ya existe en la Sucursal.","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-
             
 
 
