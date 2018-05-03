@@ -78,6 +78,12 @@
             this.btnAddAbono = new DevExpress.XtraBars.BarButtonItem();
             this.btnRemoveAbono = new DevExpress.XtraBars.BarButtonItem();
             this.btnAsignProducts = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReportSales = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTop10Sales = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAgregarPresentacion = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVerPrecios = new DevExpress.XtraBars.BarButtonItem();
+            this.btnmodificarAsignacionPrecio = new DevExpress.XtraBars.BarButtonItem();
+            this.btneliminarasignacion = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -90,18 +96,17 @@
             this.pagecategorias = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pagemarcas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnPresentacion = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.AsignacionPrecio = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSucursales = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pagesucursales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroupReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnReportSales = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTop10Sales = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,9 +149,14 @@
             this.btnRemoveAbono,
             this.btnAsignProducts,
             this.btnReportSales,
-            this.btnTop10Sales});
+            this.btnTop10Sales,
+            this.btnAgregarPresentacion,
+            this.btnVerPrecios,
+            this.btnmodificarAsignacionPrecio,
+            this.btneliminarasignacion});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 53;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.MaxItemId = 61;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
@@ -155,7 +165,7 @@
             this.ribbonPageSucursales,
             this.ribbonPageReports});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(917, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(2064, 219);
             // 
             // btnVentas
             // 
@@ -482,6 +492,74 @@
             this.btnAsignProducts.SuperTip = superToolTip3;
             this.btnAsignProducts.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAsignProducts_ItemClick);
             // 
+            // btnReportSales
+            // 
+            this.btnReportSales.Caption = "Ventas por Sucursal";
+            this.btnReportSales.Glyph = ((System.Drawing.Image)(resources.GetObject("btnReportSales.Glyph")));
+            this.btnReportSales.Id = 51;
+            this.btnReportSales.Name = "btnReportSales";
+            this.btnReportSales.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem4.Text = "Ventas por Sucursal";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Genera un reporte de ventas realizadas en un rango de fechas.";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btnReportSales.SuperTip = superToolTip4;
+            this.btnReportSales.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportSales_ItemClick);
+            // 
+            // btnTop10Sales
+            // 
+            this.btnTop10Sales.Caption = "Productos mas Vendidos";
+            this.btnTop10Sales.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTop10Sales.Glyph")));
+            this.btnTop10Sales.Id = 52;
+            this.btnTop10Sales.Name = "btnTop10Sales";
+            this.btnTop10Sales.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem5.Text = "Productos mas Vendidos";
+            toolTipItem5.LeftIndent = 6;
+            toolTipItem5.Text = "Genera un reporte de los 10 productos mas vendidos.";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            this.btnTop10Sales.SuperTip = superToolTip5;
+            this.btnTop10Sales.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTop10Sales_ItemClick);
+            // 
+            // btnAgregarPresentacion
+            // 
+            this.btnAgregarPresentacion.Caption = "Asignar Precios";
+            this.btnAgregarPresentacion.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAgregarPresentacion.Glyph")));
+            this.btnAgregarPresentacion.Id = 53;
+            this.btnAgregarPresentacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnAgregarPresentacion.LargeGlyph")));
+            this.btnAgregarPresentacion.Name = "btnAgregarPresentacion";
+            this.btnAgregarPresentacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAgregarPresentacion_ItemClick);
+            // 
+            // btnVerPrecios
+            // 
+            this.btnVerPrecios.Caption = "Ver Asignaciones De Precios";
+            this.btnVerPrecios.Glyph = ((System.Drawing.Image)(resources.GetObject("btnVerPrecios.Glyph")));
+            this.btnVerPrecios.Id = 57;
+            this.btnVerPrecios.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnVerPrecios.LargeGlyph")));
+            this.btnVerPrecios.Name = "btnVerPrecios";
+            this.btnVerPrecios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVerPrecios_ItemClick);
+            // 
+            // btnmodificarAsignacionPrecio
+            // 
+            this.btnmodificarAsignacionPrecio.Caption = "Modificar Asignacion";
+            this.btnmodificarAsignacionPrecio.Glyph = ((System.Drawing.Image)(resources.GetObject("btnmodificarAsignacionPrecio.Glyph")));
+            this.btnmodificarAsignacionPrecio.Id = 59;
+            this.btnmodificarAsignacionPrecio.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnmodificarAsignacionPrecio.LargeGlyph")));
+            this.btnmodificarAsignacionPrecio.Name = "btnmodificarAsignacionPrecio";
+            this.btnmodificarAsignacionPrecio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnmodificarAsignacionPrecio_ItemClick);
+            // 
+            // btneliminarasignacion
+            // 
+            this.btneliminarasignacion.Caption = "Eliminar Asignacion De Precio";
+            this.btneliminarasignacion.Glyph = ((System.Drawing.Image)(resources.GetObject("btneliminarasignacion.Glyph")));
+            this.btneliminarasignacion.Id = 60;
+            this.btneliminarasignacion.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btneliminarasignacion.LargeGlyph")));
+            this.btneliminarasignacion.Name = "btneliminarasignacion";
+            this.btneliminarasignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btneliminarasignacion_ItemClick);
+            // 
             // ribbonPageTranscts
             // 
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -548,7 +626,8 @@
             this.productospage,
             this.pagecategorias,
             this.pagemarcas,
-            this.rbnPresentacion});
+            this.rbnPresentacion,
+            this.AsignacionPrecio});
             this.ribbonPageProductos.Name = "ribbonPageProductos";
             this.ribbonPageProductos.Text = "Productos";
             // 
@@ -588,6 +667,15 @@
             this.rbnPresentacion.Name = "rbnPresentacion";
             this.rbnPresentacion.Text = "Presentacion";
             // 
+            // AsignacionPrecio
+            // 
+            this.AsignacionPrecio.ItemLinks.Add(this.btnAgregarPresentacion);
+            this.AsignacionPrecio.ItemLinks.Add(this.btnVerPrecios);
+            this.AsignacionPrecio.ItemLinks.Add(this.btnmodificarAsignacionPrecio);
+            this.AsignacionPrecio.ItemLinks.Add(this.btneliminarasignacion);
+            this.AsignacionPrecio.Name = "AsignacionPrecio";
+            this.AsignacionPrecio.Text = "Asignacion De Precios";
+            // 
             // ribbonPageSucursales
             // 
             this.ribbonPageSucursales.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -604,6 +692,20 @@
             this.pagesucursales.ItemLinks.Add(this.btnAsignProducts);
             this.pagesucursales.Name = "pagesucursales";
             this.pagesucursales.Text = "Sucursales";
+            // 
+            // ribbonPageReports
+            // 
+            this.ribbonPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupReports});
+            this.ribbonPageReports.Name = "ribbonPageReports";
+            this.ribbonPageReports.Text = "Reportes";
+            // 
+            // ribbonPageGroupReports
+            // 
+            this.ribbonPageGroupReports.ItemLinks.Add(this.btnReportSales);
+            this.ribbonPageGroupReports.ItemLinks.Add(this.btnTop10Sales);
+            this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
+            this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
             // 
             // barButtonItem6
             // 
@@ -656,63 +758,18 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // ribbonPageReports
-            // 
-            this.ribbonPageReports.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupReports});
-            this.ribbonPageReports.Name = "ribbonPageReports";
-            this.ribbonPageReports.Text = "Reportes";
-            // 
-            // ribbonPageGroupReports
-            // 
-            this.ribbonPageGroupReports.ItemLinks.Add(this.btnReportSales);
-            this.ribbonPageGroupReports.ItemLinks.Add(this.btnTop10Sales);
-            this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
-            this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
-            // 
-            // btnReportSales
-            // 
-            this.btnReportSales.Caption = "Ventas por Sucursal";
-            this.btnReportSales.Glyph = ((System.Drawing.Image)(resources.GetObject("btnReportSales.Glyph")));
-            this.btnReportSales.Id = 51;
-            this.btnReportSales.Name = "btnReportSales";
-            this.btnReportSales.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem4.Text = "Ventas por Sucursal";
-            toolTipItem4.LeftIndent = 6;
-            toolTipItem4.Text = "Genera un reporte de ventas realizadas en un rango de fechas.";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnReportSales.SuperTip = superToolTip4;
-            this.btnReportSales.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportSales_ItemClick);
-            // 
-            // btnTop10Sales
-            // 
-            this.btnTop10Sales.Caption = "Productos mas Vendidos";
-            this.btnTop10Sales.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTop10Sales.Glyph")));
-            this.btnTop10Sales.Id = 52;
-            this.btnTop10Sales.Name = "btnTop10Sales";
-            this.btnTop10Sales.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem5.Text = "Productos mas Vendidos";
-            toolTipItem5.LeftIndent = 6;
-            toolTipItem5.Text = "Genera un reporte de los 10 productos mas vendidos.";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            superToolTip5.Items.Add(toolTipItem5);
-            this.btnTop10Sales.SuperTip = superToolTip5;
-            this.btnTop10Sales.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTop10Sales_ItemClick);
-            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 357);
+            this.ClientSize = new System.Drawing.Size(2064, 522);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
-            this.Text = "Surticasa S.A.";
+            this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
@@ -780,6 +837,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageReports;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupReports;
         private DevExpress.XtraBars.BarButtonItem btnTop10Sales;
+        private DevExpress.XtraBars.BarButtonItem btnAgregarPresentacion;
+        private DevExpress.XtraBars.BarButtonItem btnVerPrecios;
+        private DevExpress.XtraBars.BarButtonItem btnmodificarAsignacionPrecio;
+        private DevExpress.XtraBars.BarButtonItem btneliminarasignacion;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup AsignacionPrecio;
     }
 }
 

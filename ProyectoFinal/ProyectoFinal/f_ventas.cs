@@ -92,6 +92,9 @@ namespace ProyectoFinal
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            string dateTime = dtFechaPago.DateTime.Date.ToString();
+            string date_credit = Convert.ToDateTime(dateTime).ToString("yyyy-MM-dd");
+            //MessageBox.Show(date_credit);
             if (verificar() == true)
             {
                 try
@@ -99,14 +102,17 @@ namespace ProyectoFinal
                     if (!venta)
                     {
                         da.tansactCompra(dt, txtDocumento.Text, empleado, false, codigoProveedor, sucursal, totalFactura);
+                        
+
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
-                            decimal monto = Convert.ToDecimal(lblTotal.Text);
+                            decimal monto = Convert.ToDecimal(totalFactura.ToString());
                             string sQuery;
-                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento);";
-                            sQuery += "values ({0},{1},{2},0,'{3}')";
-                            sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
+                            MessageBox.Show(codigoProveedor.ToString());
+                            sQuery = "insert into tblCreditos (deudor,monto,fecha_limite,tipo_cuenta,documento) ";
+                            sQuery += "values ({0},{1},'{2}',0,'{3}')";
+                            sQuery = string.Format(sQuery, codigoProveedor, monto, date_credit, txtDocumento.Text);
                             da.executeCommand(sQuery);
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 0 significa que es COMPRA
@@ -119,11 +125,12 @@ namespace ProyectoFinal
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
-                            decimal monto = Convert.ToDecimal(lblTotal.Text);
+                            decimal monto = Convert.ToDecimal(totalFactura.ToString());
                             string sQuery;
-                            sQuery = "insert into tblCreditos(deudor,monto,fecha_limite,tipo_cuenta,documento);";
-                            sQuery += "values ({0},{1},{2},1,'{3}')";
-                            sQuery = string.Format(sQuery, codigoCliente, monto, dtFechaPago.DateTime.Date, txtDocumento.Text);
+                            MessageBox.Show(codigoCliente.ToString());
+                            sQuery = "insert into tblCreditos (deudor,monto,fecha_limite,tipo_cuenta,documento) ";
+                            sQuery += "values ({0},{1},'{2}',1,'{3}')";
+                            sQuery = string.Format(sQuery, codigoCliente, monto, date_credit, txtDocumento.Text);
                             da.executeCommand(sQuery);
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 1 significa que es VENTA
@@ -410,7 +417,6 @@ namespace ProyectoFinal
                     {
                         txtNombre.Text = "";
                         codigoCliente = Convert.ToInt16(tmp.Rows[0]["id_cliente"]);
-                        MessageBox.Show(codigoCliente.ToString());
                         txtNombre.Text = tmp.Rows[0]["nombre"].ToString() + " " + tmp.Rows[0]["apellido"].ToString();
                     }
                 }
@@ -434,6 +440,11 @@ namespace ProyectoFinal
                 }
                 
             }
+        }
+
+        private void txtNit_EditValueChanged(object sender, EventArgs e)
+        {
+            cargarinformacion();
         }
     }
 }
