@@ -89,13 +89,13 @@ namespace ProyectoFinal
                 //PRIMERO EN TABLASIGNACION PRODUCTO
 
                 string command = "INSERT INTO tblAsignacionProducto(id_sucursal, id_producto) VALUES ({0},'{1}')";
-                command= string.Format(command, gridLookUpSucursales.EditValue.ToString(), gridLookUpProduct.EditValue.ToString());
+                command = string.Format(command, gridLookUpSucursales.EditValue.ToString(), gridLookUpProduct.EditValue.ToString());
                 da.executeCommand(command);
                 //insertamos el dato.
                 //AHORA EN EL KARDEX.
                 command = "INSERT INTO tblKardex(fecha,documento,cantidad_inicial,cantidad_final,id_asignacionprecio,id_sucursal) ";
                 command += "VALUES('{0}','{1}',0,0,(SELECT tblAsignacionPrecio.id_asignacionprecio from tblAsignacionPrecio WHERE id_producto = '{2}' AND id_presentacion = {3}),{4})";
-                command= string.Format(command,                    
+                command = string.Format(command,
                     DateTime.Today.ToString("yyyy-MM-dd"),
                     "INICIO PROD ",
                     gridLookUpProduct.EditValue.ToString(),
@@ -103,6 +103,8 @@ namespace ProyectoFinal
                     gridLookUpSucursales.EditValue.ToString());
                 da.executeCommand(command);
 
+                MessageBox.Show("Producto Agregado correctamente. ", "Informacion", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                LoadData();
 
 
             }
