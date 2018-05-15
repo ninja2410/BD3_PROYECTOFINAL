@@ -99,6 +99,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmagregarroles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmagregarroles.Designer.cs">
+      <DependentUpon>frmagregarroles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsignarPermisos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +404,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmagregarroles.resx">
+      <DependentUpon>frmagregarroles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarPermisos.resx">
+      <DependentUpon>frmAsignarPermisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAsignarPrecio.resx">
       <DependentUpon>frmAsignarPrecio.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDelAsignacionprecio.resx">
       <DependentUpon>frmDelAsignacionprecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDelAsignacionRoles.resx">
+      <DependentUpon>frmDelAsignacionRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmdelcategoria.resx">
       <DependentUpon>frmdelcategoria.cs</DependentUpon>
@@ -424,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdelsucursal.resx">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarAsignacion.resx">
+      <DependentUpon>frmModificarAsignacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmnewcategoria.resx">
       <DependentUpon>frmnewcategoria.cs</DependentUpon>
