@@ -295,9 +295,9 @@ namespace ProyectoFinal
         private void btnTop10Sales_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            frmPrintReport miReporte = new frmPrintReport();
-            miReporte.PrintReportTop10();
-            miReporte.Show();
+            XtraFormTop10Ventas frmTop10 = new XtraFormTop10Ventas();
+            frmTop10.MdiParent = this;
+            frmTop10.Show();
         }
 
         private void btnAgregarPresentacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -326,6 +326,15 @@ namespace ProyectoFinal
             frmDelAsignacionprecio a = new frmDelAsignacionprecio();
             a.MdiParent = this;
             a.Show();
+        }
+
+        private void btnNewCaja_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Deshabilitamos el boton para evitar que genere datos erroneos en inicio de caja.
+            btnNewCaja.Enabled = false;
+            //Tomamos el tiempo del sistema.
+            
+
         }
     }
 }

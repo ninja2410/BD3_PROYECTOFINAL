@@ -71,22 +71,28 @@ namespace ProyectoFinal
                     da.executeCommand(command);
 
                     MessageBox.Show("Producto Agregado correctamente. ", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
+                    //Recargamos la tabla para que muestre los cambios.
+                    
 
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al asignar el producto. \n Detalles del error: " + ex.Message);
+                    MessageBox.Show("Error al asignar el producto. \n Detalles del error: " + ex.Message);                    
+                }
+                finally
+                {
+                    sqlDataSource1.Fill();
                 }
             }
             else
             {
                 MessageBox.Show("El producto que desea agregar ya existe en la Sucursal.","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
-            
 
 
+
+            sqlDataSource1.Fill();
         }
     }
 }

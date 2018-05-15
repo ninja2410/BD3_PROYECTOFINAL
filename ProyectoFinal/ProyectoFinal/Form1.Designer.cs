@@ -44,6 +44,9 @@
             DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCompras = new DevExpress.XtraBars.BarButtonItem();
@@ -84,6 +87,7 @@
             this.btnVerPrecios = new DevExpress.XtraBars.BarButtonItem();
             this.btnmodificarAsignacionPrecio = new DevExpress.XtraBars.BarButtonItem();
             this.btneliminarasignacion = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewCaja = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,6 +105,8 @@
             this.pagesucursales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageCaja = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupCaja = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
@@ -153,19 +159,20 @@
             this.btnAgregarPresentacion,
             this.btnVerPrecios,
             this.btnmodificarAsignacionPrecio,
-            this.btneliminarasignacion});
+            this.btneliminarasignacion,
+            this.btnNewCaja});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbonControl1.MaxItemId = 61;
+            this.ribbonControl1.MaxItemId = 62;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
             this.ribbonPageclientes,
             this.ribbonPageProductos,
             this.ribbonPageSucursales,
-            this.ribbonPageReports});
+            this.ribbonPageReports,
+            this.ribbonPageCaja});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(2064, 219);
+            this.ribbonControl1.Size = new System.Drawing.Size(737, 143);
             // 
             // btnVentas
             // 
@@ -560,6 +567,22 @@
             this.btneliminarasignacion.Name = "btneliminarasignacion";
             this.btneliminarasignacion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btneliminarasignacion_ItemClick);
             // 
+            // btnNewCaja
+            // 
+            this.btnNewCaja.Caption = "Iniciar Caja";
+            this.btnNewCaja.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewCaja.Glyph")));
+            this.btnNewCaja.Id = 61;
+            this.btnNewCaja.Name = "btnNewCaja";
+            this.btnNewCaja.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem6.Text = "Iniciar Caja";
+            toolTipItem6.LeftIndent = 6;
+            toolTipItem6.Text = "Apertura caja para poder realizar ventas, abonos.";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            this.btnNewCaja.SuperTip = superToolTip6;
+            this.btnNewCaja.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCaja_ItemClick);
+            // 
             // ribbonPageTranscts
             // 
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -707,6 +730,19 @@
             this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
             this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
             // 
+            // ribbonPageCaja
+            // 
+            this.ribbonPageCaja.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupCaja});
+            this.ribbonPageCaja.Name = "ribbonPageCaja";
+            this.ribbonPageCaja.Text = "Caja";
+            // 
+            // ribbonPageGroupCaja
+            // 
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewCaja);
+            this.ribbonPageGroupCaja.Name = "ribbonPageGroupCaja";
+            this.ribbonPageGroupCaja.Text = "Opciones Caja";
+            // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Agregar Producto";
@@ -761,12 +797,11 @@
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2064, 522);
+            this.ClientSize = new System.Drawing.Size(737, 525);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Inicio";
@@ -842,6 +877,9 @@
         private DevExpress.XtraBars.BarButtonItem btnmodificarAsignacionPrecio;
         private DevExpress.XtraBars.BarButtonItem btneliminarasignacion;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup AsignacionPrecio;
+        private DevExpress.XtraBars.BarButtonItem btnNewCaja;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageCaja;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCaja;
     }
 }
 
