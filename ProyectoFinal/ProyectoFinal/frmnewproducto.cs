@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ProyectoFinal
 {
@@ -24,7 +25,7 @@ namespace ProyectoFinal
 
         private void pictureEdit1_MouseClick(object sender, MouseEventArgs e)
         {
-
+            
         }
         public int p = 0;
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace ProyectoFinal
         }
         void agregar()
         {
-
+            bool img = false;
             int cod_presentacion=0;
             #region validaciones
 
@@ -57,7 +58,7 @@ namespace ProyectoFinal
                 }
             }
            
-
+            
             if (textEdit2.Text.Trim() == String.Empty)
                 {
                     MessageBox.Show("Debe Llenar Este Campo Para Guardarlo");
@@ -78,7 +79,11 @@ namespace ProyectoFinal
                     textEdit3.Focus();
 
                 }
-                
+                else if((imagen==null)&&(img==false))
+                  {
+                DialogResult dialog = MessageBox.Show("¿Esta seguro que desea continuar guardando este Producto sin imagen?", "Cancelar", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes) { img = true;agregar(); } else if (dialog == DialogResult.No) {  }
+            }
                 else
                 {
                     #endregion
@@ -105,9 +110,9 @@ namespace ProyectoFinal
                 string sCommand;
                 string sCommand1="";
 
-                    sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,descripcion,id_marca,id_categoria) ";
-                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}')";
-                    sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo), descripcion, marca,categoria);
+                    sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,foto,descripcion,id_marca,id_categoria) ";
+                    sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
+                    sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo),ruta, descripcion, marca,categoria);
                 if(presentacion)
                     { 
                         sCommand1 = "insert into tblAsignacionPrecio(id_Presentacion,id_producto,precio_Venta,precio_Compra) ";
@@ -118,7 +123,8 @@ namespace ProyectoFinal
                 {
                         da.executeCommand(sCommand);
                         MessageBox.Show("Se Ingreso El Producto " + nombre + " Con Exito");
-                        if(presentacion)
+                    File.Copy(imagen, ruta);
+                    if (presentacion)
                         {
                         da.executeCommand(sCommand1);
                         MessageBox.Show("Se Asigno El Precio Con Exito");
@@ -169,21 +175,30 @@ namespace ProyectoFinal
             cargar_marcas();
             
         }
-
+        string imagen = null;
+        string ruta=null;
+        
         private void pictureEdit1_DoubleClick(object sender, EventArgs e)
         {
             try
             {
+                openFileDialog1.Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF";
+
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    string imagen = openFileDialog1.FileName;
+                    imagen = openFileDialog1.FileName;
+                    string ext = Path.GetExtension(openFileDialog1.FileName);
                     pictureEdit1.Image = Image.FromFile(imagen);
+                    
+                    ruta = "images/" + textEdit4.Text+ext;
+                    
+                   
                 }
                     
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido "+ex.ToString());
             }
         }
 

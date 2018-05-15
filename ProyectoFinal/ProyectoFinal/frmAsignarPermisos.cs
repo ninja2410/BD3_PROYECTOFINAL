@@ -16,5 +16,10 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void frmAsignarPermisos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -327,5 +327,40 @@ namespace ProyectoFinal
             a.MdiParent = this;
             a.Show();
         }
+
+        private void btnAsignarRoles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmAsignarPermisos a = new frmAsignarPermisos();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void barButtonItem5_ItemClick_3(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmModificarAsignacion a = new frmModificarAsignacion();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnAgregarRoles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmagregarroles a = new frmagregarroles();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnVerRoles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVerAsignacionPermisos a = new frmVerAsignacionPermisos();
+            a.MdiParent = this;
+            a.Show();
+        }
+
+        private void btnDelRoles_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmDelAsignacionRoles a = new frmDelAsignacionRoles();
+            a.MdiParent = this;
+            a.Show();
+        }
     }
 }

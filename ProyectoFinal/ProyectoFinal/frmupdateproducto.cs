@@ -33,6 +33,17 @@ namespace ProyectoFinal
             {
                 checkEdit1.Checked = false;
             }
+            string imagen= Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Portada"));
+            try
+            {
+                pictureEdit1.Image = Image.FromFile(imagen);
+            }
+            catch (Exception)
+            {
+
+                pictureEdit1.Image = null;
+            }
+            
             textEdit1.Text = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "descripcion"));
              lookUpEdit1.EditValue= Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Marca"));
             lookUpEdit2.EditValue = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Codigo Categoria"));
@@ -40,7 +51,7 @@ namespace ProyectoFinal
         }
         void cargar()
         {
-            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,descripcion,  id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
+            string query = "SELECT id_producto as 'Codigo Producto',nombre_producto as 'Nombre Del Producto', codigo_barras as 'Codigo De Barras', activo,foto as 'Portada',descripcion,  id_marca as 'Codigo Marca',(select nombre_marca  from tblMarca where id_marca=tblProducto.id_marca) as 'Nombre Marca' , id_categoria as 'Codigo Categoria',(select nombre_categoria  from tblCategoria where id_categoria=tblProducto.id_categoria) as 'Nombre Categoria'   FROM tblProducto "; //Consulta que se enviara al servidor de la base
             DataTable dt = new DataTable();           // creando una nueva tabla
             dt = da.fillDataTable(query); //Obteniendo los datos para llenar la tabla de clientes registrados
             gridView1.Columns.Clear();
