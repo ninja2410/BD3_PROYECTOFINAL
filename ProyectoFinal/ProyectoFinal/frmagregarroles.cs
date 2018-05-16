@@ -27,7 +27,7 @@ namespace ProyectoFinal
         }
         private void frmagregarroles_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
