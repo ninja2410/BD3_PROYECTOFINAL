@@ -13,6 +13,9 @@ namespace ProyectoFinal
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         DataAccess da = new DataAccess();
+        //VARIABLES GLOBALES
+        //ID CAJA
+        int idCaja=0;
         public Form1()
         {
             InitializeComponent();
@@ -361,6 +364,120 @@ namespace ProyectoFinal
             frmDelAsignacionRoles a = new frmDelAsignacionRoles();
             a.MdiParent = this;
             a.Show();
+        }
+
+        private void btnNewCaja_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int idsucursal = 1; //reemplazar con el id de sucursal segun login para enviar a sucursal correcta
+            try
+            {
+                //Generamos la nueva caja en la base
+                string query = "CALL SP_NEWCAJA({0})";
+                query = string.Format(query, idsucursal);
+                da.executeCommand(query);
+
+                //obtenemos su ID para utilizarlo y enviarlo a los diferentes forms donde hay ingreso o egreso de dinero.
+                query = "SELECT FN_GETLASTCAJA({0})";
+                query = string.Format(query, idsucursal);
+                idCaja = Convert.ToInt16( da.executeScalar(query));
+                //si se ejecuto todo correcamente se activan los botones de ventas y compras abonos de compras y ventas.
+                //Adicional habilitamos el boton de cerrar caja.
+                btnNewVenta.Enabled = true;
+                btnCloseCaja.Enabled = true;
+                btnNewCompra.Enabled = true;
+                btnAbonoC.Enabled = true;
+                btnAbonoV.Enabled = true;
+                btnNewCaja.Enabled = false;
+
+                MessageBox.Show("Caja aperturada correctamente.","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Oops.! ocurrio un error durante la creacion de la caja \n Detalles: "+ex.Message,"Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                
+            }
+            
+            
+        }
+
+        private void ribbonControl1_SelectedPageChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCloseCaja_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //cerramos la caja actual
+            try
+            {
+                string query = "call SP_CLOSECAJA({0})";
+                query = string.Format(query, idCaja);
+                da.executeCommand(query);
+                //Habilitamos nuevamente el boton de nueva caja y deshabilitamos los botones de abonos, compras y ventas
+                //Adicionalmente deshabilitamos este boton para evitar un cierre de una caja que no exista.
+                btnCloseCaja.Enabled = false;
+                btnNewVenta.Enabled = false;
+                btnNewCompra.Enabled = false;                
+                btnAbonoC.Enabled = false;
+                btnAbonoV.Enabled = false;
+                btnNewCaja.Enabled = true;
+                MessageBox.Show("Cierre de caja Correcto!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                //Dejamos todo igual si ocurre alguna baja de internet o no se puede cerrar la caja.
+                MessageBox.Show("Error al intentar cerrar la caja. \n Detalles: " + ex.Message, "Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+
+            
+        }
+
+        private void btnNewVenta_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Enviamos la caja actual al formulario de ventas para que la caja a afectar sea la misma y
+            //evitar que se traslapen los saldos de las cajas en cierta sucursal.
+            f_ventas miFormVenta = new f_ventas(idCaja); 
+            miFormVenta.MdiParent = this;
+            miFormVenta.venta = true;
+            miFormVenta.Show();
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNewCompra_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_ventas miFormCompras = new f_ventas(idCaja);
+            miFormCompras.venta = false;
+            miFormCompras.MdiParent = this;
+            miFormCompras.Show();
+
+        }
+
+        private void btnAbonoC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_abonos miFrmAbonoProv = new f_abonos(idCaja);
+            miFrmAbonoProv.typeAbono = false;
+            miFrmAbonoProv.MdiParent = this;
+            miFrmAbonoProv.Show();
+        }
+
+        private void btnAbonoV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_abonos miFrmAbonoClient = new f_abonos(idCaja);
+            miFrmAbonoClient.typeAbono = true;
+            miFrmAbonoClient.MdiParent = this;
+            miFrmAbonoClient.Show();
+
         }
     }
 }

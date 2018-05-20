@@ -50,6 +50,18 @@
             DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem10 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCompras = new DevExpress.XtraBars.BarButtonItem();
@@ -95,6 +107,10 @@
             this.btnVerRoles = new DevExpress.XtraBars.BarButtonItem();
             this.btnModificarRoles = new DevExpress.XtraBars.BarButtonItem();
             this.btnDelRoles = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewCaja = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewVenta = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCloseCaja = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNewCompra = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -113,16 +129,16 @@
             this.pagesucursales = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageReports = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupReports = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageCaja = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupCaja = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageCaja = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroupCaja = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnNewCaja = new DevExpress.XtraBars.BarButtonItem();
-            this.btnNewVenta = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,9 +192,13 @@
             this.btnModificarRoles,
             this.btnDelRoles,
             this.btnNewCaja,
-            this.btnNewVenta});
+            this.btnNewVenta,
+            this.btnCloseCaja,
+            this.btnNewCompra,
+            this.btnAbonoC,
+            this.btnAbonoV});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 68;
+            this.ribbonControl1.MaxItemId = 72;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
@@ -189,6 +209,8 @@
             this.ribbonPageCaja});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
             this.ribbonControl1.Size = new System.Drawing.Size(765, 143);
+            this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
+            this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnVentas
             // 
@@ -628,6 +650,73 @@
             this.btnDelRoles.Name = "btnDelRoles";
             this.btnDelRoles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDelRoles_ItemClick);
             // 
+            // btnNewCaja
+            // 
+            this.btnNewCaja.Caption = "Abrir Caja";
+            this.btnNewCaja.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewCaja.Glyph")));
+            this.btnNewCaja.Id = 66;
+            this.btnNewCaja.Name = "btnNewCaja";
+            this.btnNewCaja.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem6.Text = "Nueva Caja";
+            toolTipItem6.LeftIndent = 6;
+            toolTipItem6.Text = "Apertura una nueva caja.";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            this.btnNewCaja.SuperTip = superToolTip6;
+            this.btnNewCaja.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCaja_ItemClick);
+            // 
+            // btnNewVenta
+            // 
+            this.btnNewVenta.Caption = "Nueva Venta";
+            this.btnNewVenta.Enabled = false;
+            this.btnNewVenta.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewVenta.Glyph")));
+            this.btnNewVenta.Id = 67;
+            this.btnNewVenta.Name = "btnNewVenta";
+            this.btnNewVenta.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem7.Text = "Nueva Venta";
+            toolTipItem7.LeftIndent = 6;
+            toolTipItem7.Text = "Abre una ventana para registrar ventas.";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.btnNewVenta.SuperTip = superToolTip7;
+            this.btnNewVenta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewVenta_ItemClick);
+            // 
+            // btnCloseCaja
+            // 
+            this.btnCloseCaja.Caption = "Cerrar Caja";
+            this.btnCloseCaja.Enabled = false;
+            this.btnCloseCaja.Glyph = ((System.Drawing.Image)(resources.GetObject("btnCloseCaja.Glyph")));
+            this.btnCloseCaja.Id = 68;
+            this.btnCloseCaja.Name = "btnCloseCaja";
+            this.btnCloseCaja.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem8.Text = "Cerrar Caja";
+            toolTipItem8.LeftIndent = 6;
+            toolTipItem8.Text = "Cierra la caja con la cantidad actual en la misma.";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            superToolTip8.Items.Add(toolTipItem8);
+            this.btnCloseCaja.SuperTip = superToolTip8;
+            this.btnCloseCaja.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCloseCaja_ItemClick);
+            // 
+            // btnNewCompra
+            // 
+            this.btnNewCompra.Caption = "Nueva Compra";
+            this.btnNewCompra.Enabled = false;
+            this.btnNewCompra.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewCompra.Glyph")));
+            this.btnNewCompra.Id = 69;
+            this.btnNewCompra.Name = "btnNewCompra";
+            this.btnNewCompra.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem9.Text = "Nueva Compra";
+            toolTipItem9.LeftIndent = 6;
+            toolTipItem9.Text = "Abre una nueva ventana donde se realiza una compra.";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            superToolTip9.Items.Add(toolTipItem9);
+            this.btnNewCompra.SuperTip = superToolTip9;
+            this.btnNewCompra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCompra_ItemClick);
+            // 
             // ribbonPageTranscts
             // 
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -786,6 +875,24 @@
             this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
             this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
             // 
+            // ribbonPageCaja
+            // 
+            this.ribbonPageCaja.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupCaja});
+            this.ribbonPageCaja.Name = "ribbonPageCaja";
+            this.ribbonPageCaja.Text = "Caja";
+            // 
+            // ribbonPageGroupCaja
+            // 
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewCaja);
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnCloseCaja);
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewVenta);
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewCompra);
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnAbonoC);
+            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnAbonoV);
+            this.ribbonPageGroupCaja.Name = "ribbonPageGroupCaja";
+            this.ribbonPageGroupCaja.Text = "Caja";
+            // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Agregar Producto";
@@ -837,49 +944,39 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // ribbonPageCaja
+            // btnAbonoC
             // 
-            this.ribbonPageCaja.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupCaja});
-            this.ribbonPageCaja.Name = "ribbonPageCaja";
-            this.ribbonPageCaja.Text = "Caja";
-            // 
-            // ribbonPageGroupCaja
-            // 
-            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewCaja);
-            this.ribbonPageGroupCaja.ItemLinks.Add(this.btnNewVenta);
-            this.ribbonPageGroupCaja.Name = "ribbonPageGroupCaja";
-            this.ribbonPageGroupCaja.Text = "Caja";
-            // 
-            // btnNewCaja
-            // 
-            this.btnNewCaja.Caption = "Abrir Caja";
-            this.btnNewCaja.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewCaja.Glyph")));
-            this.btnNewCaja.Id = 66;
-            this.btnNewCaja.Name = "btnNewCaja";
-            this.btnNewCaja.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnAbonoC.Caption = "Abonar a Proveedor";
+            this.btnAbonoC.Enabled = false;
+            this.btnAbonoC.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoC.Glyph")));
+            this.btnAbonoC.Id = 70;
+            this.btnAbonoC.Name = "btnAbonoC";
+            this.btnAbonoC.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem6.Text = "Nueva Caja";
-            toolTipItem6.LeftIndent = 6;
-            toolTipItem6.Text = "Apertura una nueva caja.";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            superToolTip6.Items.Add(toolTipItem6);
-            this.btnNewCaja.SuperTip = superToolTip6;
+            toolTipTitleItem10.Text = "Abonar a Proveedor";
+            toolTipItem10.LeftIndent = 6;
+            toolTipItem10.Text = "Se registra un abono a una compra realizada al credito por medio de un codigo.";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            superToolTip10.Items.Add(toolTipItem10);
+            this.btnAbonoC.SuperTip = superToolTip10;
+            this.btnAbonoC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoC_ItemClick);
             // 
-            // btnNewVenta
+            // btnAbonoV
             // 
-            this.btnNewVenta.Caption = "Nueva Venta";
-            this.btnNewVenta.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNewVenta.Glyph")));
-            this.btnNewVenta.Id = 67;
-            this.btnNewVenta.Name = "btnNewVenta";
-            this.btnNewVenta.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnAbonoV.Caption = "Abono de Cliente";
+            this.btnAbonoV.Enabled = false;
+            this.btnAbonoV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoV.Glyph")));
+            this.btnAbonoV.Id = 71;
+            this.btnAbonoV.Name = "btnAbonoV";
+            this.btnAbonoV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem7.Text = "Nueva Venta";
-            toolTipItem7.LeftIndent = 6;
-            toolTipItem7.Text = "Abre una ventana para registrar ventas.";
-            superToolTip7.Items.Add(toolTipTitleItem7);
-            superToolTip7.Items.Add(toolTipItem7);
-            this.btnNewVenta.SuperTip = superToolTip7;
+            toolTipTitleItem11.Text = "Abono de Cliente";
+            toolTipItem11.LeftIndent = 6;
+            toolTipItem11.Text = "Registra un abono de un cliente al que se le hizo una venta al credito.";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            superToolTip11.Items.Add(toolTipItem11);
+            this.btnAbonoV.SuperTip = superToolTip11;
+            this.btnAbonoV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoV_ItemClick);
             // 
             // Form1
             // 
@@ -893,6 +990,7 @@
             this.Ribbon = this.ribbonControl1;
             this.Text = "Inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -974,6 +1072,10 @@
         private DevExpress.XtraBars.BarButtonItem btnNewVenta;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageCaja;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupCaja;
+        private DevExpress.XtraBars.BarButtonItem btnCloseCaja;
+        private DevExpress.XtraBars.BarButtonItem btnNewCompra;
+        private DevExpress.XtraBars.BarButtonItem btnAbonoC;
+        private DevExpress.XtraBars.BarButtonItem btnAbonoV;
     }
 }
 

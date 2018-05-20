@@ -23,8 +23,15 @@ namespace ProyectoFinal
         public int empleado = 1;
         int codigoProveedor;
         int codigoCliente;
+        int idCaja;
         public f_ventas()
         {
+            InitializeComponent();
+            timer1.Enabled = true;
+        }
+        public f_ventas(int caja)
+        {
+         idCaja= caja;
             InitializeComponent();
             timer1.Enabled = true;
         }
@@ -102,7 +109,10 @@ namespace ProyectoFinal
                     if (!venta)
                     {
                         da.tansactCompra(dt, txtDocumento.Text, empleado, false, codigoProveedor, sucursal, totalFactura);
-                        
+                        //enviamos el dato a la tabla de caja para sumar la cantidad.
+                        string query = "CALL SP_UPDATECAJA({0},-{1})"; //Actualizamos la cantidad de caja
+                        query = string.Format(query,idCaja,totalFactura);
+                        da.executeCommand(query);
 
                         if (chkCredito.Checked == true)
                         {
@@ -122,6 +132,10 @@ namespace ProyectoFinal
                     {
                         da.transact(dt, txtDocumento.Text, empleado, true, codigoCliente,
                             sucursal, totalFactura);
+                        string query = "CALL SP_UPDATECAJA({0},{1})"; //Actualizamos la cantidad de caja
+                        query = string.Format(query, idCaja, totalFactura);
+                        da.executeCommand(query);
+
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
@@ -152,7 +166,7 @@ namespace ProyectoFinal
                 catch (Exception ex)
                 {
 
-                    throw new Exception("ERROR EN LA EJECUCION "+ex.Message);
+                    MessageBox.Show("ERROR EN LA EJECUCION "+ex.Message);
                 }
 
             }

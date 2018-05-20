@@ -100,6 +100,27 @@ namespace ProyectoFinal
             }
         }
 
+        public object executeScalar(string sCommand)
+        {
+            MySqlCommand cm = new MySqlCommand(sCommand, cnConnection);
+            object value;
+            try
+            {
+                cm.Connection.Open();
+                return value=cm.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error for execute command:" + ex.Message);
+
+            }
+            finally
+            {
+                cm.Connection.Close(); // Cerramos la conexion
+            }
+
+        }
+
         public void transact(DataTable detalles, string documento, int codEmpleado, bool codTipoVenta, int codCliente, int idSucursal, decimal total)
         {
             cnConnection.Open();
