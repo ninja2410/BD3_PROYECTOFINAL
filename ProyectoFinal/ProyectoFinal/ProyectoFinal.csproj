@@ -351,6 +351,12 @@
     <Compile Include="f_Plantilla.Designer.cs">
       <DependentUpon>f_Plantilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="f_traslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_traslados.Designer.cs">
+      <DependentUpon>f_traslados.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -526,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f_Plantilla.resx">
       <DependentUpon>f_Plantilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_traslados.resx">
+      <DependentUpon>f_traslados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_Usuarios.resx">
       <DependentUpon>f_Usuarios.cs</DependentUpon>

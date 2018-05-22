@@ -111,6 +111,8 @@
             this.btnNewVenta = new DevExpress.XtraBars.BarButtonItem();
             this.btnCloseCaja = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewCompra = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -137,8 +139,8 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
+            this.rbnTraslados = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTrasladosBod = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,9 +198,11 @@
             this.btnCloseCaja,
             this.btnNewCompra,
             this.btnAbonoC,
-            this.btnAbonoV});
+            this.btnAbonoV,
+            this.btnTrasladosBod});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 72;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ribbonControl1.MaxItemId = 73;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
@@ -208,7 +212,7 @@
             this.ribbonPageReports,
             this.ribbonPageCaja});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(765, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1148, 219);
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -717,6 +721,40 @@
             this.btnNewCompra.SuperTip = superToolTip9;
             this.btnNewCompra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCompra_ItemClick);
             // 
+            // btnAbonoC
+            // 
+            this.btnAbonoC.Caption = "Abonar a Proveedor";
+            this.btnAbonoC.Enabled = false;
+            this.btnAbonoC.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoC.Glyph")));
+            this.btnAbonoC.Id = 70;
+            this.btnAbonoC.Name = "btnAbonoC";
+            this.btnAbonoC.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem10.Text = "Abonar a Proveedor";
+            toolTipItem10.LeftIndent = 6;
+            toolTipItem10.Text = "Se registra un abono a una compra realizada al credito por medio de un codigo.";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            superToolTip10.Items.Add(toolTipItem10);
+            this.btnAbonoC.SuperTip = superToolTip10;
+            this.btnAbonoC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoC_ItemClick);
+            // 
+            // btnAbonoV
+            // 
+            this.btnAbonoV.Caption = "Abono de Cliente";
+            this.btnAbonoV.Enabled = false;
+            this.btnAbonoV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoV.Glyph")));
+            this.btnAbonoV.Id = 71;
+            this.btnAbonoV.Name = "btnAbonoV";
+            this.btnAbonoV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem11.Text = "Abono de Cliente";
+            toolTipItem11.LeftIndent = 6;
+            toolTipItem11.Text = "Registra un abono de un cliente al que se le hizo una venta al credito.";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            superToolTip11.Items.Add(toolTipItem11);
+            this.btnAbonoV.SuperTip = superToolTip11;
+            this.btnAbonoV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoV_ItemClick);
+            // 
             // ribbonPageTranscts
             // 
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -724,7 +762,8 @@
             this.ribbonPageTranscts.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.rbnVentas,
             this.rbnCompras,
-            this.rbnNotas});
+            this.rbnNotas,
+            this.rbnTraslados});
             this.ribbonPageTranscts.Name = "ribbonPageTranscts";
             this.ribbonPageTranscts.Text = "Transacciones";
             // 
@@ -944,48 +983,30 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // btnAbonoC
+            // rbnTraslados
             // 
-            this.btnAbonoC.Caption = "Abonar a Proveedor";
-            this.btnAbonoC.Enabled = false;
-            this.btnAbonoC.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoC.Glyph")));
-            this.btnAbonoC.Id = 70;
-            this.btnAbonoC.Name = "btnAbonoC";
-            this.btnAbonoC.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem10.Text = "Abonar a Proveedor";
-            toolTipItem10.LeftIndent = 6;
-            toolTipItem10.Text = "Se registra un abono a una compra realizada al credito por medio de un codigo.";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            superToolTip10.Items.Add(toolTipItem10);
-            this.btnAbonoC.SuperTip = superToolTip10;
-            this.btnAbonoC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoC_ItemClick);
+            this.rbnTraslados.ItemLinks.Add(this.btnTrasladosBod);
+            this.rbnTraslados.Name = "rbnTraslados";
+            this.rbnTraslados.Text = "Traslado de Productos";
             // 
-            // btnAbonoV
+            // btnTrasladosBod
             // 
-            this.btnAbonoV.Caption = "Abono de Cliente";
-            this.btnAbonoV.Enabled = false;
-            this.btnAbonoV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoV.Glyph")));
-            this.btnAbonoV.Id = 71;
-            this.btnAbonoV.Name = "btnAbonoV";
-            this.btnAbonoV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem11.Text = "Abono de Cliente";
-            toolTipItem11.LeftIndent = 6;
-            toolTipItem11.Text = "Registra un abono de un cliente al que se le hizo una venta al credito.";
-            superToolTip11.Items.Add(toolTipTitleItem11);
-            superToolTip11.Items.Add(toolTipItem11);
-            this.btnAbonoV.SuperTip = superToolTip11;
-            this.btnAbonoV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoV_ItemClick);
+            this.btnTrasladosBod.Caption = "Traslados";
+            this.btnTrasladosBod.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTrasladosBod.Glyph")));
+            this.btnTrasladosBod.Id = 72;
+            this.btnTrasladosBod.Name = "btnTrasladosBod";
+            this.btnTrasladosBod.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTrasladosBod.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrasladosBod_ItemClick);
             // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 510);
+            this.ClientSize = new System.Drawing.Size(1148, 745);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Inicio";
@@ -1076,6 +1097,8 @@
         private DevExpress.XtraBars.BarButtonItem btnNewCompra;
         private DevExpress.XtraBars.BarButtonItem btnAbonoC;
         private DevExpress.XtraBars.BarButtonItem btnAbonoV;
+        private DevExpress.XtraBars.BarButtonItem btnTrasladosBod;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnTraslados;
     }
 }
 
