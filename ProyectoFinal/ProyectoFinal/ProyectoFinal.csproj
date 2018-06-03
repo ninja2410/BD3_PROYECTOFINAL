@@ -40,9 +40,7 @@
     <Reference Include="DevExpress.Data.v15.2" />
     <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v15.2.UI, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.ExpressApp.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Persistent.Base.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core" />
     <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -172,12 +170,6 @@
     </Compile>
     <Compile Include="frmdelsucursal.Designer.cs">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLessVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLessVentas.Designer.cs">
-      <DependentUpon>frmLessVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarAsignacion.cs">
       <SubType>Form</SubType>
@@ -317,12 +309,6 @@
     <Compile Include="frmversucursal.Designer.cs">
       <DependentUpon>frmversucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVntporEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVntporEmpleado.Designer.cs">
-      <DependentUpon>frmVntporEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="f_abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,36 +383,6 @@
     <Compile Include="ProductosVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reporteKardex.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reporteKardex.Designer.cs">
-      <DependentUpon>reporteKardex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="reporteMenosVendidos.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reporteMenosVendidos.Designer.cs">
-      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="reporteProductos.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reporteProductos.Designer.cs">
-      <DependentUpon>reporteProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="reporteVentasporCliente.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reporteVentasporCliente.Designer.cs">
-      <DependentUpon>reporteVentasporCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="reporteVentasporEmpleado.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="reporteVentasporEmpleado.Designer.cs">
-      <DependentUpon>reporteVentasporEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="top10Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -447,6 +403,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>XtraReportVentas.resx</DependentUpon>
+    </Compile>
+    <Compile Include="XtraTop10Less.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraTop10Less.Designer.cs">
+      <DependentUpon>XtraTop10Less.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="agregarpresentacion.resx">
       <DependentUpon>agregarpresentacion.cs</DependentUpon>
@@ -489,9 +451,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdelsucursal.resx">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLessVentas.resx">
-      <DependentUpon>frmLessVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarAsignacion.resx">
       <DependentUpon>frmModificarAsignacion.cs</DependentUpon>
@@ -562,9 +521,6 @@
     <EmbeddedResource Include="frmversucursal.resx">
       <DependentUpon>frmversucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVntporEmpleado.resx">
-      <DependentUpon>frmVntporEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="f_abonos.resx">
       <DependentUpon>f_abonos.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,18 +568,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reporteKardex.resx">
-      <DependentUpon>reporteKardex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reporteMenosVendidos.resx">
-      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reporteVentasporCliente.resx">
-      <DependentUpon>reporteVentasporCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="reporteVentasporEmpleado.resx">
-      <DependentUpon>reporteVentasporEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="top10Report.resx">
       <DependentUpon>top10Report.cs</DependentUpon>
     </EmbeddedResource>

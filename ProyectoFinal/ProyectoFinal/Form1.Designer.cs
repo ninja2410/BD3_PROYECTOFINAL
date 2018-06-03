@@ -143,6 +143,8 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             this.SuspendLayout();
@@ -934,9 +936,6 @@
             // 
             this.ribbonPageGroupReports.ItemLinks.Add(this.btnReportSales);
             this.ribbonPageGroupReports.ItemLinks.Add(this.btnTop10Sales);
-            this.ribbonPageGroupReports.ItemLinks.Add(this.btnLess10);
-            this.ribbonPageGroupReports.ItemLinks.Add(this.btnKardexProd);
-            this.ribbonPageGroupReports.ItemLinks.Add(this.btnVentasEmpleado);
             this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
             this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
             // 
