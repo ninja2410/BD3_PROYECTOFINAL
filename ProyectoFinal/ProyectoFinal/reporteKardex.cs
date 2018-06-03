@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace ProyectoFinal
 {
-    public partial class XtraTop10Less : DevExpress.XtraReports.UI.XtraReport
+    public partial class reporteKardex : DevExpress.XtraReports.UI.XtraReport
     {
-        public XtraTop10Less()
+        public reporteKardex()
         {
             InitializeComponent();
         }

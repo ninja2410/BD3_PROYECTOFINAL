@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinal
 {
-    partial class XtraTop10Less
+    partial class reporteProductos
     {
         /// <summary>
         /// Required designer variable.

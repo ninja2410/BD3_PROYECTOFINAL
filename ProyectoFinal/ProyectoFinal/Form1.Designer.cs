@@ -62,6 +62,15 @@
             DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem11 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem12 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem13 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem14 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnVentas = new DevExpress.XtraBars.BarButtonItem();
             this.btnCompras = new DevExpress.XtraBars.BarButtonItem();
@@ -111,6 +120,11 @@
             this.btnNewVenta = new DevExpress.XtraBars.BarButtonItem();
             this.btnCloseCaja = new DevExpress.XtraBars.BarButtonItem();
             this.btnNewCompra = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLess10 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKardexProd = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVentasEmpleado = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageTranscts = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnVentas = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnCompras = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -137,8 +151,6 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAbonoC = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAbonoV = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,9 +208,12 @@
             this.btnCloseCaja,
             this.btnNewCompra,
             this.btnAbonoC,
-            this.btnAbonoV});
+            this.btnAbonoV,
+            this.btnLess10,
+            this.btnKardexProd,
+            this.btnVentasEmpleado});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 72;
+            this.ribbonControl1.MaxItemId = 75;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageTranscts,
@@ -208,7 +223,7 @@
             this.ribbonPageReports,
             this.ribbonPageCaja});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(765, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(783, 143);
             this.ribbonControl1.SelectedPageChanged += new System.EventHandler(this.ribbonControl1_SelectedPageChanged);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -717,6 +732,87 @@
             this.btnNewCompra.SuperTip = superToolTip9;
             this.btnNewCompra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNewCompra_ItemClick);
             // 
+            // btnAbonoC
+            // 
+            this.btnAbonoC.Caption = "Abonar a Proveedor";
+            this.btnAbonoC.Enabled = false;
+            this.btnAbonoC.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoC.Glyph")));
+            this.btnAbonoC.Id = 70;
+            this.btnAbonoC.Name = "btnAbonoC";
+            this.btnAbonoC.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem10.Text = "Abonar a Proveedor";
+            toolTipItem10.LeftIndent = 6;
+            toolTipItem10.Text = "Se registra un abono a una compra realizada al credito por medio de un codigo.";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            superToolTip10.Items.Add(toolTipItem10);
+            this.btnAbonoC.SuperTip = superToolTip10;
+            this.btnAbonoC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoC_ItemClick);
+            // 
+            // btnAbonoV
+            // 
+            this.btnAbonoV.Caption = "Abono de Cliente";
+            this.btnAbonoV.Enabled = false;
+            this.btnAbonoV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoV.Glyph")));
+            this.btnAbonoV.Id = 71;
+            this.btnAbonoV.Name = "btnAbonoV";
+            this.btnAbonoV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem11.Text = "Abono de Cliente";
+            toolTipItem11.LeftIndent = 6;
+            toolTipItem11.Text = "Registra un abono de un cliente al que se le hizo una venta al credito.";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            superToolTip11.Items.Add(toolTipItem11);
+            this.btnAbonoV.SuperTip = superToolTip11;
+            this.btnAbonoV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoV_ItemClick);
+            // 
+            // btnLess10
+            // 
+            this.btnLess10.Caption = "Productos menos Vendidos";
+            this.btnLess10.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLess10.Glyph")));
+            this.btnLess10.Id = 72;
+            this.btnLess10.Name = "btnLess10";
+            this.btnLess10.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem12.Text = "Productos menos Vendidos";
+            toolTipItem12.LeftIndent = 6;
+            toolTipItem12.Text = "Muestra una lista de los 1o productos menos vendidos.";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            superToolTip12.Items.Add(toolTipItem12);
+            this.btnLess10.SuperTip = superToolTip12;
+            this.btnLess10.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLess10_ItemClick);
+            // 
+            // btnKardexProd
+            // 
+            this.btnKardexProd.Caption = "Kardex por producto";
+            this.btnKardexProd.Glyph = ((System.Drawing.Image)(resources.GetObject("btnKardexProd.Glyph")));
+            this.btnKardexProd.Id = 73;
+            this.btnKardexProd.Name = "btnKardexProd";
+            this.btnKardexProd.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem13.Text = "Kardex por productos";
+            toolTipItem13.LeftIndent = 6;
+            toolTipItem13.Text = "Gneera un reporte de Kardex por producto especificado.";
+            superToolTip13.Items.Add(toolTipTitleItem13);
+            superToolTip13.Items.Add(toolTipItem13);
+            this.btnKardexProd.SuperTip = superToolTip13;
+            // 
+            // btnVentasEmpleado
+            // 
+            this.btnVentasEmpleado.Caption = "Ventas por Empleado";
+            this.btnVentasEmpleado.Glyph = ((System.Drawing.Image)(resources.GetObject("btnVentasEmpleado.Glyph")));
+            this.btnVentasEmpleado.Id = 74;
+            this.btnVentasEmpleado.Name = "btnVentasEmpleado";
+            this.btnVentasEmpleado.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem14.Text = "Ventas por Empleado";
+            toolTipItem14.LeftIndent = 6;
+            toolTipItem14.Text = "Genera un reporte de ventas realizadas por un empleado seleccionado.";
+            superToolTip14.Items.Add(toolTipTitleItem14);
+            superToolTip14.Items.Add(toolTipItem14);
+            this.btnVentasEmpleado.SuperTip = superToolTip14;
+            this.btnVentasEmpleado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVentasEmpleado_ItemClick);
+            // 
             // ribbonPageTranscts
             // 
             this.ribbonPageTranscts.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -872,8 +968,11 @@
             // 
             this.ribbonPageGroupReports.ItemLinks.Add(this.btnReportSales);
             this.ribbonPageGroupReports.ItemLinks.Add(this.btnTop10Sales);
+            this.ribbonPageGroupReports.ItemLinks.Add(this.btnLess10);
+            this.ribbonPageGroupReports.ItemLinks.Add(this.btnKardexProd);
+            this.ribbonPageGroupReports.ItemLinks.Add(this.btnVentasEmpleado);
             this.ribbonPageGroupReports.Name = "ribbonPageGroupReports";
-            this.ribbonPageGroupReports.Text = "ribbonPageGroup1";
+            this.ribbonPageGroupReports.Text = "Reporteria";
             // 
             // ribbonPageCaja
             // 
@@ -944,46 +1043,12 @@
             this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // btnAbonoC
-            // 
-            this.btnAbonoC.Caption = "Abonar a Proveedor";
-            this.btnAbonoC.Enabled = false;
-            this.btnAbonoC.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoC.Glyph")));
-            this.btnAbonoC.Id = 70;
-            this.btnAbonoC.Name = "btnAbonoC";
-            this.btnAbonoC.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem10.Text = "Abonar a Proveedor";
-            toolTipItem10.LeftIndent = 6;
-            toolTipItem10.Text = "Se registra un abono a una compra realizada al credito por medio de un codigo.";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            superToolTip10.Items.Add(toolTipItem10);
-            this.btnAbonoC.SuperTip = superToolTip10;
-            this.btnAbonoC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoC_ItemClick);
-            // 
-            // btnAbonoV
-            // 
-            this.btnAbonoV.Caption = "Abono de Cliente";
-            this.btnAbonoV.Enabled = false;
-            this.btnAbonoV.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAbonoV.Glyph")));
-            this.btnAbonoV.Id = 71;
-            this.btnAbonoV.Name = "btnAbonoV";
-            this.btnAbonoV.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem11.Text = "Abono de Cliente";
-            toolTipItem11.LeftIndent = 6;
-            toolTipItem11.Text = "Registra un abono de un cliente al que se le hizo una venta al credito.";
-            superToolTip11.Items.Add(toolTipTitleItem11);
-            superToolTip11.Items.Add(toolTipItem11);
-            this.btnAbonoV.SuperTip = superToolTip11;
-            this.btnAbonoV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbonoV_ItemClick);
-            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 510);
+            this.ClientSize = new System.Drawing.Size(783, 510);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
@@ -1076,6 +1141,9 @@
         private DevExpress.XtraBars.BarButtonItem btnNewCompra;
         private DevExpress.XtraBars.BarButtonItem btnAbonoC;
         private DevExpress.XtraBars.BarButtonItem btnAbonoV;
+        private DevExpress.XtraBars.BarButtonItem btnLess10;
+        private DevExpress.XtraBars.BarButtonItem btnKardexProd;
+        private DevExpress.XtraBars.BarButtonItem btnVentasEmpleado;
     }
 }
 

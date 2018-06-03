@@ -479,5 +479,19 @@ namespace ProyectoFinal
             miFrmAbonoClient.Show();
 
         }
+
+        private void btnLess10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmLessVentas miFrmLessVentas = new frmLessVentas();
+            miFrmLessVentas.MdiParent = this;
+            miFrmLessVentas.Show();
+        }
+
+        private void btnVentasEmpleado_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVntporEmpleado frmSaleforEmployee = new frmVntporEmpleado();
+            frmSaleforEmployee.MdiParent = this;
+            frmSaleforEmployee.Show();
+        }
     }
 }
