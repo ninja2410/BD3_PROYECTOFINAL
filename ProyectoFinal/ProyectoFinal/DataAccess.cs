@@ -22,7 +22,7 @@ namespace ProyectoFinal
         #region buillder
         public DataAccess()
         {
-            ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj;";
+            ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj; SslMode=none;";
             //ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
             //ConnectionString = "Server=localhost;Database=dbsurticasa;Uid=root;Pwd=s3xo!=am0r;";
 
@@ -73,7 +73,7 @@ namespace ProyectoFinal
             }
             catch (Exception ex)
             {
-                throw new Exception("Error Select detail error: "+ex.Message+"\n");
+                MessageBox.Show("Error Select detail error: "+ex.Message+"\n");
             }
             return dt;
         }

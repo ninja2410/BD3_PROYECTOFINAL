@@ -16,6 +16,11 @@ namespace ProyectoFinal
         //VARIABLES GLOBALES
         //ID CAJA
         int idCaja=0;
+        public int codSucursal;
+        public int codEmpleado=1;
+        public string empleado;
+        public string sucursal;
+        public Login anterior=new Login();
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +30,8 @@ namespace ProyectoFinal
         {
             f_ventas v = new f_ventas();
             v.MdiParent = this;
+            v.sucursal = codSucursal;
+            v.empleado = codEmpleado;
             v.venta = true;
             v.Show();
         }
@@ -42,6 +49,8 @@ namespace ProyectoFinal
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_ventas c = new f_ventas();
+            c.empleado = codEmpleado;
+            c.sucursal = codSucursal;
             c.venta = false;
             c.MdiParent = this;
             c.Show();
@@ -50,6 +59,8 @@ namespace ProyectoFinal
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_NotasEntrada n = new f_NotasEntrada();
+            n.sucursal = codSucursal;
+            n.empleado = codEmpleado;
             n.MdiParent = this;
             n.Show();
         }
@@ -71,6 +82,8 @@ namespace ProyectoFinal
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_Notas nota = new f_Notas();
+            nota.empleado = codEmpleado;
+            nota.sucursal = codSucursal;
             nota.entrada = false;
             nota.MdiParent = this;
             nota.Show();
@@ -262,6 +275,15 @@ namespace ProyectoFinal
             a.Show();
         }
 
+        private void btnSalir_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+            anterior.anterior = this;
+            anterior.bandera = true;
+            anterior.recargar();
+            anterior.Show();
+        }
+
         private void barButtonItem5_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_abonos aC = new f_abonos();
@@ -408,9 +430,70 @@ namespace ProyectoFinal
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-
+            anterior.Hide();
+            nombreEmpleado.Caption = empleado;
+            nombreSucursal.Caption = sucursal;
+            cargar_Permisos();
         }
+        private void cargar_Permisos()
+        {
+            DataTable permisos = new DataTable();
+            string query;
+            query = "SELECT * FROM tblPermiso where id_empleado={0}";
+            query = string.Format(query, codEmpleado);
+            permisos = da.fillDataTable(query);
 
+            foreach (object item in ribbonControl1.Pages)
+            {
+                if (item is DevExpress.XtraBars.Ribbon.RibbonPage)
+                {
+                    DevExpress.XtraBars.Ribbon.RibbonPage p = item as DevExpress.XtraBars.Ribbon.RibbonPage;
+
+                    //RECORRER GROUPS DEL RIBON
+
+                    foreach (DevExpress.XtraBars.Ribbon.RibbonPageGroup grupo in p.Groups)
+                    {
+                        grupo.Visible = false;
+                    }
+
+                    foreach (DevExpress.XtraBars.Ribbon.RibbonPageGroup grupo in p.Groups)
+                    {
+                        //MessageBox.Show(grupo.Text);
+                        foreach (DataRow r in permisos.Rows)
+                        {
+                            if (r["id_rol"].ToString() == grupo.Tag.ToString()) {
+                                grupo.Visible = true;
+
+                                if (Convert.ToInt16(grupo.Tag) <= 4)
+                                {
+                                    ribbonPageTranscts.Visible = true;
+        }
+                                else if(Convert.ToInt16(grupo.Tag)<= 7)
+                                {
+                                    ribbonPageclientes.Visible = true;
+                                } else if (Convert.ToInt16(grupo.Tag) <= 12)
+                                {
+                                    ribbonPageProductos.Visible = true;
+                                }else if (Convert.ToInt16(grupo.Tag) <= 13)
+                                {
+                                    ribbonPageSucursales.Visible = true;
+                                }else if (Convert.ToInt16(grupo.Tag) <= 14)
+                                {
+                                    ribbonPageReports.Visible = true;
+                                }else if (Convert.ToInt16(grupo.Tag) <= 15)
+                                {
+                                    ribbonPageCaja.Visible = true;
+                                }
+
+
+
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         private void btnCloseCaja_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //cerramos la caja actual
@@ -478,6 +561,13 @@ namespace ProyectoFinal
             miFrmAbonoClient.MdiParent = this;
             miFrmAbonoClient.Show();
 
+        }
+
+        private void btnTrasladosBod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_traslados traslados = new f_traslados();
+            traslados.MdiParent = this;
+            traslados.Show();
         }
 
         private void btnLess10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
