@@ -563,6 +563,7 @@ namespace ProyectoFinal
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void btnTrasladosBod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -584,6 +585,8 @@ namespace ProyectoFinal
             frmSaleforEmployee.MdiParent = this;
             frmSaleforEmployee.Show();
         }
+=======
+>>>>>>> parent of 3152640... Addin more Reports
 =======
 >>>>>>> parent of 3152640... Addin more Reports
     }
