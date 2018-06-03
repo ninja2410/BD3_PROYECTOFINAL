@@ -279,17 +279,22 @@ namespace ProyectoFinal
             int codigo;
             string q;
             DataTable dt = new DataTable();
-            q = "SELECT id_asignacion, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>={2}";
-            q += " ORDER BY fecha_caducidad ASC";
+            DataTable tmp = new DataTable();
 
-            q = string.Format(q, cod, sucursal, Convert.ToInt16(txtCantidad.Text));
-            dt = da.fillDataTable(q);
-            if (dt.Rows.Count == 0)
+            q = "SELECT SUM(cantidad) as n from tblAsignacionCantidad WHERE id_asignacionprecio={0} AND id_sucursal={1}";
+            q = string.Format(q, cod, sucursal);
+            tmp = da.fillDataTable(q);
+            MessageBox.Show(tmp.Rows[0]["n"].ToString());
+            if (Convert.ToInt16(tmp.Rows[0]["n"]) < Convert.ToInt16(txtCantidad.Text))
             {
                 codigo = -1;
             }
             else
             {
+                q = "SELECT id_asignacion, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>0";
+                q += " ORDER BY fecha_caducidad ASC";
+                q = string.Format(q, cod, sucursal);
+                dt = da.fillDataTable(q);
                 codigo = Convert.ToInt16(dt.Rows[0]["id_asignacion"]);
             }
             return codigo;
