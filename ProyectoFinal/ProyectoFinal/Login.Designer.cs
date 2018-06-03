@@ -59,6 +59,7 @@
             // 
             // textEdit1
             // 
+            this.textEdit1.EnterMoveNextControl = true;
             this.textEdit1.Location = new System.Drawing.Point(171, 121);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(193, 20);
@@ -66,8 +67,10 @@
             // 
             // textEdit2
             // 
+            this.textEdit2.EnterMoveNextControl = true;
             this.textEdit2.Location = new System.Drawing.Point(171, 170);
             this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.PasswordChar = '*';
             this.textEdit2.Size = new System.Drawing.Size(193, 20);
             this.textEdit2.TabIndex = 4;
             // 
@@ -103,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(566, 299);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
@@ -111,7 +115,9 @@
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
