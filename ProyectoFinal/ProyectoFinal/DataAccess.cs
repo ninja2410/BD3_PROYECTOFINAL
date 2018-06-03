@@ -73,7 +73,7 @@ namespace ProyectoFinal
             }
             catch (Exception ex)
             {
-                throw new Exception("Error Select detail error: "+ex.Message+"\n");
+                MessageBox.Show("Error Select detail error: "+ex.Message+"\n");
             }
             return dt;
         }

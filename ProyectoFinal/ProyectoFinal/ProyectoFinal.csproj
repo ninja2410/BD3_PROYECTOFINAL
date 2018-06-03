@@ -62,7 +62,7 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -499,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentascs.resx">
       <DependentUpon>frmVentascs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerAsignacionPermisos.resx">
+      <DependentUpon>frmVerAsignacionPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmvercategoria.resx">
       <DependentUpon>frmvercategoria.cs</DependentUpon>
