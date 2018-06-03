@@ -173,7 +173,7 @@
   <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="customSqlQuery1.Sql" xml:space="preserve">
+  <data name="customSqlQuery4.Sql" xml:space="preserve">
     <value>select `tblAsignacionProducto`.`id_producto`,
        `tblSucursal`.`nombre_sucursal`,
        `tblProducto`.`nombre_producto`,
@@ -189,7 +189,7 @@
        and (`tblAsignacionCantidad`.`id_sucursal` = `tblAsignacionProducto`.`id_sucursal`)))
 group by `tblAsignacionProducto`.`id_producto`</value>
   </data>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
+  <data name="customSqlQuery5.Sql" xml:space="preserve">
     <value>select `tblAsignacionProducto`.`id_producto`,
        `tblProducto`.`nombre_producto`,
        `tblSucursal`.`nombre_sucursal`,
@@ -211,7 +211,7 @@ group by `tblAsignacionProducto`.`id_producto`</value>
        on (`tblPresentacion`.`id_Presentacion` = `tblAsignacionPrecio`.`id_Presentacion`))
 group by `tblPresentacion`.`tipo_presentacion`</value>
   </data>
-  <data name="customSqlQuery3.Sql" xml:space="preserve">
+  <data name="customSqlQuery6.Sql" xml:space="preserve">
     <value>select `tblSucursal`.`nombre_sucursal`,
 	 `tblAsignacionProducto`.`id_producto`,
        `tblProducto`.`nombre_producto`,
@@ -225,8 +225,7 @@ group by `tblPresentacion`.`tipo_presentacion`</value>
   inner join `tblMarca`
        on `tblMarca`.`id_marca` = `tblProducto`.`id_marca`
   inner join `tblSucursal` `tblSucursal`
-       on `tblSucursal`.`id_sucursal` = `tblAsignacionProducto`.`id_sucursal`
-group by `tblAsignacionProducto`.`id_producto`</value>
+       on `tblSucursal`.`id_sucursal` = `tblAsignacionProducto`.`id_sucursal`</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iaWRfcHJvZHVjdG8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0ibm9tYnJlX3N1Y3Vyc2FsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im5vbWJyZV9wcm9kdWN0byIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYW50aWRhZCIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfRmluaXNoIj48RmllbGQgTmFtZT0ibm9tYnJlX3N1Y3Vyc2FsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImlkX3Byb2R1Y3RvIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im5vbWJyZV9wcm9kdWN0byIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJub21icmVfY2F0ZWdvcmlhIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im5vbWJyZV9tYXJjYSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJRdWVyeV9wcmVzZW50YWNpb25lcyI+PEZpZWxkIE5hbWU9ImlkX3Byb2R1Y3RvIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Im5vbWJyZV9wcm9kdWN0byIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJub21icmVfc3VjdXJzYWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2FudGlkYWQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InRpcG9fcHJlc2VudGFjaW9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>

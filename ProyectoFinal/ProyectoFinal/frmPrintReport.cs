@@ -20,9 +20,9 @@ namespace ProyectoFinal
 
         public void PrintReportTop10()
         {
-            XtraReportTop10Ventas report = new XtraReportTop10Ventas();
-            documentViewer1.DocumentSource = report;
-            report.CreateDocument();
+            //XtraReportTop10Ventas report = new XtraReportTop10Ventas();
+            //documentViewer1.DocumentSource = report;
+            //report.CreateDocument();
         }
 
         public void PrintReport(int sucursal, DateTime fechaInicio, DateTime fechaFin)

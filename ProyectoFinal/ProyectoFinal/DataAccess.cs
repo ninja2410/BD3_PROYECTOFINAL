@@ -22,7 +22,7 @@ namespace ProyectoFinal
         #region buillder
         public DataAccess()
         {
-            ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj;";
+            ConnectionString = "Server=185.224.137.20;Database=u983648979_dbsur; Uid =u983648979_loto;Pwd=3McfvgblzEpj; SslMode=none;";
             //ConnectionString = "Server=127.0.0.1;Database=dbsurticasa;Uid=root;Pwd=database;";
             //ConnectionString = "Server=localhost;Database=dbsurticasa;Uid=root;Pwd=s3xo!=am0r;";
 
@@ -98,6 +98,27 @@ namespace ProyectoFinal
             {
                 cm.Connection.Close();
             }
+        }
+
+        public object executeScalar(string sCommand)
+        {
+            MySqlCommand cm = new MySqlCommand(sCommand, cnConnection);
+            object value;
+            try
+            {
+                cm.Connection.Open();
+                return value=cm.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error for execute command:" + ex.Message);
+
+            }
+            finally
+            {
+                cm.Connection.Close(); // Cerramos la conexion
+            }
+
         }
 
         public void transact(DataTable detalles, string documento, int codEmpleado, bool codTipoVenta, int codCliente, int idSucursal, decimal total)

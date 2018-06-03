@@ -12,8 +12,8 @@ namespace ProyectoFinal
 {
     public partial class f_NotasEntrada : Form
     {
-        public int sucursal=1;
-        public int empleado=1;
+        public int sucursal;
+        public int empleado;
         string x;
         DataTable dt = new DataTable();
         DataAccess da = new DataAccess();

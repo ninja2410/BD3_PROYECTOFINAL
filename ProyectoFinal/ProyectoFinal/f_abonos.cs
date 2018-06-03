@@ -17,12 +17,20 @@ namespace ProyectoFinal
         int idCredit;
         decimal monto;
         DataAccess da = new DataAccess();
+        int miCaja;
         // Abono de venta = true;
         // Abono de compra = false;
 
         public f_abonos()
         {
             InitializeComponent();
+        }
+
+        public f_abonos(int idCaja)
+        {
+            miCaja = idCaja;
+            InitializeComponent();
+
         }
 
         private void textEdit2_EditValueChanged(object sender, EventArgs e)
@@ -112,6 +120,21 @@ namespace ProyectoFinal
                 updateCredit = "UPDATE tblCreditos SET  monto = (monto - {0}) where id_creditos = {1};";
                 updateCredit = string.Format(updateCredit, abono, idCredit);
                 da.executeCommand(updateCredit);
+
+                //Insertando la cantidad a la caja
+                if (typeAbono == true) //Si es abono de una venta al credito se suma a la caja.
+                {
+                    string query = "CALL SP_UPDATECAJA({0},{1})"; //Actualizamos la cantidad de caja
+                    query = string.Format(query, miCaja, Convert.ToDecimal(textEdit2.Text));
+                    da.executeCommand(query);
+                }
+                else if (typeAbono == false) // Si es una compra al credito se resta a la caja.
+                {
+                    string query = "CALL SP_UPDATECAJA({0},-{1})"; //Actualizamos la cantidad de caja
+                    query = string.Format(query, miCaja, Convert.ToDecimal(textEdit2.Text));
+                    da.executeCommand(query);
+                }
+
 
                 MessageBox.Show("Se ha registrado el abono con exito.");
                 }
