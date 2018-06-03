@@ -13,10 +13,10 @@ namespace ProyectoFinal
     public partial class f_Notas : Form
     {
         DataAccess da = new DataAccess();
-        public int sucursal=1;
+        public int sucursal;
         public bool entrada=true;
         DataTable dt = new DataTable();
-        public int empleado = 1;
+        public int empleado;
         string tpres;
         public f_Notas()
         {
@@ -47,7 +47,9 @@ namespace ProyectoFinal
             gridControl1.Refresh();
 
             //falta filtrar por sucursal
-            lProducto.Properties.DataSource = da.fillDataTable("SELECT id_producto, nombre_producto from listarProductos");
+            query = "SELECT id_producto, nombre_producto from listarProductos WHERE id_sucursal={0}";
+            query = string.Format(query, sucursal);
+            lProducto.Properties.DataSource = da.fillDataTable(query);
             lProducto.Properties.DisplayMember = "nombre_producto";
             lProducto.Properties.ValueMember = "id_producto";
         }

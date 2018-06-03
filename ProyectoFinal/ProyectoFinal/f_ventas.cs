@@ -17,10 +17,10 @@ namespace ProyectoFinal
         DataTable tmp = new DataTable();
         List<ProductosVenta> lista = new List<ProductosVenta>();
         string query;
-        public int sucursal=1;
+        public int sucursal;
         decimal totalFactura;
         public bool venta=true;
-        public int empleado = 1;
+        public int empleado;
         int codigoProveedor;
         int codigoCliente;
         int idCaja;
@@ -54,8 +54,9 @@ namespace ProyectoFinal
             //LLENADO DE LOOKUPEDIT DE PRODUCTO CON VISTA listarProductos
             try
             {
-                //falta filtrar por sucursal
-                lProductos.Properties.DataSource = da.fillDataTable("SELECT id_producto, nombre_producto from listarProductos");
+                query = "SELECT id_producto, nombre_producto from listarProductos WHERE id_sucursal={0}";
+                query = string.Format(query, sucursal);
+                lProductos.Properties.DataSource = da.fillDataTable(query);
                 lProductos.Properties.DisplayMember = "nombre_producto";
                 lProductos.Properties.ValueMember = "id_producto";
 
