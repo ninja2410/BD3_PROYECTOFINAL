@@ -15,6 +15,7 @@ namespace ProyectoFinal
     {
         public bool typeAbono = true;
         int idCredit;
+        decimal monto;
         DataAccess da = new DataAccess();
         int miCaja;
         // Abono de venta = true;
@@ -39,67 +40,29 @@ namespace ProyectoFinal
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
-            idCredit = Convert.ToInt32(txtIdCredit.Text);
-            int idDeudor;
-            int typeCuenta;
-            string sQuery;
             try
             {
-                sQuery = "SELECT * FROM tblCreditos where id_creditos = " + idCredit + " ;";
-                DataTable dt = da.fillDataTable(sQuery);
-                if (dt.Rows.Count > 0)
+                btnPago.Enabled = true;
+                textEdit2.Enabled = true;
+                creditosGridControl.Enabled = false;
+
+                if (typeAbono)
                 {
-                    idDeudor = Convert.ToInt32(dt.Rows[0]["deudor"]);
-                    typeCuenta = Convert.ToInt16(dt.Rows[0]["tipo_cuenta"]);
-                    if (!typeAbono && (typeCuenta == 0) )
-                    {
-                        sQuery = "SELECT * FROM tblProveedor where id_proveedor = " + idDeudor + " ;";
-                        DataTable dtDeudor = da.fillDataTable(sQuery);
-                        if (dtDeudor.Rows.Count > 0)
-                        {
-                            lblDeudorTitle.Text = "DATOS DEL PROVEEDOR";
-                            lblInfoDeudor.Text = "Proveedor: " + Convert.ToString(dtDeudor.Rows[0]["nombre_proveedor"]) + "\n";
-                            lblInfoDeudor.Text += "NIT: " + Convert.ToString(dtDeudor.Rows[0]["nit"]) + "\n";
-                            lblInfoDeudor.Text += "Telefono: " + Convert.ToString(dtDeudor.Rows[0]["telefono"]) + "\n";
-                            lblInfoDeudor.Text += "Contacto: " + Convert.ToString(dtDeudor.Rows[0]["contacto"]) + "\n";
-                            btnPago.Enabled = true;
-                            textEdit2.Enabled = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("El codigo de CREDITO DE COMPRA no existe, porfavor verifique.");
-                            txtIdCredit.Focus();
-                        }
-                    }
-                    else if(typeAbono && (typeCuenta == 1))
-                    {
-                        sQuery = "SELECT * FROM tblCliente where id_cliente= " + idDeudor + " ;";
-                        DataTable dtDeudor = da.fillDataTable(sQuery);
-                        if (dtDeudor.Rows.Count > 0)
-                        {
-                            lblDeudorTitle.Text = "DATOS DEL CLIENTE";
-                            lblInfoDeudor.Text = "Nombre: " + Convert.ToString(dtDeudor.Rows[0]["nombre"]) + " "+ Convert.ToString(dtDeudor.Rows[0]["apellido"]) + "\n";
-                            lblInfoDeudor.Text += "NIT: " + Convert.ToString(dtDeudor.Rows[0]["nit"]) + "\n";
-                            lblInfoDeudor.Text += "Telefono: " + Convert.ToString(dtDeudor.Rows[0]["telefono"]) + "\n";
-                            btnPago.Enabled = true;
-                            textEdit2.Enabled = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("El codigo de CREDITO DE VENTA no existe, porfavor verifique.");
-                            txtIdCredit.Focus();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El codigo de CREDITO no existe o no corresponde al tipo de pago.");
-                        txtIdCredit.Focus();
-                    }
+                    idCredit = Convert.ToInt32(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "IDCREDITO").ToString());
+                    string nombre = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "CLIENTE").ToString();
+                    string nit = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "NIT").ToString();
+                    monto = Convert.ToDecimal(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "MONTO"));
+                    DateTime fecha = Convert.ToDateTime(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "FECHALIMITE"));
+                    lblCreditoDetail.Text = "Cliente: "+nombre+"/nMonto: "+monto;
                 }
                 else
                 {
-                    MessageBox.Show("El codigo de CREDITO no existe, porfavor verifique.");
-                    txtIdCredit.Focus();
+                    idCredit = Convert.ToInt32(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "IDCREDITO").ToString());
+                    string nombre = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "PROVEEDOR").ToString();
+                    string nit = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "NIT").ToString();
+                    monto = Convert.ToDecimal(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "MONTO").ToString());
+                    DateTime fecha = Convert.ToDateTime(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "FECHALIMITE").ToString());
+                    lblCreditoDetail.Text = "Cliente: " + nombre + " /n Monto: " + monto;
                 }
 
             }
@@ -118,8 +81,23 @@ namespace ProyectoFinal
         {
             textEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             textEdit2.Properties.Mask.EditMask = "N2";
-            txtIdCredit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            txtIdCredit.Properties.Mask.EditMask = "D";
+            //txtIdCredit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            //txtIdCredit.Properties.Mask.EditMask = "D";
+
+            if (typeAbono)
+            { 
+                string consultarCreditos = "SELECT CR.id_creditos as IDCREDITO, CONCAT(CL.nombre, ' ', CL.apellido) as CLIENTE, CL.nit as NIT, CR.monto as MONTO ,CR.fecha_limite as FECHA_LIMITE FROM tblCreditos CR INNER JOIN tblCliente CL ON CR.deudor = CL.id_cliente";
+                creditosGridControl.DataSource = da.fillDataTable(consultarCreditos);
+                
+            }
+            else
+            {
+                string consultarCreditos = "SELECT CR.id_creditos AS IDCREDITO, PR.nombre_proveedor AS PROVEEDOR, ";
+                consultarCreditos += " PR.nit AS NIT, CR.monto AS MONTO ,CR.fecha_limite AS FECHA_LIMITE";
+                consultarCreditos += " FROM tblCreditos CR INNER JOIN tblProveedor PR";
+                consultarCreditos += " ON CR.deudor = PR.id_proveedor";
+                creditosGridControl.DataSource = da.fillDataTable(consultarCreditos);
+            }
             btnPago.Enabled = false;
             textEdit2.Enabled = false;
         }
@@ -129,15 +107,18 @@ namespace ProyectoFinal
             try
             {
                 string insertAbono, updateCredit;
+                decimal abono = Convert.ToDecimal(textEdit2.Text);
                 string dateTime = DateTime.Now.ToString();
                 string createddate = Convert.ToDateTime(dateTime).ToString("yyyy-MM-dd");
 
+                if(abono<= monto)
+                { 
                 insertAbono = "INSERT INTO tblAbonos(id_creditos, monto, fecha_pago) VALUES ({0},{1},'{2}');";
-                insertAbono = string.Format(insertAbono,idCredit,Convert.ToDecimal(textEdit2.Text),createddate);
+                insertAbono = string.Format(insertAbono,idCredit,abono,createddate);
                 da.executeCommand(insertAbono);
 
                 updateCredit = "UPDATE tblCreditos SET  monto = (monto - {0}) where id_creditos = {1};";
-                updateCredit = string.Format(updateCredit, Convert.ToDecimal(textEdit2.Text), idCredit);
+                updateCredit = string.Format(updateCredit, abono, idCredit);
                 da.executeCommand(updateCredit);
 
                 //Insertando la cantidad a la caja
@@ -156,8 +137,34 @@ namespace ProyectoFinal
 
 
                 MessageBox.Show("Se ha registrado el abono con exito.");
+                }
+                else
+                {
+                    MessageBox.Show("El abono excede el total del credito.");
+                    textEdit2.Text = "";
+                    textEdit2.Focus();
+                }
 
-                
+                if (typeAbono)
+                {
+                    string consultarCreditos = "SELECT CR.id_creditos as IDCREDITO, CONCAT(CL.nombre, ' ', CL.apellido) as CLIENTE, CL.nit as NIT, CR.monto as MONTO ,CR.fecha_limite as FECHA_LIMITE FROM tblCreditos CR INNER JOIN tblCliente CL ON CR.deudor = CL.id_cliente";
+                    creditosGridControl.DataSource = da.fillDataTable(consultarCreditos);
+
+                }
+                else
+                {
+                    string consultarCreditos = "SELECT CR.id_creditos AS IDCREDITO, PR.nombre_proveedor AS PROVEEDOR, ";
+                    consultarCreditos += " PR.nit AS NIT, CR.monto AS MONTO ,CR.fecha_limite AS FECHA_LIMITE";
+                    consultarCreditos += " FROM tblCreditos CR INNER JOIN tblProveedor PR";
+                    consultarCreditos += " ON CR.deudor = PR.id_proveedor";
+                    creditosGridControl.DataSource = da.fillDataTable(consultarCreditos);
+                }
+                textEdit2.Text = "";
+                btnPago.Enabled = false;
+                textEdit2.Enabled = false;
+                lblCreditoDetail.Text = "";
+                creditosGridControl.Enabled = true;
+
             }
             catch (Exception ex)
             {
